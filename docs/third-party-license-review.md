@@ -1,4 +1,9 @@
-<!-- SPDX-License-Identifier: MIT -->
+<!--
+Copyright (C) 2026 kaoyan-english-grader contributors
+SPDX-License-Identifier: GPL-3.0-or-later
+This file is licensed under GPL-3.0-or-later. See LICENSE.
+-->
+
 
 # 第三方内容与许可证审查规范
 
@@ -99,9 +104,9 @@
 
 ### 6.2 当前仓库
 
-本仓库现有根目录 `LICENSE` 声明采用 MIT 许可证，README 也明确说明项目采用 MIT。本次维护保留现有 MIT，不将新项目默认值追溯应用到本仓库。
+本仓库原创内容现采用 `GPL-3.0-or-later`。根目录 `LICENSE` 和 `COPYING` 保存完整 GPLv3 文本，README 明确说明适用范围。新增原创 Markdown 文件使用 `SPDX-License-Identifier: GPL-3.0-or-later` 文件级标识。
 
-新增原创文档使用与当前仓库一致的 `SPDX-License-Identifier: MIT` 文件级标识。引入的第三方文件保留其上游 SPDX 标识、版权声明和许可证，不得为了统一项目许可而覆盖上游声明。
+第三方文件保留其上游 SPDX 标识、版权声明和许可证，不得为了统一项目许可而覆盖上游声明。当前已引入的 `skills/check-the-licence-before-you-copy/SKILL.md` 保留 `Apache-2.0`，其来源、版权人和修改说明记录在 `NOTICE`，完整上游许可证保存在 `LICENSES/Apache-2.0.txt`。
 
 ### 6.3 文件标识与通知
 
@@ -124,7 +129,7 @@
 4. 改编、翻译或重命名后，是否仍能追溯到原始文件和版本。
 5. 仓库中的自动化检查是否能发现通知文件或来源标记意外丢失。
 
-如果仓库引入了第三方材料，应为其增加可执行的署名完整性检查；不要只依赖人工记忆。当前仓库没有独立的第三方署名检查工具，新增第三方内容时应将检查纳入该变更的验证范围。
+如果仓库引入了第三方材料，应为其增加可执行的署名完整性检查；不要只依赖人工记忆。本仓库通过 `tests/test_third_party_attribution.py` 校验 Apache-2.0 许可证文本的 Git blob SHA、NOTICE 来源记录，以及改编 Skill 的文件级版权和来源标识。GitHub Actions 在 push 和 pull request 时执行该测试。新增或移动第三方文件时，必须同步更新测试清单和 NOTICE。
 
 ### 6.5 许可变更出口
 
