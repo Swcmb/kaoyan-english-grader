@@ -4,54 +4,56 @@ SPDX-License-Identifier: GPL-3.0-or-later
 This file is licensed under GPL-3.0-or-later. See LICENSE.
 -->
 
-# Gemini CLI 与 Qwen Code 安装指南
+# Gemini CLI 安装与使用
 
-> 国内网络环境优先使用 Gitee 镜像安装标准 Skill：
->
-> ```bash
-> npx skills add https://gitee.com/ianwusb/kaoyan-english-grader.git --skill kaoyan-english-grader --agent gemini-cli
-> ```
->
-> 将 `AGENT_NAME` 替换为当前平台对应的 Agent 标识。下方的平台原生插件安装方式作为补充；需要 Gitee 国内源时，优先使用此方式。
+Gemini CLI 支持标准 Agent Skills，可从用户目录、工作区目录和扩展中加载技能。
 
-仓库包含 Gemini CLI 扩展清单，以及用于加载标准 Skill 的 GEMINI.md 入口文件。
+## 方式一：通过 Gitee 安装
 
-## Gemini CLI
-
-从 GitHub 安装：
+在项目根目录打开终端：
 
 ~~~bash
-gemini extensions install https://github.com/Swcmb/kaoyan-english-grader
+npx skills add https://gitee.com/ianwusb/kaoyan-english-grader.git \
+  --skill kaoyan-english-grader \
+  --agent gemini-cli
 ~~~
 
-安装后重新启动 Gemini CLI。更新扩展：
+默认安装到项目级 .agents/skills/。添加 -g 可安装到用户级目录：
 
 ~~~bash
-gemini extensions update
+npx skills add https://gitee.com/ianwusb/kaoyan-english-grader.git \
+  --skill kaoyan-english-grader \
+  --agent gemini-cli \
+  -g
 ~~~
 
-查看已安装扩展：
+## 方式二：手动安装
 
-~~~text
-/extensions list
-~~~
+复制完整技能目录到以下任一路径：
 
-## Qwen Code
+| 作用范围 | 路径 |
+|---|---|
+| 项目级通用目录 | .agents/skills/kaoyan-english-grader/ |
+| 项目级 Gemini 目录 | .gemini/skills/kaoyan-english-grader/ |
+| 用户级通用目录 | ~/.agents/skills/kaoyan-english-grader/ |
+| 用户级 Gemini 目录 | ~/.gemini/skills/kaoyan-english-grader/ |
 
-通过扩展命令安装：
+不要只复制 SKILL.md；六份题型规则必须保留在 references/ 子目录中。
 
-~~~bash
-qwen extensions install Swcmb/kaoyan-english-grader
-~~~
+## 验证与调用
 
-安装后重新启动 Qwen Code。可使用其扩展管理命令查看已安装扩展。
+1. 启动 Gemini CLI。
+2. 输入 /skills 查看可调用技能。
+3. 输入 /kaoyan-english-grader，或直接发出考研英语翻译/作文批改请求。
+4. 测试英语一翻译和英语二大作文，确认对应规则文件可以读取。
 
-## 作为独立 Skill 安装
+如果安装后当前会话没有识别新技能，执行 /skills reload（当前版本支持时）或启动新会话。
 
-~~~bash
-npx skills add https://gitee.com/ianwusb/kaoyan-english-grader.git --skill kaoyan-english-grader --agent gemini-cli
-~~~
+## 更新与卸载
 
-## 验证
+CLI 安装：npx skills update。手动安装：替换完整技能文件夹；卸载时删除上述目录中的 kaoyan-english-grader 子目录。
 
-要求 Agent 批改一道具体题目，检查它是否读取对应的中文题型规则。
+## 官方资料
+
+- [Gemini CLI：Managing Agent Skills](https://github.com/google-gemini/gemini-cli/blob/main/docs/cli/using-agent-skills.md)
+- [Skills CLI：Gemini CLI 安装目录](https://github.com/vercel-labs/skills/blob/main/docs/agents.md)
