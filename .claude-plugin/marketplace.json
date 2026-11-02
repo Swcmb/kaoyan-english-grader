@@ -1,13 +1,13 @@
 {
   "name": "kaoyan-english-grader",
-  "description": "考研英语批改与第三方许可证审查的跨平台 Agent Skills 集合。",
+  "description": "面向考研英语一、英语二主观题的跨平台 AI 批改 Skill。",
   "owner": {
     "name": "Swcmb"
   },
   "plugins": [
     {
       "name": "kaoyan-english-grader",
-      "description": "英语一/二翻译与作文批改，以及第三方许可证审查和来源归属验证。",
+      "description": "英语一/二翻译、大作文和小作文六类题型的模拟批改与学习反馈。",
       "version": "1.0.0",
       "source": "./",
       "author": {
