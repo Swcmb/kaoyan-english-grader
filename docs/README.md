@@ -6,20 +6,19 @@ This file is licensed under GPL-3.0-or-later. See ../LICENSE.
 
 # 文档中心
 
-按任务查找 Skill 版本、安装渠道、平台兼容、文档规范和版本发布信息。
+按任务查找 Skill、安装方法、平台说明、内容写作规范和发布流程。
 
-## Skill 与安装
+## Skill
 
-- [安装与版本选择](installation/README.md)：两个 Skill 的区别、推荐顺序及各类平台能力边界。
-- [Skills CLI](installation/skills-cli.md)：从 Git 仓库安装标准 Agent Skill。
-- [手机端渠道](installation/mobile-apps.md)：技能市场、应用内创建和远程 Agent 的区别。
-- [平台指南](installation/platforms/)：各产品安装入口、文件格式和能力边界。
-- [Agent 安装协议](../INSTALL.md)：识别平台、选择 Skill、安装和验收。
+- [完整 Skill 文件](../skills/kaoyan-english-grader/SKILL.md)：唯一的自包含 Agent Skill，内含英语一、英语二六类主观题的全部评分规则。
+- [Agent 安装与验收协议](../INSTALL.md)：识别平台能力、选择安装方式、执行安装并验证真实调用。
 
-## 两个 Skill
+## 安装指南
 
-- 标准版：[`skills/kaoyan-english-grader/`](../skills/kaoyan-english-grader/SKILL.md)，需完整保留 `SKILL.md` 与 `references/` 六份规则。
-- 完整版：[`skills/kaoyan-english-grader-full/SKILL.md`](../skills/kaoyan-english-grader-full/SKILL.md)，六类规则全部内嵌，供单文件导入场景使用。
+- [安装与平台能力总览](installation/README.md)：区分技能市场、应用内创建、标准 Skill 导入和远程 Agent。
+- [Skills CLI](installation/skills-cli.md)：从 Git 仓库或本地目录安装 Skill。
+- [手机端使用渠道](installation/mobile-apps.md)：手机端市场、应用内创建和远程主机连接。
+- [各平台指南](installation/platforms/)：按 Agent、IDE、桌面端和手机产品查找安装步骤。
 
 ## 文档规范
 
@@ -30,4 +29,4 @@ This file is licensed under GPL-3.0-or-later. See ../LICENSE.
 
 ## 发布
 
-- [GitHub Releases 发布说明](releasing.md)：版本标签、源码归档、SHA-256 和故障排查。
+- [GitHub Releases 发布说明](releasing.md)：版本标签、源码归档、SHA-256 校验和发布检查。
