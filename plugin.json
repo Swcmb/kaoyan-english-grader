@@ -1,0 +1,42 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "kaoyan-english-grader",
+  "version": "1.0.0",
+  "description": "Practice grading and feedback for all six postgraduate entrance exam English I and II translation and essay task types.",
+  "author": {
+    "name": "Swcmb",
+    "url": "https://github.com/Swcmb"
+  },
+  "homepage": "https://github.com/Swcmb/kaoyan-english-grader",
+  "repository": "https://github.com/Swcmb/kaoyan-english-grader",
+  "license": "MIT",
+  "keywords": [
+    "agent-skill",
+    "postgraduate-exam",
+    "kaoyan",
+    "english",
+    "translation",
+    "essay",
+    "grading",
+    "education"
+  ],
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "考研英语批改",
+        "shortDescription": "考研英语一/二翻译与作文六种题型批改",
+        "longDescription": "按题型进行审题、模拟评分、逐句纠错、完整修改和针对性复盘。评分仅供练习参考。",
+        "developerName": "Swcmb",
+        "category": "Education",
+        "capabilities": [
+          "Read"
+        ],
+        "websiteURL": "https://github.com/Swcmb/kaoyan-english-grader",
+        "defaultPrompt": [
+          "批改我的考研英语一大作文，检查图画寓意与论证是否切题。",
+          "批改我的考研英语二翻译，逐意群划分模拟采分点。"
+        ]
+      }
+    }
+  }
+}
