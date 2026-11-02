@@ -26,7 +26,7 @@ npx skills add https://gitee.com/ianwusb/kaoyan-english-grader.git \
 | 用户级通用 | `~/.agents/skills/kaoyan-english-grader/` |
 | 用户级 Cursor | `~/.cursor/skills/kaoyan-english-grader/` |
 
-将完整目录复制到目标路径，保持完整 Skill 文件的相对位置。
+将 `skills/kaoyan-english-grader/` 目录复制到目标路径，确保 `SKILL.md` 位于该目录根部。
 
 ## 能力边界
 
