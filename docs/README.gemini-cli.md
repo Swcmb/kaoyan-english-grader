@@ -1,3 +1,9 @@
+<!--
+Copyright (C) 2026 kaoyan-english-grader contributors
+SPDX-License-Identifier: GPL-3.0-or-later
+This file is licensed under GPL-3.0-or-later. See LICENSE.
+-->
+
 # Gemini CLI 与 Qwen Code 安装指南
 
 仓库包含 Gemini CLI 扩展清单，以及用于加载标准 Skill 的 GEMINI.md 入口文件。
