@@ -37,7 +37,7 @@ gemini skills list
 
 ## 能力边界
 
-指定 `skills/kaoyan-english-grader` 子目录，避免把整个仓库作为 Skill 根目录。更新或卸载时确认作用范围，保留完整 Skill 文件。
+指定 `skills/kaoyan-english-grader` 子目录，避免把整个仓库作为 Skill 根目录。更新或卸载时确认作用范围，确保 `SKILL.md` 文件内容完整。
 
 ## 验收
 
