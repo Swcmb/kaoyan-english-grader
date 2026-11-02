@@ -6,23 +6,27 @@ This file is licensed under GPL-3.0-or-later. See LICENSE.
 
 # Repository Instructions
 
-本文件是 Gemini 类 Agent 的仓库级入口。
+本文件是 Gemini CLI 及能够读取仓库指令的 Gemini 类 Agent 的入口。
 
-## 考研英语批改
+## Skill 使用
 
 @./skills/kaoyan-english-grader/SKILL.md
 
-用户要求批改考研英语一、英语二的翻译、大作文或小作文时，遵循该 Skill。先识别考试类型和题型，再读取对应评分规则。所有分数均为练习模拟评价，不得表述为官方阅卷结果。
+处理考研英语一、英语二的翻译、大作文或小作文时，先识别考试与题型，再完整读取对应评分规则。所有分数均为练习模拟评价，不得表述为官方阅卷结果或真实分数预测。
 
-## 文档与许可证
+用户明确选择单文件版本时，使用 `dist/kaoyan-english-grader-single-file/SKILL.md` 作为独立完整规则来源，不要混合两个版本。
 
-- 编辑 README、平台安装指南、Issue、Pull Request 或评论时，遵循 [GitHub 内容写作规范](docs/standards/github-content-writing.md)。
-- 修改公开项目文档体系、README 语言或发布内容前，遵循 [公开开源项目文档规范](docs/standards/open-source-docs.md)。
-- 处理本机环境、私有配置和开发操作手册时，遵循 [本机与私有项目文档规范](docs/standards/local-dev-docs.md)。
-- 复制、改编、翻译、重命名、vendor 或发布第三方代码、Skill、Prompt、配置和模板前，遵循 [第三方许可证审查规范](docs/standards/third-party-license-review.md)，记录文件级来源和许可证据。
+## 文档规范
 
-## 变更与验证
+- GitHub 内容、Issue、PR、评论和 README 遵循 [GitHub 内容写作规范](docs/standards/github-content-writing.md)。
+- 公开文档体系、README 语言与发布内容遵循 [开源项目文档规范](docs/standards/open-source-docs.md)。
+- 本机环境、私有配置和开发手册遵循 [本机与私有项目文档规范](docs/standards/local-dev-docs.md)。
+- 第三方代码、Skill、Prompt、模板和文档的复制、改编与发布遵循 [第三方许可证审查规范](docs/standards/third-party-license-review.md)。
 
-先检查现有状态和适用范围，采用满足目标的最小修改。不要修改 `skills/kaoyan-english-grader/` 中的 Skill 文件，除非用户明确要求。
+## 修改与验证
 
-区分事实、假设、计划和已验证结果。完成变更后执行对应检查，并报告真实结果；未运行的检查标记为未执行。
+先检查现状、目标路径和影响范围，再进行完成任务所需的最小修改。区分事实、假设、计划和已验证结果；涉及平台能力时优先查看当前官方资料。
+
+完成后检查相对链接、Markdown、命令和路径，执行对应测试并如实报告。未运行的检查标记为未执行。
+
+除用户明确要求外，不修改 `skills/kaoyan-english-grader/` 中的标准 Skill 文件。
