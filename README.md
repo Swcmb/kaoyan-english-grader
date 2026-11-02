@@ -5,24 +5,59 @@ SPDX-License-Identifier: GPL-3.0-or-later
 This file is licensed under GPL-3.0-or-later. See LICENSE.
 -->
 
+<div align="center">
+
 # 考研英语 AI 批改
 
-**面向考研英语一、英语二主观题的自包含 Agent Skill，覆盖翻译、大作文和小作文六类题型。**
+**面向考研英语一、英语二六类主观题的自包含 Agent Skill**
 
-将完整评分规则、题型判断、错误分析和批改流程集中在一个 `SKILL.md` 中。让支持 Agent Skills 的 AI Agent 按照统一的评价标准完成模拟批改，提供评分依据、逐句修改和针对性复盘。
+<p>
+  <a href="https://github.com/Swcmb/kaoyan-english-grader/stargazers">
+    <img src="https://img.shields.io/github/stars/Swcmb/kaoyan-english-grader?style=flat-square" alt="GitHub Stars">
+  </a>
+  <a href="https://github.com/Swcmb/kaoyan-english-grader/releases">
+    <img src="https://img.shields.io/github/v/release/Swcmb/kaoyan-english-grader?style=flat-square" alt="Latest Release">
+  </a>
+  <a href="LICENSE">
+    <img src="https://img.shields.io/github/license/Swcmb/kaoyan-english-grader?style=flat-square" alt="License">
+  </a>
+  <a href="https://github.com/Swcmb/kaoyan-english-grader/actions/workflows/publish.yml">
+    <img src="https://github.com/Swcmb/kaoyan-english-grader/actions/workflows/publish.yml/badge.svg" alt="Publish Workflow">
+  </a>
+</p>
 
-[![GitHub Stars](https://img.shields.io/github/stars/Swcmb/kaoyan-english-grader?style=flat-square)](https://github.com/Swcmb/kaoyan-english-grader/stargazers)
-[![Latest Release](https://img.shields.io/github/v/release/Swcmb/kaoyan-english-grader?display_name=tag&style=flat-square)](https://github.com/Swcmb/kaoyan-english-grader/releases)
-[![License](https://img.shields.io/github/license/Swcmb/kaoyan-english-grader?style=flat-square)](LICENSE)
-[![Publish](https://github.com/Swcmb/kaoyan-english-grader/actions/workflows/publish.yml/badge.svg)](https://github.com/Swcmb/kaoyan-english-grader/actions/workflows/publish.yml)
+<img src="docs/assets/hero.png" alt="Kaoyan English Grader — AI-powered English Exam Evaluation" width="100%">
 
-[快速开始](#快速开始) · [支持题型](#支持题型) · [核心能力](#核心能力) · [使用示例](#使用示例) · [安装方式](#安装方式) · [评分原则](#评分原则) · [文档](#文档)
+<p>
+  <a href="#快速开始">快速开始</a> ·
+  <a href="#支持题型">支持题型</a> ·
+  <a href="#核心能力">核心能力</a> ·
+  <a href="#安装方式">安装方式</a> ·
+  <a href="docs/README.md">文档</a>
+</p>
+
+</div>
 
 > **评分说明：** 所有分数均为考研备考训练用的模拟评价，不代表官方阅卷结果、官方评分细则或真实考试分数预测。
 
+## 项目简介
+
+考研英语 AI 批改（Kaoyan English Grader）是一个面向 AI Agent 的考研英语主观题批改 Skill，覆盖英语一和英语二的翻译、大作文及小作文六类题型。
+
+项目将完整评分规则、题型判断、错误分析和批改流程集中在一个 `SKILL.md` 中，让支持 Agent Skills 的 AI Agent 按照统一的评价标准完成模拟批改。
+
+**核心特点：**
+
+- **六类题型：** 覆盖考研英语一、英语二翻译、大作文和小作文。
+- **完整评分规则：** 将评分标准直接写入 `SKILL.md`，便于查看、维护和复用。
+- **证据驱动：** 重要评价和失分判断对应具体的题目、原文、译文或图表信息。
+- **完整反馈：** 提供模拟评分、逐句分析、修改建议、完整修订稿和针对性复盘。
+- **跨平台复用：** 支持标准 Agent Skills 目录安装，以及平台提供的单文件 Skill 导入。
+- **自包含设计：** 不依赖外部评分规则目录、MCP 服务、远程资源或额外运行时。
+
 ## 快速开始
 
-使用 [Skills CLI](https://skills.sh/) 安装：
+使用 [Skills CLI](https://skills.sh/) 从 GitHub 安装：
 
 ```bash
 npx skills add https://github.com/Swcmb/kaoyan-english-grader --skill kaoyan-english-grader
@@ -31,18 +66,10 @@ npx skills add https://github.com/Swcmb/kaoyan-english-grader --skill kaoyan-eng
 指定安装到 Codex：
 
 ```bash
-npx skills add https://github.com/Swcmb/kaoyan-english-grader --skill kaoyan-english-grader -a codex
+npx skills add https://github.com/Swcmb/kaoyan-english-grader --skill kaoyan-english-grader --agent codex
 ```
 
 安装完成后，在支持 Agent Skills 的 AI Agent 中提交作文或翻译，并指定使用 `kaoyan-english-grader` Skill，即可开始批改。
-
-**核心特点：**
-
-- **六类题型：** 覆盖考研英语一、英语二翻译、大作文和小作文。
-- **完整评分规则：** 评分标准直接保存在 `SKILL.md`，无需额外下载规则文件。
-- **证据驱动：** 重要评价和失分判断对应具体原文、译文、题目或图表信息。
-- **完整反馈：** 从模拟评分、逐句分析到完整修订稿和针对性复盘。
-- **跨平台复用：** 支持标准 Agent Skills 目录安装，以及平台提供的单文件 Skill 导入。
 
 ## 支持题型
 
@@ -57,11 +84,11 @@ npx skills add https://github.com/Swcmb/kaoyan-english-grader --skill kaoyan-eng
 | 英语二 | 大作文（通常为图表作文） | 15 分 |
 | 英语二 | 小作文（应用文） | 10 分 |
 
-所有题型的评分规则均收录于：
+所有题型的完整评分规则均收录于：
 
 [`skills/kaoyan-english-grader/SKILL.md`](skills/kaoyan-english-grader/SKILL.md)
 
-Skill 采用单主文件设计，评分规则与批改指令集中管理，不依赖外部评分规则目录、MCP 服务、远程资源或额外运行时。
+Skill 采用单主文件设计，评分规则与批改指令集中管理，方便在不同 Agent 宿主之间迁移和复用。
 
 ## 核心能力
 
@@ -89,11 +116,11 @@ Skill 采用单主文件设计，评分规则与批改指令集中管理，不�
 
 一次完整批改可以提供以下内容：
 
-1. **任务核查**：确认题目要求，区分已完成、部分完成和缺失的信息。
-2. **模拟评分**：给出分数、评分档位和具体评价依据。
-3. **逐句分析**：定位语法、词汇、搭配、逻辑和表达问题，区分必须修改与可选优化。
-4. **完整修订稿**：提供修改后的译文或作文，尽量保留原文中准确且自然的表达。
-5. **针对性复盘**：整理主要失分原因、值得保留的表达、可迁移的语言素材和下一步练习重点。
+1. **任务核查：** 确认题目要求，区分已完成、部分完成和缺失的信息。
+2. **模拟评分：** 给出分数、评分档位和具体评价依据。
+3. **逐句分析：** 定位语法、词汇、搭配、逻辑和表达问题，区分必须修改与可选优化。
+4. **完整修订稿：** 提供修改后的译文或作文，尽量保留原文中准确且自然的表达。
+5. **针对性复盘：** 整理主要失分原因、值得保留的表达、可迁移的语言素材和下一步练习重点。
 
 ## 使用示例
 
@@ -107,8 +134,9 @@ Skill 采用单主文件设计，评分规则与批改指令集中管理，不�
 英文原文：（粘贴完整原文及上下文）
 我的译文：（按题号粘贴译文）
 
-请按照英语一翻译规则进行模拟评分，逐句解释失分点，
-提供完整修改译文，并进行针对性复盘。
+请按照英语一翻译规则进行模拟评分，
+逐句解释失分点，提供完整修改译文，
+并进行针对性复盘。
 ```
 
 ### 英语二大作文
@@ -150,7 +178,7 @@ npx skills add https://gitee.com/ianwusb/kaoyan-english-grader.git --skill kaoya
 **指定 Codex：**
 
 ```bash
-npx skills add https://github.com/Swcmb/kaoyan-english-grader --skill kaoyan-english-grader -a codex
+npx skills add https://github.com/Swcmb/kaoyan-english-grader --skill kaoyan-english-grader --agent codex
 ```
 
 ### 2. 手动安装或导入文件
@@ -178,7 +206,7 @@ skills/kaoyan-english-grader/
 
 ### 3. 区分不同的平台能力
 
-平台技能市场、应用内创建和标准 Skill 文件导入属于不同的安装方式。
+平台技能市场、应用内创建和标准 Skill 文件导入属于不同的能力。
 
 | 方式 | 实际含义 |
 | :--- | :--- |
@@ -221,6 +249,8 @@ kaoyan-english-grader/
 │   └── kaoyan-english-grader/
 │       └── SKILL.md
 ├── docs/
+│   ├── assets/
+│   │   └── hero.png
 │   ├── installation/
 │   └── standards/
 ├── .github/
@@ -255,4 +285,8 @@ kaoyan-english-grader/
 
 ---
 
+<div align="center">
+
 [GitHub Repository](https://github.com/Swcmb/kaoyan-english-grader) · [Releases](https://github.com/Swcmb/kaoyan-english-grader/releases) · [发布工作流](.github/workflows/publish.yml)
+
+</div>
