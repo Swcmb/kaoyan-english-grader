@@ -1,101 +1,152 @@
 # kaoyan-english-grader
 
-考研英语（一）（二）主观题 AI 批改 Skill，覆盖翻译、大作文和小作文六种题型。它把题目理解、任务完成度检查、模拟评分、逐句修改和学习复盘组织成可复核的工作流。
+跨平台考研英语 AI 批改 Skill，覆盖中国研究生招生考试英语一、英语二的翻译、大作文和小作文，共六种题型。项目采用标准 Agent Skill 目录结构，并提供 Claude Code、Codex、Cursor、Gemini CLI、OpenCode、Antigravity、Kimi Code 等平台的原生安装入口。
 
-评分依据为练习参考和民间整理的档位，不是官方评分细则，也不代表真实考试成绩。
+所有评分均为练习参考，不是官方阅卷结果，也不保证与实际考试分数一致。
 
-## 功能特性
+## Features
 
-- **六种题型独立规则**：英语一/英语二翻译、大作文、小作文分别使用对应评分标准。
-- **先审题再评分**：作文先核对题目任务和切题性；翻译先分析原文、上下文和信息点。
-- **切题专项检查**：英语一大作文检查图画寓意与段落论证是否一致；英语一小作文检查身份、对象、目的和必答信息。
-- **图表数据核验**：英语二大作文核查图表对象、时间、单位、数值、比例、排序和趋势，区分数据事实与合理推测。
-- **交际任务核查**：英语二小作文核对身份、对象、目的、回复动作、格式和语气。
-- **可解释的翻译评分**：提供模拟采分点、局部错误定位和总分一致性检查。
-- **区分错误与优化**：标记【必须修改】和【可选优化】，正确且自然的简单表达可以保留。
-- **完整修改与复盘**：提供修改稿、实用表达、写作/翻译思路和具体练习建议。
-- **手写图片友好**：先转录并保留原始错误；无法辨认处要求确认，不把识别错误当成考生错误。
+- **Six independent grading modules**：英语一/英语二翻译、大作文、小作文分别采用独立评分规则。
+- **Task-first essay grading**：先审题与任务完成度，再综合评价语言、结构、格式和语气。
+- **Relevance checks**：英语一大作文核对图画寓意与论证；英语一小作文核对身份、对象、目的和必答事项。
+- **Chart verification**：英语二大作文核对图表对象、时间、单位、数值、比例、排序和趋势，区分数据事实与合理推测。
+- **Point-based translation scoring**：模拟采分点，逐项解释得分和失分，不冒充官方评分点。
+- **Error vs. improvement**：区分【必须修改】与【可选优化】，保留正确、自然的简单表达。
+- **Handwriting-aware**：先转录再批改；无法辨认处要求确认，不把识别错误当成考生错误。
+- **Portable Agent Skill**：一份规范内容，多平台发现；不依赖 MCP、外部 API、shell 脚本或运行时 Hook。
 
-## 六种题型
+## Six task types
 
-| 科目   | 题型                       |  满分 | 规则文件                           |
-| ------ | -------------------------- | ----: | ---------------------------------- |
-| 英语一 | 大作文（B 节，图画作文等） | 20 分 | references/english1_essay_major.md |
-| 英语一 | 小作文（A 节，应用文）     | 10 分 | references/english1_essay_minor.md |
-| 英语一 | 翻译（5 个划线句）         | 10 分 | references/english1_translation.md |
-| 英语二 | 大作文（通常为图表作文）   | 15 分 | references/english2_essay_major.md |
-| 英语二 | 小作文（应用文）           | 10 分 | references/english2_essay_minor.md |
-| 英语二 | 翻译（整段英译汉）         | 15 分 | references/english2_translation.md |
+| Exam | Task | Score | Reference |
+|---|---|---:|---|
+| English I | Major essay (B section) | 20 | references/english1_essay_major.md |
+| English I | Minor essay (A section) | 10 | references/english1_essay_minor.md |
+| English I | Translation (5 underlined sentences) | 10 | references/english1_translation.md |
+| English II | Major essay (usually chart-based) | 15 | references/english2_essay_major.md |
+| English II | Minor essay | 10 | references/english2_essay_minor.md |
+| English II | Translation | 15 | references/english2_translation.md |
 
-## 评分设计
+## Installation
 
-作文模块使用内容/任务、语言、组织/格式的综合评价侧重点。出现的 50% / 30% / 20% 是非官方判断权重，不是机械计算公式或官方逐项扣分表。
+### Recommended: Agent Skills CLI
 
-翻译模块依据原文信息和上下文进行模拟采分点划分。采分点用于解释本次练习得分，不冒充官方评分点；意思准确即可得分，不要求逐字匹配参考译文。
+Install the skill into one or more supported agents. Requires Node.js 22.20 or later.
 
-## 安装
+~~~bash
+npx skills add Swcmb/kaoyan-english-grader --skill kaoyan-english-grader
+~~~
 
-### 克隆仓库
+The installer lets you choose the target agent(s) and project/global scope.
 
-运行命令：
+Install to selected agents directly:
 
-```
-git clone https://github.com/Swcmb/kaoyan-english-grader.git
-```
+~~~bash
+npx skills add Swcmb/kaoyan-english-grader \
+  --skill kaoyan-english-grader \
+  -a claude-code \
+  -a codex \
+  -a cursor \
+  -a opencode \
+  -a gemini-cli \
+  -a antigravity \
+  -a kimi-code-cli
+~~~
 
-将仓库目录作为 Skill 目录放入所使用 AI 助手支持的 skills 目录，确保目录内保留根目录的 SKILL.md 和 references 文件夹。
+Add -g or --global for user-wide installation. Update an installed skill with npx skills update kaoyan-english-grader.
 
-如果工具要求全局 Skill 目录，按该工具的安装规范放置同一目录结构。
+The CLI supports many additional agents. See [the supported agent list](https://github.com/vercel-labs/skills/blob/main/docs/agents.md).
 
-## 使用
+### Native plugin installation
 
-明确告诉助手考试科目和题型，并尽量同时提供完整题目、图画/图表、作文或译文。
+| Agent | Native installation |
+|---|---|
+| Claude Code | /plugin marketplace add Swcmb/kaoyan-english-grader, then /plugin install kaoyan-english-grader@kaoyan-english-grader |
+| Codex | codex plugin marketplace add Swcmb/kaoyan-english-grader, then open /plugins and install the plugin |
+| Cursor | Copy the repository into ~/.cursor/plugins/local/kaoyan-english-grader, reload Cursor, and inspect Customize |
+| Gemini CLI | gemini extensions install https://github.com/Swcmb/kaoyan-english-grader |
+| Qwen Code | qwen extensions install Swcmb/kaoyan-english-grader |
+| Antigravity CLI | agy plugin install https://github.com/Swcmb/kaoyan-english-grader |
+| Kimi Code | /plugins install https://github.com/Swcmb/kaoyan-english-grader, then /reload or start a new session |
+| OpenCode | Install with npx skills add ... -a opencode, or copy the skill folder into .agents/skills/ or ~/.config/opencode/skills/ |
 
-**英语一大作文**
+Detailed steps:
 
-批改我的考研英语一大作文。题目和图画：[提供题目]。我的作文：[粘贴作文]。
+- [Agent Skills CLI](docs/README.skills-cli.md)
+- [Claude Code](docs/README.claude-code.md)
+- [Codex](docs/README.codex.md)
+- [Cursor](docs/README.cursor.md)
+- [Gemini CLI and Qwen Code](docs/README.gemini-cli.md)
+- [OpenCode](docs/README.opencode.md)
+- [Antigravity](docs/README.antigravity.md)
+- [Kimi Code](docs/README.kimi-code.md)
 
-**英语一小作文**
+## Usage
 
-批改我的英语一小作文。题目要求：[提供身份、对象和任务]。我的作文：[粘贴作文]。
+Tell the agent the exam and task type, then provide the complete prompt and your response.
 
-**英语一翻译**
+**English I major essay**
 
-批改英语一翻译，共 5 个划线句。英文原文：[提供完整原文和上下文]。我的译文：[按题号填写]。
+> 批改我的考研英语一大作文。题目和图画：[提供题目]。我的作文：[粘贴作文或上传清晰照片]。
 
-**英语二大作文**
+**English I minor essay**
 
-批改英语二图表大作文。题目：[提供题干]。图表：[上传清晰图片或提供数据]。我的作文：[粘贴作文]。
+> 批改我的英语一小作文。题目要求：[提供身份、对象和任务]。我的作文：[粘贴作文]。
 
-**英语二小作文**
+**English I translation**
 
-批改英语二小作文。题目：[提供题干]。我的作文：[粘贴作文]。
+> 批改英语一翻译，共 5 个划线句。英文原文：[提供完整原文和上下文]。我的译文：[按题号填写]。
 
-**英语二翻译**
+**English II major essay**
 
-批改英语二翻译。英文原文：[提供完整原文]。我的译文：[粘贴译文]。参考译文：[可选]。
+> 批改英语二图表大作文。题目：[提供题干]。图表：[上传清晰图片或提供数据]。我的作文：[粘贴作文]。
 
-也可以直接上传清晰的题目、图表、手写作文或译文图片。图片中有无法辨认的内容时，助手会先请你确认，不会猜测。
+**English II minor essay**
 
-## 目录结构
+> 批改英语二小作文。题目：[提供题干]。我的作文：[粘贴作文]。
 
-- SKILL.md：技能主入口，包含路由、通用守则和质量检查。
-- README.md：项目说明与使用方法。
-- LICENSE：MIT 许可证。
-- references/english1_essay_major.md：英语一大作文。
-- references/english1_essay_minor.md：英语一小作文。
-- references/english1_translation.md：英语一翻译。
-- references/english2_essay_major.md：英语二大作文。
-- references/english2_essay_minor.md：英语二小作文。
-- references/english2_translation.md：英语二翻译。
+**English II translation**
 
-## 评分边界
+> 批改英语二翻译。英文原文：[提供完整原文]。我的译文：[粘贴译文]。参考译文：[可选]。
 
-- 所有分数仅用于练习反馈，不保证与实际阅卷结果一致。
-- 缺少题目或关键图片时，可以进行语言层面的批改，但不提供确定的内容总分。
-- 图表数据无法辨认时要求补充，不猜测数值。
-- 题型专属规则优先于通用规则；不同科目和题型的满分、档位及错别字规则不可混用。
+也可以直接上传题目、图画、图表、手写作文或译文照片。无法辨认的内容会先请求确认。
 
-## 许可证
+## Repository structure
+
+~~~text
+kaoyan-english-grader/
+├── skills/
+│   └── kaoyan-english-grader/
+│       ├── SKILL.md
+│       └── references/
+│           ├── english1_essay_major.md
+│           ├── english1_essay_minor.md
+│           ├── english1_translation.md
+│           ├── english2_essay_major.md
+│           ├── english2_essay_minor.md
+│           └── english2_translation.md
+├── .claude-plugin/
+├── .codex-plugin/
+├── .cursor-plugin/
+├── .antigravity-plugin/
+├── .agents/plugins/marketplace.json
+├── plugin.json
+├── gemini-extension.json
+├── kimi.plugin.json
+├── GEMINI.md
+├── docs/
+└── LICENSE
+~~~
+
+The canonical skill lives in skills/kaoyan-english-grader. Platform manifests point to that directory; grading rules are maintained once and shared across agents.
+
+## Scoring boundaries
+
+- Score bands and grading details are user-oriented practice references, not official marking rubrics.
+- Essay weighting references (50% task/content, 30% language, 20% organization/format) are non-official judgment aids, not a mechanical formula.
+- Translation scoring points are simulated to explain the score; they are not official scoring points.
+- Missing prompts, unclear charts, or unreadable handwriting limit content scoring. The agent must state uncertainty rather than invent information.
+- Rules specific to a task type take precedence over global guidance. Scores and typo deductions must never be mixed across different modules.
+
+## License
 
 [MIT License](LICENSE)
