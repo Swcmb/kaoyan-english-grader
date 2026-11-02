@@ -6,6 +6,14 @@ This file is licensed under GPL-3.0-or-later. See LICENSE.
 
 # Cursor 安装指南
 
+> 国内网络环境优先使用 Gitee 镜像安装标准 Skill：
+>
+> ```bash
+> npx skills add https://gitee.com/ianwusb/kaoyan-english-grader.git --skill kaoyan-english-grader --agent cursor
+> ```
+>
+> 将 `AGENT_NAME` 替换为当前平台对应的 Agent 标识。下方的平台原生插件安装方式作为补充；需要 Gitee 国内源时，优先使用此方式。
+
 本仓库包含通用插件清单 plugin.json 和 Cursor 专用清单 .cursor-plugin/plugin.json。
 
 ## 本地安装插件
@@ -13,7 +21,7 @@ This file is licensed under GPL-3.0-or-later. See LICENSE.
 克隆仓库：
 
 ~~~bash
-git clone https://github.com/Swcmb/kaoyan-english-grader.git
+git clone https://gitee.com/ianwusb/kaoyan-english-grader.git
 ~~~
 
 将完整仓库复制到 Cursor 本地插件目录：
@@ -26,7 +34,7 @@ git clone https://github.com/Swcmb/kaoyan-english-grader.git
 ## 作为独立 Skill 安装
 
 ~~~bash
-npx skills add Swcmb/kaoyan-english-grader --skill kaoyan-english-grader --agent cursor
+npx skills add https://gitee.com/ianwusb/kaoyan-english-grader.git --skill kaoyan-english-grader --agent cursor
 ~~~
 
 添加 -g 参数可安装到用户级目录。
