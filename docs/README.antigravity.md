@@ -31,9 +31,9 @@ git clone https://gitee.com/ianwusb/kaoyan-english-grader.git
 将完整技能目录复制到：
 
 - 项目级：项目根目录/.agents/skills/kaoyan-english-grader/
-- 用户级：~/.gemini/config/skills/kaoyan-english-grader/
+- 用户级（Skills CLI）：~/.gemini/antigravity/skills/kaoyan-english-grader/
 
-独立 Antigravity IDE 还兼容旧目录 ~/.gemini/antigravity/skills/。Antigravity CLI 也读取 ~/.gemini/antigravity-cli/skills/ 和 ~/.gemini/skills/；这些目录不一定被 App 端读取。跨端共享优先采用项目级 .agents/skills/ 或官方当前文档列出的全局配置目录。
+Skills CLI 的 Antigravity 目标会写入 ~/.gemini/antigravity/skills/。Antigravity CLI 有独立的 ~/.gemini/antigravity-cli/skills/ 目录；该目录不一定被 Antigravity App/IDE 读取。跨端共享优先采用项目级 .agents/skills/，并按当前客户端文档确认用户级目录。
 
 ## 方式三：作为插件安装
 
