@@ -19,7 +19,7 @@ This file is licensed under GPL-3.0-or-later. See ../../../LICENSE.
 
 ### 导入本地 Skill
 
-若当前客户端提供本地导入入口，进入技能管理，选择导入或上传。目录版应包含 `完整的 `SKILL.md`；只接受单文件时使用[完整单文件版本](../../../skills/kaoyan-english-grader/SKILL.md)。
+若当前客户端提供本地导入入口，进入技能管理，选择导入或上传。上传包含唯一 `SKILL.md` 的 Skill 目录；若平台明确只接受单文件，则导入[本项目完整 Skill](../../../skills/kaoyan-english-grader/SKILL.md)。
 
 ### 开发者提交市场审核
 
