@@ -6,23 +6,23 @@ This file is licensed under GPL-3.0-or-later. See ../LICENSE.
 
 # GitHub Releases 发布
 
-仓库通过 GitHub Actions 将经过检查的 Git 标签发布为 GitHub Release。附件包括完整源码归档和 SHA-256 校验文件；两个 Skill 均包含在源码归档中。
+仓库通过 GitHub Actions 将经过检查的 Git 标签发布为 GitHub Release。源码归档包含项目文件和唯一的自包含 Skill；发布附件同时提供 SHA-256 校验文件。
 
 ## 触发条件
 
 推送符合以下格式的标签时触发：
 
-```text
+~~~text
 vMAJOR.MINOR.PATCH
 vMAJOR.MINOR.PATCH-prerelease
-```
+~~~
 
 例如：
 
-```bash
+~~~bash
 git tag -a v1.0.0 -m "Release v1.0.0"
 git push origin v1.0.0
-```
+~~~
 
 工作流见 [publish.yml](../.github/workflows/publish.yml)。
 
@@ -38,17 +38,20 @@ Release Notes 由 GitHub 根据标签和上一个版本生成。发布入口：[
 
 ## 从源码包安装 Skill
 
-- **标准版（推荐）：** `skills/kaoyan-english-grader/`。安装整个目录，确保 `SKILL.md` 与 `references/` 六份评分规则保持原有相对位置。
-- **完整版（单文件）：** `skills/kaoyan-english-grader-full/SKILL.md`。该文件内嵌六类完整评分规则，适用于只接受单个 Skill 文件的平台。
+解压源码包后，安装唯一的 Skill 目录：
 
-支持标准目录或完整目录 ZIP 的平台应优先安装标准版。完整版是兼容替代，不建议取代标准安装。
+~~~text
+skills/
+└── kaoyan-english-grader/
+    └── SKILL.md
+~~~
+
+支持标准 Agent Skills 的平台安装整个 `skills/kaoyan-english-grader/` 目录。明确提供单文件导入入口的平台可以直接导入该目录中的 `SKILL.md`。全部六类题型评分规则已经内嵌，不需要额外复制或下载引用文件。
 
 ## 发布前检查
 
 - [ ] README、安装文档和版本说明描述当前实际能力。
-- [ ] 标准版主文件和六份规则已检查，目录结构完整。
-- [ ] 完整版六类规则均已内嵌，且不依赖外部引用文件。
-- [ ] 两个 Skill 的名称和目录互不冲突。
+- [ ] 唯一 Skill 的六类题型评分规则、满分和输入输出要求完整。
 - [ ] 插件清单版本号与发布版本一致。
 - [ ] 根目录 `LICENSE`、文件级版权和第三方通知完整。
 - [ ] 标签指向经过审查的提交。
@@ -59,4 +62,4 @@ Release Notes 由 GitHub 根据标签和上一个版本生成。发布入口：[
 
 修订已发布内容时使用新版本标签，不覆盖已发布版本。创建失败时检查 Actions Release job、`contents: write` 权限、标签格式和资产上传日志。
 
-发布后下载 ZIP 与 TAR.GZ，检查两个 Skill 的目录结构、主文件和评分规则，再校验 `SHA256SUMS`。归档校验通过不代表 Skill 已在任何平台完成安装测试。
+发布后下载 ZIP 与 TAR.GZ，检查 Skill 主文件和六类评分规则，再校验 `SHA256SUMS`。归档校验通过不代表 Skill 已在任何平台完成安装测试。
