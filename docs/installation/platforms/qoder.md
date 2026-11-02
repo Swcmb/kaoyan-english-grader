@@ -30,7 +30,7 @@ ZIP 结构：
 ```text
 kaoyan-english-grader/
 ├── SKILL.md
-└── references/
+└── 外部规则文件
     ├── english1_essay_major.md
     ├── english1_essay_minor.md
     ├── english1_translation.md
@@ -55,9 +55,9 @@ IDE 和 CLI 的重新加载方式可能不同，按当前客户端处理。导�
 
 确认技能出现在目标产品的已安装列表，并分别测试英语一翻译和英语二大作文，核对对应规则、分值和输出要求。
 
-## 本仓库的 Skill 版本选择
+## 本项目 Skill
 
-若当前导入入口能保留完整目录或 ZIP 内的相对路径，使用标准版 `skills/kaoyan-english-grader/`，确保 `SKILL.md` 与 `references/` 六份规则完整保留。若产品实际只接受单个标准 `SKILL.md` 文件，再使用独立完整版 `skills/kaoyan-english-grader-full/SKILL.md`。技能市场条目、应用内创建和本地文件导入属于不同流程；市场安装要求本项目已真实上架，应用内创建则需手动迁移并核对规则。
+本仓库只提供一个自包含的标准 Agent Skill，六类题型的完整评分规则全部内嵌于 `skills/kaoyan-english-grader/SKILL.md`。安装时导入 `skills/kaoyan-english-grader/` 目录即可；平台明确只接受单文件时，直接导入该目录中的 `SKILL.md`。该 Skill 不依赖额外的规则文件或运行时服务。
 
 ## 官方资料
 
