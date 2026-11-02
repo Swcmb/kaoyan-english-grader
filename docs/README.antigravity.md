@@ -6,6 +6,14 @@ This file is licensed under GPL-3.0-or-later. See LICENSE.
 
 # Google Antigravity 安装指南
 
+> 国内网络环境优先使用 Gitee 镜像安装标准 Skill：
+>
+> ```bash
+> npx skills add https://gitee.com/ianwusb/kaoyan-english-grader.git --skill kaoyan-english-grader --agent antigravity
+> ```
+>
+> 将 `AGENT_NAME` 替换为当前平台对应的 Agent 标识。下方的平台原生插件安装方式作为补充；需要 Gitee 国内源时，优先使用此方式。
+
 本仓库包含 Antigravity 插件清单 .antigravity-plugin/plugin.json，以及标准 Agent Skill。
 
 ## 作为插件安装
@@ -30,7 +38,7 @@ agy plugin install ./kaoyan-english-grader
 ## 作为独立 Skill 安装
 
 ~~~bash
-npx skills add Swcmb/kaoyan-english-grader --skill kaoyan-english-grader --agent antigravity
+npx skills add https://gitee.com/ianwusb/kaoyan-english-grader.git --skill kaoyan-english-grader --agent antigravity
 ~~~
 
 添加 -g 参数可安装到用户级目录。
