@@ -1,0 +1,20 @@
+{
+  "name": "kaoyan-english-grader",
+  "interface": {
+    "displayName": "考研英语批改"
+  },
+  "plugins": [
+    {
+      "name": "kaoyan-english-grader",
+      "source": {
+        "source": "url",
+        "url": "./"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Education"
+    }
+  ]
+}
