@@ -1,4 +1,8 @@
-<!-- SPDX-License-Identifier: MIT -->
+<!--
+Copyright (C) 2026 kaoyan-english-grader contributors
+SPDX-License-Identifier: GPL-3.0-or-later
+This file is licensed under GPL-3.0-or-later. See LICENSE.
+-->
 
 # GitHub 内容写作与 Markdown 排版规范
 
