@@ -19,12 +19,12 @@
 
 | Exam | Task | Score | Reference |
 |---|---|---:|---|
-| English I | Major essay (B section) | 20 | references/english1_essay_major.md |
-| English I | Minor essay (A section) | 10 | references/english1_essay_minor.md |
-| English I | Translation (5 underlined sentences) | 10 | references/english1_translation.md |
-| English II | Major essay (usually chart-based) | 15 | references/english2_essay_major.md |
-| English II | Minor essay | 10 | references/english2_essay_minor.md |
-| English II | Translation | 15 | references/english2_translation.md |
+| English I | Major essay (B section) | 20 | skills/kaoyan-english-grader/references/english1_essay_major.md |
+| English I | Minor essay (A section) | 10 | skills/kaoyan-english-grader/references/english1_essay_minor.md |
+| English I | Translation (5 underlined sentences) | 10 | skills/kaoyan-english-grader/references/english1_translation.md |
+| English II | Major essay (usually chart-based) | 15 | skills/kaoyan-english-grader/references/english2_essay_major.md |
+| English II | Minor essay | 10 | skills/kaoyan-english-grader/references/english2_essay_minor.md |
+| English II | Translation | 15 | skills/kaoyan-english-grader/references/english2_translation.md |
 
 ## Installation
 
