@@ -55,7 +55,7 @@ npx skills add https://gitee.com/ianwusb/kaoyan-english-grader.git \
 项目级：.workbuddy/skills/kaoyan-english-grader/
 ```
 
-如果 WorkBuddy 当前版本通过通用 Agent Skill 目录发现技能，也可以将整个技能文件夹放在项目级 `.agents/skills/` 下。首次安装后按客户端提示刷新或重启，并用 `/skills` 检查加载结果。
+如果 WorkBuddy 当前版本通过通用 Agent Skill 目录发现技能，也可以将整个技能文件夹放在项目级 `.agents/skills/` 下。首次安装后按客户端提示刷新或重启，并在技能管理界面确认加载结果。
 
 WorkBuddy 微信小程序是手机端入口。官方文档说明可以通过 SkillHub 安装技能包，并在对话输入框的「添加技能」入口中为当前对话启用技能。手机端的主要路径是 SkillHub，不应将其描述为支持从手机文件管理器直接导入任意 ZIP。
 
