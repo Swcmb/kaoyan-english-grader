@@ -24,7 +24,7 @@ npx skills add https://gitee.com/ianwusb/kaoyan-english-grader.git \
 | 项目级 | `.qwen/skills/kaoyan-english-grader/` | `.agents/skills/kaoyan-english-grader/` |
 | 用户级 | `~/.qwen/skills/kaoyan-english-grader/` | `~/.agents/skills/kaoyan-english-grader/` |
 
-复制完整目录并保持主文件和 `外部规则文件` 的相对位置。
+复制完整的 `skills/kaoyan-english-grader/` 目录；目录中只有一个自包含的 `SKILL.md`。
 
 ## 能力边界
 
