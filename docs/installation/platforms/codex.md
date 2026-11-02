@@ -29,7 +29,7 @@ npx skills add https://gitee.com/ianwusb/kaoyan-english-grader.git \
 
 ## 能力边界
 
-不要只复制 `SKILL.md`；内嵌的六类评分规则属于目录版的完整内容。Codex 插件与本项目独立 Skill 是不同安装对象。
+完整评分规则全部内嵌在 `SKILL.md` 中，安装整个 Skill 目录即可；该目录无需其他文件。Codex 插件与本项目独立 Skill 是不同安装对象。
 
 ## 验收
 
@@ -37,7 +37,7 @@ npx skills add https://gitee.com/ianwusb/kaoyan-english-grader.git \
 
 ## 本项目 Skill
 
-本仓库只提供一个自包含的标准 Agent Skill，六类题型的完整评分规则全部内嵌于 `skills/kaoyan-english-grader/SKILL.md`，不依赖 `（外部规则目录）` 或其他外部文件。目录安装时导入 `skills/kaoyan-english-grader/`；平台明确只接受单文件时，导入该目录中的 `SKILL.md`。
+本仓库只提供一个自包含的标准 Agent Skill，六类题型的完整评分规则全部内嵌于 `skills/kaoyan-english-grader/SKILL.md`，不依赖额外的规则文件或运行时服务。目录安装时导入 `skills/kaoyan-english-grader/`；平台明确只接受单文件时，导入该目录中的 `SKILL.md`。
 
 ## 官方资料
 
