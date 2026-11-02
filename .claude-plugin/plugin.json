@@ -1,7 +1,7 @@
 {
   "name": "kaoyan-english-grader",
   "version": "1.0.0",
-  "description": "考研英语一/二批改与第三方许可证审查 Skill 集合。",
+  "description": "考研英语一/二翻译、大作文和小作文六类题型的模拟批改与学习反馈。",
   "author": {
     "name": "Swcmb",
     "url": "https://github.com/Swcmb"
