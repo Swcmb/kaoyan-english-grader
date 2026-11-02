@@ -21,7 +21,6 @@ This file is licensed under GPL-3.0-or-later. See LICENSE.
   <a href="LICENSE">
     <img src="https://img.shields.io/github/license/Swcmb/kaoyan-english-grader?style=flat-square" alt="License">
   </a>
-  <a href="https://github.com/Swcmb/kaoyan-english-grader/actions/workflows/publish.yml">
     <img src="https://github.com/Swcmb/kaoyan-english-grader/actions/workflows/publish.yml/badge.svg" alt="Publish Workflow">
   </a>
 </p>
