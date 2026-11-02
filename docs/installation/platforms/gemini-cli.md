@@ -1,16 +1,16 @@
 <!--
 Copyright (C) 2026 kaoyan-english-grader contributors
 SPDX-License-Identifier: GPL-3.0-or-later
-This file is licensed under GPL-3.0-or-later. See LICENSE.
+This file is licensed under GPL-3.0-or-later. See ../../../LICENSE.
 -->
 
 # Gemini CLI：安装与使用
 
-Gemini CLI 支持标准 Agent Skills，可从工作区、用户目录和扩展中加载技能。本指南对应 Gemini CLI，不是千问 App 或 QwenWork。
+Gemini CLI 支持标准 Agent Skills。本指南介绍 Gemini CLI，不涉及千问 App 或 QwenWork。
 
-## 通过 Skills CLI 安装
+## 安装方式
 
-在项目根目录运行：
+### 使用 Skills CLI
 
 ```bash
 npx skills add https://gitee.com/ianwusb/kaoyan-english-grader.git \
@@ -20,7 +20,7 @@ npx skills add https://gitee.com/ianwusb/kaoyan-english-grader.git \
 
 用户级安装增加 `-g`。
 
-## 使用 Gemini CLI 原生命令
+### 使用 Gemini CLI 原生命令
 
 先克隆仓库：
 
@@ -41,13 +41,13 @@ gemini skills install ./skills/kaoyan-english-grader --scope workspace
 gemini skills install ./skills/kaoyan-english-grader --scope user
 ```
 
-检查安装：
+查看已安装技能：
 
 ```bash
 gemini skills list
 ```
 
-## 手动安装路径
+### 手动安装路径
 
 | 范围 | 路径 |
 | --- | --- |
@@ -66,7 +66,7 @@ gemini skills list
 
 ## 更新与卸载
 
-Skills CLI 安装使用 `npx skills update`。原生命令卸载：
+Skills CLI 安装使用 `npx skills update kaoyan-english-grader`。原生命令卸载：
 
 ```bash
 gemini skills uninstall kaoyan-english-grader --scope workspace
@@ -75,7 +75,7 @@ gemini skills uninstall kaoyan-english-grader --scope user
 
 手动安装时，替换或删除目标路径下的 `kaoyan-english-grader/`。
 
-## 官方文档与参考资料
+## 参考资料
 
 - [Gemini CLI：Skills 命令与管理](https://geminicli.com/docs/cli/skills/)
 - [Gemini CLI：Managing Agent Skills](https://github.com/google-gemini/gemini-cli/blob/main/docs/cli/using-agent-skills.md)

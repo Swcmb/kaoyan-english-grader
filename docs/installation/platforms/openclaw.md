@@ -1,7 +1,7 @@
 <!--
 Copyright (C) 2026 kaoyan-english-grader contributors
 SPDX-License-Identifier: GPL-3.0-or-later
-This file is licensed under GPL-3.0-or-later. See LICENSE.
+This file is licensed under GPL-3.0-or-later. See ../../../LICENSE.
 -->
 
 # OpenClaw：安装与使用
@@ -36,7 +36,7 @@ npx skills add https://gitee.com/ianwusb/kaoyan-english-grader.git \
   --agent openclaw
 ```
 
-用户级安装按 CLI 当前版本增加全局选项，并检查 OpenClaw 实际读取的目录。
+用户级安装按当前 CLI 版本增加全局选项，并检查 OpenClaw 实际读取的目录。
 
 ## 检查与调用
 
@@ -46,33 +46,27 @@ openclaw skills check
 openclaw skills info kaoyan-english-grader
 ```
 
-在消息渠道提交批改任务，并分别测试英语一翻译和英语二图表作文。确认 Agent 能读取 `references/english2_essay_major.md` 等对应文件。
-
-工作区安装时，确认当前 Agent 使用同一工作区；全局安装时检查 `agents.defaults.skills` 或 `agents.entries` 的技能可见性设置。
+在消息渠道提交批改任务，并分别测试英语一翻译和英语二图表作文。确认 Agent 能读取对应评分规则。工作区安装时，确认当前 Agent 使用同一工作区；全局安装时检查技能可见性设置。
 
 ## 更新与卸载
 
-本地目录安装不属于 ClawHub 跟踪安装，`openclaw skills update` 不会自动从 Gitee 拉取。更新流程：
+本地目录安装不属于 ClawHub 跟踪安装，`openclaw skills update` 不会自动从 Gitee 拉取。更新时进入仓库执行 `git pull`，再重新安装：
 
-1. 进入仓库执行 `git pull`。
-2. 重新安装工作区副本：
+```bash
+openclaw skills install ./skills/kaoyan-english-grader --force
+openclaw skills list
+openclaw skills check
+```
 
-   ```bash
-   openclaw skills install ./skills/kaoyan-english-grader --force
-   ```
-
-3. 全局副本按需增加 `--global`，并确认目标路径。
-4. 执行 `openclaw skills list` 与 `openclaw skills check` 验证。
-
-卸载时只删除相应作用范围下的 `kaoyan-english-grader/`。
+全局副本按需增加 `--global` 并确认目标路径。卸载时只删除相应作用范围下的 `kaoyan-english-grader/`。
 
 ## 手机端与安全
 
 手机连接 Gateway 后，调用的是主机上已加载的 Skill，不是在手机 App 本地安装。Android Termux 自托管属于独立部署，需要单独核对 OpenClaw 安装要求和 Android 兼容性。
 
-安装前检查来源、`SKILL.md`、脚本、网络请求和文件访问范围。不要为了跳过未知风险提示而盲目使用 `--force`。本仓库核心规则是 Markdown 文件，仍需检查实际下载内容。
+安装前检查来源、`SKILL.md`、脚本、网络请求和文件访问范围。不要为了跳过未知风险提示而盲目使用 `--force`。
 
-## 官方文档与参考资料
+## 参考资料
 
 - [OpenClaw：Skills 系统与安装](https://docs.openclaw.ai/skills)
 - [OpenClaw：Skills CLI](https://docs.openclaw.ai/cli/skills)
