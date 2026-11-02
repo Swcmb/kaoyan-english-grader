@@ -6,7 +6,7 @@ This file is licensed under GPL-3.0-or-later. See ../../../LICENSE.
 
 # OpenCode：安装与使用
 
-OpenCode 原生发现 Agent Skills。每个技能使用独立目录，目录根部包含 `SKILL.md`；本项目内嵌评分规则应与主文件一并安装。
+OpenCode 原生发现 Agent Skills。每个技能使用独立目录，目录根部包含 `SKILL.md`。本项目的六类题型评分规则全部内嵌在该文件中。
 
 ## 安装与使用
 
@@ -28,7 +28,7 @@ npx skills add https://gitee.com/ianwusb/kaoyan-english-grader.git \
 
 ## 能力边界
 
-OpenCode 按需加载技能。主文件中的相对引用必须指向实际存在的文件；安装后测试英语一翻译和英语二图表作文，确认对应规则可读取。
+OpenCode 按需加载技能。本项目的 `SKILL.md` 自包含，不需要加载其他规则文件；安装后测试英语一翻译和英语二图表作文，确认对应规则可读取。
 
 ## 验收
 
