@@ -1,7 +1,7 @@
 <!--
 Copyright (C) 2026 kaoyan-english-grader contributors
 SPDX-License-Identifier: GPL-3.0-or-later
-This file is licensed under GPL-3.0-or-later. See LICENSE.
+This file is licensed under GPL-3.0-or-later. See ../../../LICENSE.
 -->
 
 # 千问 App：手机端技能广场
@@ -21,7 +21,7 @@ This file is licensed under GPL-3.0-or-later. See LICENSE.
 
 在工作助理中选择已安装技能，或直接描述任务。执行复杂工作前提供必要资料、约束和交付格式，并检查结果中的数据和事实。
 
-## 本仓库是否支持手机端直接导入？
+## 本仓库的手机端导入边界
 
 千问 App 手机端公开资料确认了技能浏览和调用入口，但尚未确认普通用户可从手机文件系统导入任意第三方 `SKILL.md` 或 ZIP。桌面端 QwenWork 已公开本地技能包上传能力；两者不是同一界面。
 

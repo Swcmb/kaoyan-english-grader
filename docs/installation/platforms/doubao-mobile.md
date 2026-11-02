@@ -1,7 +1,7 @@
 <!--
 Copyright (C) 2026 kaoyan-english-grader contributors
 SPDX-License-Identifier: GPL-3.0-or-later
-This file is licensed under GPL-3.0-or-later. See LICENSE.
+This file is licensed under GPL-3.0-or-later. See ../../../LICENSE.
 -->
 
 # 豆包 App：手机端使用技能
@@ -14,7 +14,7 @@ This file is licensed under GPL-3.0-or-later. See LICENSE.
 2. 登录与电脑版相同的账号。
 3. 在当前对话或功能入口选择账号可用的技能。
 4. 按技能提示提供材料和必要授权。
-5. 检查返回结果中的数据、引用和实际执行内容。
+5. 检查结果中的数据、引用和实际执行内容。
 
 具体入口和可见技能随客户端版本、账号状态与灰度范围变化。
 
@@ -23,17 +23,17 @@ This file is licensed under GPL-3.0-or-later. See LICENSE.
 如需创建个人工作流或导入文件，使用豆包电脑版工作任务模式：
 
 1. 打开豆包电脑版并进入 **工作任务**。
-2. 打开侧边栏技能相关入口。
-3. 使用创建技能流程，或检查当前版本是否提供本地导入入口。
+2. 打开侧边栏技能入口。
+3. 使用创建技能流程，或检查当前版本是否提供本地导入。
 4. 保存后回到手机端，确认同一账号是否同步显示该技能。
 
 手机端公开流程尚未确认支持从文件系统导入任意标准 Skill 文件夹或 ZIP。将 `SKILL.md` 作为普通聊天附件发送，不代表技能已经安装。
 
 ## 使用本仓库
 
-若账号和客户端支持完整技能包导入，在电脑版导入本仓库完整目录，并检查 `references/` 六份规则。没有导入入口时，可在豆包中按本仓库规则创建个人技能，并核对六类题型是否迁移完整。
+若账号和客户端支持完整技能包导入，在电脑版导入本仓库完整目录，并检查 `references/` 六份规则。没有导入入口时，可按本仓库规则创建个人技能，并核对六类题型是否迁移完整。
 
-## 官方文档与参考资料
+## 官方资料
 
 - [豆包开放平台：Skill 接入指南](https://open.doubao.com/document/doubao-developer-guide/skill-integration-guide)
 - [豆包工作任务模式技能功能介绍](https://www.sina.cn/news/detail/5334379914069294.html)

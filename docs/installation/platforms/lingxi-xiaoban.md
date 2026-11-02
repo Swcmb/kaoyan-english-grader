@@ -1,7 +1,7 @@
 <!--
 Copyright (C) 2026 kaoyan-english-grader contributors
 SPDX-License-Identifier: GPL-3.0-or-later
-This file is licensed under GPL-3.0-or-later. See LICENSE.
+This file is licensed under GPL-3.0-or-later. See ../../../LICENSE.
 -->
 
 # 灵犀·晓伴：工具与技能中心
@@ -20,14 +20,14 @@ App Store 也提供 iOS 产品页面。地区可用性和设备兼容性以相�
 
 1. 在主页或工具入口打开 **AI 工具与技能中心**。
 2. 浏览分类并搜索目标能力。
-3. 打开详情，检查用途、提供方、授权和使用条件。
+3. 查看详情中的用途、提供方、授权和使用条件。
 4. 按页面提示添加或启用技能。
 5. 返回对话或对应智能体场景提交任务。
 6. 在使用记录中检查运行状态。
 
 ## 创建专属智能体
 
-产品介绍提及个人专属智能体和第三方智能体接入。需要组合能力时，可进入 AI 创作或智能体专区，按页面提示配置角色、目标和可用能力，再用独立任务验证。
+产品介绍提及个人专属智能体和第三方智能体接入。需要组合能力时，可进入 AI 创作或智能体专区，按页面提示配置角色、目标和能力，再用独立任务验证。
 
 ## 本仓库的导入边界
 
@@ -35,7 +35,7 @@ App Store 也提供 iOS 产品页面。地区可用性和设备兼容性以相�
 
 若当前版本新增本地导入入口，先核对文件格式和目录要求，并验证 `SKILL.md` 与 `references/` 六份规则是否完整保留。
 
-## 官方文档与参考资料
+## 官方资料
 
 - [灵犀·晓伴：小米应用商店](https://app.mi.com/details?id=com.lxxb)
 - [灵犀·晓伴：App Store](https://apps.apple.com/cn/app/%E7%81%B5%E7%8A%80-%E6%99%93%E4%BC%B4/id6766031151)
