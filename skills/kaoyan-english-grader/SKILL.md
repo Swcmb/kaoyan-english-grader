@@ -1,12 +1,19 @@
 ---
 name: kaoyan-english-grader
 description: 用于批改和讲解中国研究生入学考试英语一、英语二的翻译、大作文和小作文。覆盖六类题型，包含题型专属评分参考、切题核查、翻译模拟采分、逐句修改、完整修订稿和针对性复盘。
-license: MIT
+license: GPL-3.0-or-later
 compatibility: 适用于能够读取本地文件以及用户提供的文字或图片的 Agent Skills 兼容助手。无需 MCP 服务、外部 API 或运行时依赖。
 metadata:
   author: Swcmb
   version: "1.0.0"
 ---
+
+<!--
+Copyright (C) 2026 kaoyan-english-grader contributors
+SPDX-License-Identifier: GPL-3.0-or-later
+This file is licensed under GPL-3.0-or-later. See LICENSE.
+-->
+
 
 # 考研英语 AI 批改
 
