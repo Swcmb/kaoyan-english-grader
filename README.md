@@ -18,14 +18,14 @@
 
 ## 六种题型
 
-| 科目 | 题型 | 满分 | 规则文件 |
-|---|---|---:|---|
+| 科目   | 题型                       |  满分 | 规则文件                           |
+| ------ | -------------------------- | ----: | ---------------------------------- |
 | 英语一 | 大作文（B 节，图画作文等） | 20 分 | references/english1_essay_major.md |
-| 英语一 | 小作文（A 节，应用文） | 10 分 | references/english1_essay_minor.md |
-| 英语一 | 翻译（5 个划线句） | 10 分 | references/english1_translation.md |
-| 英语二 | 大作文（通常为图表作文） | 15 分 | references/english2_essay_major.md |
-| 英语二 | 小作文（应用文） | 10 分 | references/english2_essay_minor.md |
-| 英语二 | 翻译（整段英译汉） | 15 分 | references/english2_translation.md |
+| 英语一 | 小作文（A 节，应用文）     | 10 分 | references/english1_essay_minor.md |
+| 英语一 | 翻译（5 个划线句）         | 10 分 | references/english1_translation.md |
+| 英语二 | 大作文（通常为图表作文）   | 15 分 | references/english2_essay_major.md |
+| 英语二 | 小作文（应用文）           | 10 分 | references/english2_essay_minor.md |
+| 英语二 | 翻译（整段英译汉）         | 15 分 | references/english2_translation.md |
 
 ## 评分设计
 
@@ -37,12 +37,13 @@
 
 ### 克隆仓库
 
-运行命令：git clone https://github.com/Swcmb/kaoyan-english-grader.git
+运行命令：
 
-将仓库目录作为 Skill 目录放入所使用 AI 助手支持的 skills 目录，确保目录内保留根目录的 SKILL.md 和 references 文件夹。以 TRAE 项目级目录为例：
+```
+git clone https://github.com/Swcmb/kaoyan-english-grader.git
+```
 
-.trae/skills/kaoyan-english-grader/SKILL.md
-.trae/skills/kaoyan-english-grader/references/
+将仓库目录作为 Skill 目录放入所使用 AI 助手支持的 skills 目录，确保目录内保留根目录的 SKILL.md 和 references 文件夹。
 
 如果工具要求全局 Skill 目录，按该工具的安装规范放置同一目录结构。
 
