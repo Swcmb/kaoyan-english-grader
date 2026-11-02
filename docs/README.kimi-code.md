@@ -1,26 +1,26 @@
-# Kimi Code
+# Kimi Code 安装指南
 
-This repository provides a native Kimi plugin manifest at kimi.plugin.json. It packages the portable skill directory and supporting references.
+本仓库提供 Kimi 原生插件清单 kimi.plugin.json，插件包含标准 Skill 及其题型规则文件。
 
-## Install from GitHub
+## 从 GitHub 安装插件
 
-In Kimi Code, run:
+在 Kimi Code 中执行：
 
 ~~~text
 /plugins install https://github.com/Swcmb/kaoyan-english-grader
 /reload
 ~~~
 
-You can also start a new session after installation. The plugin is installed at user scope and the skill is listed under the plugin namespace.
+也可以在安装后开启新会话。安装完成后，技能会显示在插件命名空间下。
 
-## Use as a standalone Agent Skill
+## 作为独立 Skill 安装
 
 ~~~bash
 npx skills add Swcmb/kaoyan-english-grader --skill kaoyan-english-grader --agent kimi-code-cli
 ~~~
 
-Add -g for global installation when using the Agent Skills CLI.
+添加 -g 参数可通过通用技能安装工具安装到用户级目录。
 
-## Verify
+## 验证
 
-Use the skill selector or ask Kimi Code to grade a specific English I/II translation or essay. The loaded skill should read the corresponding module from the adjacent references directory.
+使用技能选择器，或直接要求 Kimi Code 批改一道英语一/英语二翻译或作文题。确认已加载的 Skill 能读取相邻的 references 目录。
