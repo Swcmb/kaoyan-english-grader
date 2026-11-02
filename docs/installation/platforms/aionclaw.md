@@ -24,9 +24,9 @@ AionClaw 的公开应用商店页面介绍 iOS、Android 客户端和 Skill 市�
 
 检查技能是否出现在目标产品的技能列表，并分别提交英语一翻译和英语二大作文测试。确认题型路由、分值、对应规则和输出结构正确。上传成功或保存成功不能替代实际调用验证。
 
-## 本仓库的 Skill 版本选择
+## 本项目 Skill
 
-手机端若只是连接 Gateway 或远程 Agent，Skill 应安装在实际运行 Agent 的主机上。优先安装标准版并保留完整 `references/`；只有远程平台无法保留引用目录、但支持单个标准 `SKILL.md` 时，才使用独立完整版。手机端市场、对话添加和文件附件不等于远程主机已安装本项目 Skill。
+本仓库只提供一个自包含的标准 Agent Skill，六类题型的完整评分规则全部内嵌于 `skills/kaoyan-english-grader/SKILL.md`，不依赖 `（外部规则目录）` 或其他外部文件。目录安装时导入 `skills/kaoyan-english-grader/`；平台明确只接受单文件时，导入该目录中的 `SKILL.md`。
 
 ## 官方资料
 
