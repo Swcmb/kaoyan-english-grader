@@ -23,7 +23,7 @@ npx skills add https://gitee.com/ianwusb/kaoyan-english-grader.git \
 2. 进入 **设置 → 技能与命令**。
 3. 在技能区域选择创建或导入本地技能。
 4. 选择全局或项目范围。
-5. 上传包含主文件和六份引用规则的完整包。
+5. 上传包含主文件和六份内嵌评分规则的完整包。
 6. 保存后检查技能列表。
 
 ### 手动安装
@@ -36,15 +36,15 @@ npx skills add https://gitee.com/ianwusb/kaoyan-english-grader.git \
 
 ## 能力边界
 
-Trae、Trae CN、TraeCode 和 TraeWork 等产品线的菜单可能不同。导入后检查 `references/` 是否完整保留；只接受单文件时使用完整单文件版本。
+Trae、Trae CN、TraeCode 和 TraeWork 等产品线的菜单可能不同。导入后检查 `外部规则文件` 是否完整保留；只接受单文件时使用完整单文件版本。
 
 ## 验收
 
 确认技能出现在目标产品的已安装列表，并分别测试英语一翻译和英语二大作文，核对对应规则、分值和输出要求。
 
-## 本仓库的 Skill 版本选择
+## 本项目 Skill
 
-若当前导入入口能保留完整目录或 ZIP 内的相对路径，使用标准版 `skills/kaoyan-english-grader/`，确保 `SKILL.md` 与 `references/` 六份规则完整保留。若产品实际只接受单个标准 `SKILL.md` 文件，再使用独立完整版 `skills/kaoyan-english-grader-full/SKILL.md`。技能市场条目、应用内创建和本地文件导入属于不同流程；市场安装要求本项目已真实上架，应用内创建则需手动迁移并核对规则。
+本仓库只提供一个自包含的标准 Agent Skill，六类题型的完整评分规则全部内嵌于 `skills/kaoyan-english-grader/SKILL.md`。安装时导入 `skills/kaoyan-english-grader/` 目录即可；平台明确只接受单文件时，直接导入该目录中的 `SKILL.md`。该 Skill 不依赖额外的规则文件或运行时服务。
 
 ## 官方资料
 
