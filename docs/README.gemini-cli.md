@@ -1,39 +1,43 @@
-# Gemini CLI and Qwen Code
+# Gemini CLI 与 Qwen Code 安装指南
 
-The repository contains a Gemini CLI extension manifest and a GEMINI.md context file that loads the portable skill.
+仓库包含 Gemini CLI 扩展清单，以及用于加载标准 Skill 的 GEMINI.md 入口文件。
 
 ## Gemini CLI
 
-Install from GitHub:
+从 GitHub 安装：
 
 ~~~bash
 gemini extensions install https://github.com/Swcmb/kaoyan-english-grader
 ~~~
 
-Restart Gemini CLI after installation. To refresh the extension later:
+安装后重新启动 Gemini CLI。更新扩展：
 
 ~~~bash
 gemini extensions update
 ~~~
 
-Check installed extensions with /extensions list.
+查看已安装扩展：
+
+~~~text
+/extensions list
+~~~
 
 ## Qwen Code
 
-Qwen Code supports Gemini CLI extensions and converts their manifest and context files during installation:
+通过扩展命令安装：
 
 ~~~bash
 qwen extensions install Swcmb/kaoyan-english-grader
 ~~~
 
-Restart Qwen Code after installation. To see the available extension commands, run qwen extensions --help.
+安装后重新启动 Qwen Code。可使用其扩展管理命令查看已安装扩展。
 
-## Standalone Agent Skill
-
-Both tools are also supported by the Agent Skills CLI:
+## 作为独立 Skill 安装
 
 ~~~bash
 npx skills add Swcmb/kaoyan-english-grader --skill kaoyan-english-grader --agent gemini-cli
 ~~~
 
-Use -a qwen-code only when that agent identifier appears in the installed skills CLI's current supported-agent list.
+## 验证
+
+要求 Agent 批改一道具体题目，检查它是否读取对应的中文题型规则。
