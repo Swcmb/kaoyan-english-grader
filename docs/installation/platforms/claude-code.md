@@ -6,25 +6,18 @@ This file is licensed under GPL-3.0-or-later. See ../../../LICENSE.
 
 # Claude Code：安装与使用
 
-Claude Code 支持标准 Agent Skills。项目级 Skill 随仓库共享，用户级 Skill 可在多个工作区复用。本指南介绍本机 Claude Code，不适用于 Claude 网页版或 Desktop 的 ZIP 上传流程。
+Claude Code 通过文件系统发现标准 Agent Skills。项目级目录可随仓库共享，用户级目录适合多个工作区。本指南不适用于 Claude 网页版或 Desktop 上传流程。
 
-## 安装方式
+## 安装与使用
 
-### 使用 Skills CLI
-
-在目标项目根目录执行：
+### Skills CLI
 
 ```bash
 npx skills add https://gitee.com/ianwusb/kaoyan-english-grader.git \
-  --skill kaoyan-english-grader \
-  --agent claude-code
+  --skill kaoyan-english-grader --agent claude-code
 ```
 
-用户级安装增加 `-g`。选择复制或符号链接时，根据是否需要独立副本决定。
-
 ### 手动安装
-
-将完整的 `skills/kaoyan-english-grader/` 复制到：
 
 | 范围 | 路径 |
 | --- | --- |
@@ -32,19 +25,17 @@ npx skills add https://gitee.com/ianwusb/kaoyan-english-grader.git \
 | 用户级 | `~/.claude/skills/kaoyan-english-grader/` |
 | Windows 用户级 | `%USERPROFILE%/.claude/skills/kaoyan-english-grader/` |
 
-安装目录必须同时包含 `SKILL.md` 和完整的 `references/`。
+将完整目录放入目标路径，保留 `SKILL.md` 和 `references/`。
 
-## 调用与验证
+## 安装边界
 
-重新加载 Claude Code 或开启新会话，使用 `/skills` 查看技能，或输入 `/kaoyan-english-grader` 调用。分别提交英语一翻译和英语二图表作文，确认 Agent 读取对应规则并按题型评分。
+Claude Code 本地目录和 Claude 网页版自定义 Skill 上传由不同界面与目录管理，不会自动同步。不要将网页 ZIP 上传流程作为 Claude Code 本地安装方式。
 
-技能未出现时，先检查目录深度、文件名和安装范围，再按当前版本要求重新加载。
+## 验收
 
-## 更新与卸载
+检查技能是否出现在目标产品的技能列表，并分别提交英语一翻译和英语二大作文测试。确认题型路由、分值、对应规则和输出结构正确。上传成功或保存成功不能替代实际调用验证。
 
-Skills CLI 安装可使用 `npx skills update kaoyan-english-grader`。手动安装时完整替换技能目录。卸载时只删除目标范围下的 `kaoyan-english-grader/`，保留其他技能。
-
-## 参考资料
+## 官方资料
 
 - [Claude Code：Agent Skills 概览](https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview)
 - [Skills CLI：命令说明](https://github.com/vercel-labs/skills/blob/main/docs/commands.md)

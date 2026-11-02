@@ -4,29 +4,27 @@ SPDX-License-Identifier: GPL-3.0-or-later
 This file is licensed under GPL-3.0-or-later. See ../../../LICENSE.
 -->
 
-# AgentOS（艾嘿）：技能商店与自定义安装
+# AgentOS（艾嘿）：技能商店
 
-AgentOS 的公开应用商店与版本记录包含技能商店、自定义安装能力和技能管理入口。具体可用功能可能因 App 版本、地区和账号状态而异。
+AgentOS 的公开应用商店介绍和版本记录包含技能商店。本页记录市场安装，不把市场入口等同于标准 Agent Skill 文件导入。
 
-## 安装市场技能
+## 安装与使用
 
-1. 在设备应用商店搜索 AgentOS 或 AIHEY（艾嘿），核对开发者后安装。
-2. 登录并完成首次启动流程。
-3. 打开 **技能商店**，浏览默认分类或搜索目标技能。
-4. 查看技能详情、用途和提供方，再按页面提示安装。
-5. 在 **已装** 分类检查安装状态，返回对话进行测试。
+1. 从 [Apple App Store 加拿大区](https://apps.apple.com/ca/app/agentos/id6759725374) 或[智利区](https://apps.apple.com/cl/app/agentos/id6759725374)查看当前应用信息，核对开发者后安装。
+2. 登录并完成首次启动。
+3. 打开技能商店，浏览分类或搜索技能。
+4. 查看介绍、来源和权限，再按页面提示安装。
+5. 在已安装列表检查状态并测试调用。
 
-## 自定义 Skill 导入
+## 安装边界
 
-公开版本记录提及自定义安装能力，但没有明确说明标准 `SKILL.md` 文件夹、ZIP/TAR.GZ 格式或导入目录协议。因此，不能据此确认 AgentOS 可以直接导入本仓库。
+公开资料提及自定义安装能力，但标准 `SKILL.md`、文件夹 ZIP 和引用目录协议尚未确认。只有当前版本明确支持完整目录导入且保留全部引用规则时，才能认定为标准 Skill 导入。
 
-若当前版本提供自定义安装入口，先阅读其格式要求，再检查导入结果是否保留 `SKILL.md` 和 `references/` 六份规则。若只支持平台内部技能条目，应将其视为独立的应用内流程。
+## 验收
 
-## 验证与安全
-
-先使用低风险任务确认技能可调用，再测试英语一翻译和英语二大作文。安装前核对提供方、授权范围和外部服务连接；不要从来源不明的网站下载安装包。
+检查技能是否出现在目标产品的技能列表，并分别提交英语一翻译和英语二大作文测试。确认题型路由、分值、对应规则和输出结构正确。上传成功或保存成功不能替代实际调用验证。
 
 ## 官方资料
 
-- [AgentOS：加拿大区 App Store 页面](https://apps.apple.com/ca/app/agentos/id6759725374)
-- [AgentOS：智利区 App Store 页面](https://apps.apple.com/cl/app/agentos/id6759725374)
+- [AgentOS：加拿大区 App Store](https://apps.apple.com/ca/app/agentos/id6759725374)
+- [AgentOS：智利区 App Store](https://apps.apple.com/cl/app/agentos/id6759725374)
