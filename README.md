@@ -273,6 +273,6 @@ kaoyan-english-grader/
 
 <div align="center">
 
-[GitHub Repository](https://github.com/Swcmb/kaoyan-english-grader) · [Releases](https://github.com/Swcmb/kaoyan-english-grader/releases) · [发布工作流](.github/workflows/publish.yml)
+[GitHub Repository](https://github.com/Swcmb/kaoyan-english-grader) · [Gitee Repository](https://gitee.com/ianwusb/kaoyan-english-grader) · [Releases](https://github.com/Swcmb/kaoyan-english-grader/releases) · [发布工作流](.github/workflows/publish.yml)
 
 </div>
