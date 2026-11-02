@@ -1,30 +1,30 @@
-# Cursor
+# Cursor 安装指南
 
-The repository includes both the portable Agent Plugin manifest (plugin.json) and Cursor-specific manifest (.cursor-plugin/plugin.json).
+本仓库包含通用插件清单 plugin.json 和 Cursor 专用清单 .cursor-plugin/plugin.json。
 
-## Install locally for evaluation
+## 本地安装插件
 
-Clone the repository:
+克隆仓库：
 
 ~~~bash
 git clone https://github.com/Swcmb/kaoyan-english-grader.git
 ~~~
 
-Copy the complete repository into Cursor's local plugin directory:
+将完整仓库复制到 Cursor 本地插件目录：
 
-- macOS/Linux: ~/.cursor/plugins/local/kaoyan-english-grader
-- Windows: %USERPROFILE%\.cursor\plugins\local\kaoyan-english-grader
+- macOS/Linux：~/.cursor/plugins/local/kaoyan-english-grader
+- Windows：%USERPROFILE%\.cursor\plugins\local\kaoyan-english-grader
 
-Keep plugin.json, .cursor-plugin/plugin.json, skills/, and the other repository files together. Restart Cursor or run Developer: Reload Window, then verify the plugin in Customize.
+请保留 plugin.json、.cursor-plugin/plugin.json、skills/ 和其他仓库文件的相对位置。重启 Cursor，或执行 Developer: Reload Window，然后在 Customize 中检查插件。
 
-## Install as a standalone skill
+## 作为独立 Skill 安装
 
 ~~~bash
 npx skills add Swcmb/kaoyan-english-grader --skill kaoyan-english-grader --agent cursor
 ~~~
 
-Add -g for global installation.
+添加 -g 参数可安装到用户级目录。
 
-## Marketplace distribution
+## 验证
 
-Cursor installs Agent Plugins and Cursor Plugins from a marketplace. To distribute this plugin through the public Cursor Marketplace, submit the repository for review at cursor.com/marketplace/publish. Team marketplaces can distribute the plugin within an organization.
+要求 Cursor 批改一份考研英语作文或翻译，确认其能读取对应题型规则。
