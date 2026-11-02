@@ -6,6 +6,14 @@ This file is licensed under GPL-3.0-or-later. See LICENSE.
 
 # Gemini CLI 与 Qwen Code 安装指南
 
+> 国内网络环境优先使用 Gitee 镜像安装标准 Skill：
+>
+> ```bash
+> npx skills add https://gitee.com/ianwusb/kaoyan-english-grader.git --skill kaoyan-english-grader --agent gemini-cli
+> ```
+>
+> 将 `AGENT_NAME` 替换为当前平台对应的 Agent 标识。下方的平台原生插件安装方式作为补充；需要 Gitee 国内源时，优先使用此方式。
+
 仓库包含 Gemini CLI 扩展清单，以及用于加载标准 Skill 的 GEMINI.md 入口文件。
 
 ## Gemini CLI
@@ -41,7 +49,7 @@ qwen extensions install Swcmb/kaoyan-english-grader
 ## 作为独立 Skill 安装
 
 ~~~bash
-npx skills add Swcmb/kaoyan-english-grader --skill kaoyan-english-grader --agent gemini-cli
+npx skills add https://gitee.com/ianwusb/kaoyan-english-grader.git --skill kaoyan-english-grader --agent gemini-cli
 ~~~
 
 ## 验证
