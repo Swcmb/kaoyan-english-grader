@@ -130,7 +130,7 @@ Catalog entries returned: 0
 使用 `>` 引用外部评论、文档原文或需要回应的观点，并区分引用和自己的分析。链接优先指向具体 Issue、PR、代码行、文档章节或提交，使用有意义的文字。
 
 ```markdown
-See [the catalog filtering implementation](../src/catalog.ts).
+See [the repository README](../../README.md).
 ```
 
 图片前说明希望读者观察什么，必要时对比预期和实际表现。流程、依赖关系、状态转换和复杂交互适合 Mermaid；简单线性步骤使用编号列表更轻便。

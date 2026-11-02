@@ -1,6 +1,6 @@
 ---
 name: kaoyan-english-grader-complete
-description: 用于批改和讲解中国研究生入学考试英语一、英语二的翻译、大作文和小作文。覆盖六类题型，包含题型专属评分参考、切题核查、翻译模拟采分、逐句修改、完整修订稿和针对性复盘。
+description: 独立完整的考研英语一、英语二六类主观题批改 Skill，内嵌所有题型评分规则，无需外部 references 文件。
 license: GPL-3.0-or-later
 compatibility: 适用于能够读取本地文件以及用户提供的文字或图片的 Agent Skills 兼容助手。无需 MCP 服务、外部 API 或运行时依赖。
 metadata:
@@ -8,11 +8,11 @@ metadata:
   version: "1.0.0"
 ---
 
-pyright (C) 2026 kaoyan-english-grader contributors
+<!--
+Copyright (C) 2026 kaoyan-english-grader contributors
 SPDX-License-Identifier: GPL-3.0-or-later
-This file is licensed under GPL-3.0-or-later. See LICENSE.
+This file is licensed under GPL-3.0-or-later. See ../../LICENSE.
 -->
-
 
 # 考研英语 AI 批改
 
@@ -70,22 +70,22 @@ This file is licensed under GPL-3.0-or-later. See LICENSE.
 
 ## 完整题型规则
 
-本文件为单文件完整版本，已经内嵌全部六类题型的评分档位、批改原则、输出要求和输入槽位。无需读取外部 `references/` 文件，也不依赖其他 Skill 文件。
+本文件已经内嵌全部六类题型的评分档位、批改原则、输出要求和输入槽位。无需读取外部 `references/` 文件，也不依赖其他 Skill 文件。
 
-题型索引：
+| 题型 | 完整规则 |
+| --- | --- |
+| 英语一大作文 | [评分规则](#英语一大作文评分规则) |
+| 英语一小作文 | [评分规则](#英语一小作文评分规则) |
+| 英语一翻译 | [评分规则](#英语一翻译评分规则) |
+| 英语二大作文 | [评分规则](#英语二大作文评分规则) |
+| 英语二小作文 | [评分规则](#英语二小作文评分规则) |
+| 英语二翻译 | [评分规则](#英语二翻译评分规则) |
 
-- [英语一大作文](#英语一大作文批改指令)
-- [英语一小作文](#英语一小作文批改指令)
-- [英语一翻译](#英语一翻译批改指令)
-- [英语二大作文](#英语二大作文批改指令)
-- [英语二小作文](#英语二小作文批改指令)
-- [英语二翻译](#英语二翻译批改指令)
-
-以下规则按题型分别执行；用户一次提交多种题型时，各题独立评分，不得混用评分口径。
+以下规则按题型分别执行。用户一次提交多种题型时，各题独立评分，不得混用评分标准。
 
 ---
 
-## 英语一大作文完整评分规则
+## 英语一大作文评分规则
 
 ### 英语一大作文批改指令
 
@@ -167,7 +167,7 @@ This file is licensed under GPL-3.0-or-later. See LICENSE.
 
 ---
 
-## 英语一小作文完整评分规则
+## 英语一小作文评分规则
 
 ### 英语一小作文批改指令
 
@@ -240,7 +240,7 @@ This file is licensed under GPL-3.0-or-later. See LICENSE.
 
 ---
 
-## 英语一翻译完整评分规则
+## 英语一翻译评分规则
 
 ### 英语一翻译批改指令
 
@@ -306,7 +306,7 @@ This file is licensed under GPL-3.0-or-later. See LICENSE.
 
 ---
 
-## 英语二大作文完整评分规则
+## 英语二大作文评分规则
 
 ### 英语二大作文批改指令
 
@@ -388,7 +388,7 @@ This file is licensed under GPL-3.0-or-later. See LICENSE.
 
 ---
 
-## 英语二小作文完整评分规则
+## 英语二小作文评分规则
 
 ### 英语二小作文批改指令
 
@@ -458,7 +458,7 @@ This file is licensed under GPL-3.0-or-later. See LICENSE.
 
 ---
 
-## 英语二翻译完整评分规则
+## 英语二翻译评分规则
 
 ### 英语二翻译批改指令
 
