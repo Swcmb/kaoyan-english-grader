@@ -1,3 +1,9 @@
+<!--
+Copyright (C) 2026 kaoyan-english-grader contributors
+SPDX-License-Identifier: GPL-3.0-or-later
+This file is licensed under GPL-3.0-or-later. See LICENSE.
+-->
+
 # Kimi Code 安装指南
 
 本仓库提供 Kimi 原生插件清单 kimi.plugin.json，插件包含标准 Skill 及其题型规则文件。
