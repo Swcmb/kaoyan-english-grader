@@ -1,3 +1,9 @@
+<!--
+Copyright (C) 2026 kaoyan-english-grader contributors
+SPDX-License-Identifier: GPL-3.0-or-later
+This file is licensed under GPL-3.0-or-later. See LICENSE.
+-->
+
 # Google Antigravity 安装指南
 
 本仓库包含 Antigravity 插件清单 .antigravity-plugin/plugin.json，以及标准 Agent Skill。
