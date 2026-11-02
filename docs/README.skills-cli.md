@@ -137,7 +137,7 @@ npx skills list
 npx skills update
 ~~~
 
-更新后在目标 Agent 中启动新会话并重新验证。卸载时使用 Skills CLI 的移除/管理交互，或删除对应安装目录下的 kaoyan-english-grader 文件夹。删除前确认路径，避免影响同目录其他技能。
+更新后在目标 Agent 中启动新会话并重新验证。卸载时执行 npx skills remove kaoyan-english-grader；全局安装的技能增加 --global，指定平台时增加 --agent <agent-id>。也可以使用交互式 npx skills remove 选择目标。删除前确认安装范围，避免移除其他 Agent 或项目中的副本。
 
 ## 8. 安装故障排查
 
