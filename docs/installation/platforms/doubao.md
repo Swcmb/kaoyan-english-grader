@@ -19,7 +19,7 @@ This file is licensed under GPL-3.0-or-later. See ../../../LICENSE.
 
 ### 导入本地 Skill
 
-若当前客户端提供本地导入入口，进入技能管理，选择导入或上传。目录版应包含 `SKILL.md` 和完整 `references/`；只接受单文件时使用[完整单文件版本](../../../dist/kaoyan-english-grader-single-file/SKILL.md)。
+若当前客户端提供本地导入入口，进入技能管理，选择导入或上传。目录版应包含 `完整的 `SKILL.md`；只接受单文件时使用[完整单文件版本](../../../skills/kaoyan-english-grader/SKILL.md)。
 
 ### 开发者提交市场审核
 
@@ -31,11 +31,11 @@ This file is licensed under GPL-3.0-or-later. See ../../../LICENSE.
 
 ## 验收
 
-检查技能是否出现在目标产品中，并分别测试英语一翻译和英语二大作文。核对题型路由、评分档位、引用规则和输出要求。上传或保存成功不能替代真实任务验证。
+检查技能是否出现在目标产品中，并分别测试英语一翻译和英语二大作文。核对题型路由、评分档位、内嵌评分规则和输出要求。上传或保存成功不能替代真实任务验证。
 
-## 本仓库的 Skill 版本选择
+## 本项目 Skill
 
-若当前导入入口能保留完整目录或 ZIP 内的相对路径，使用标准版 `skills/kaoyan-english-grader/`，确保 `SKILL.md` 与 `references/` 六份规则完整保留。若产品实际只接受单个标准 `SKILL.md` 文件，再使用独立完整版 `skills/kaoyan-english-grader-full/SKILL.md`。技能市场条目、应用内创建和本地文件导入属于不同流程；市场安装要求本项目已真实上架，应用内创建则需手动迁移并核对规则。
+本仓库只提供一个自包含的标准 Agent Skill，六类题型的完整评分规则全部内嵌于 `skills/kaoyan-english-grader/SKILL.md`。安装时导入 `skills/kaoyan-english-grader/` 目录即可；平台明确只接受单文件时，直接导入该目录中的 `SKILL.md`。该 Skill 不依赖额外的规则文件或运行时服务。
 
 ## 官方资料
 
