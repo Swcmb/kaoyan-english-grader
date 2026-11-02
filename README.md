@@ -4,9 +4,9 @@ SPDX-License-Identifier: GPL-3.0-or-later
 This file is licensed under GPL-3.0-or-later. See LICENSE.
 -->
 
-# 考研英语 AI 批改与开源合规 Skills
+# 考研英语 AI 批改
 
-一组面向 AI 编程助手的跨平台 Agent Skills：提供考研英语一、英语二翻译与作文六类题型的模拟批改，以及第三方代码、Skill、Prompt 和配置的许可证审查与署名完整性检查。支持通过通用技能安装工具或各 Agent 的原生插件、扩展机制安装。
+面向考研英语备考的跨平台 AI 批改 Skill，覆盖英语一、英语二的翻译、大作文和小作文，共六类题型。支持 Claude Code、Codex、Cursor、OpenCode、Gemini CLI、Antigravity、Kimi Code 等 Agent。
 
 > **评分说明：** 本项目提供基于练习评分参考的模拟评价，不是官方阅卷标准、官方采分点或真实考试分数预测。所有评分仅供备考训练使用。
 
@@ -20,8 +20,6 @@ This file is licensed under GPL-3.0-or-later. See LICENSE.
 - **完整修改与复盘：** 提供逐句讲解、修改后全文、实用表达积累和针对性练习建议。
 - **支持手写图片：** 先转录再批改；无法辨认的内容会请求确认，不将识别错误当成考生错误。
 - **跨平台使用：** 采用标准 Agent Skill 结构，评分规则集中维护，不依赖特定编辑器。
-- **第三方许可证审查：** 在复制、改编、vendor 或发布第三方内容前，核对文件级授权、许可证文本、NOTICE 和来源标识。
-- **署名完整性测试：** 对第三方许可证原文、NOTICE 和改编文件的来源声明建立自动化回归测试。
 
 ## 支持的题型
 
@@ -36,20 +34,22 @@ This file is licensed under GPL-3.0-or-later. See LICENSE.
 
 ## 安装
 
-### 方式一：使用通用技能安装工具（推荐）
+### 国内推荐：使用 Gitee 镜像
 
-需要 Node.js 22.20 或更高版本。
+国内网络环境优先使用 Gitee 镜像安装。需要 Node.js 22.20 或更高版本。
+
+**直接安装：**
 
 ```bash
-npx skills add Swcmb/kaoyan-english-grader --skill kaoyan-english-grader
+npx skills add https://gitee.com/ianwusb/kaoyan-english-grader.git --skill kaoyan-english-grader
 ```
 
 根据提示选择目标 Agent，以及项目级或用户级安装范围。
 
-指定多个 Agent 安装：
+**指定多个 Agent：**
 
 ```bash
-npx skills add Swcmb/kaoyan-english-grader \
+npx skills add https://gitee.com/ianwusb/kaoyan-english-grader.git \
   --skill kaoyan-english-grader \
   -a claude-code \
   -a codex \
@@ -65,17 +65,23 @@ npx skills add Swcmb/kaoyan-english-grader \
   -a cline
 ```
 
-添加 -g 参数可安装到用户级目录。支持的 Agent 名单请查看[安装工具文档](https://github.com/vercel-labs/skills/blob/main/docs/agents.md)。
+**网络环境不支持直接安装时，先克隆再从本地安装：**
 
-### 安装第三方许可证审查 Skill
+```bash
+git clone https://gitee.com/ianwusb/kaoyan-english-grader.git
+cd kaoyan-english-grader
+npx skills add . --skill kaoyan-english-grader
+```
 
-该 Skill 用于在复制、改编、翻译、vendor 或发布第三方材料前审查文件级许可证，并验证来源和署名不会在重命名、移动或重新打包时丢失。
+添加 `-g` 参数可安装到用户级目录。通用技能安装工具支持任意 Git URL，详见[命令文档](https://github.com/vercel-labs/skills/blob/main/docs/commands.md)。
 
-~~~bash
-npx skills add Swcmb/kaoyan-english-grader --skill check-the-licence-before-you-copy
-~~~
+### 备用：从 GitHub 安装
 
-### 方式二：使用平台原生安装方式
+```bash
+npx skills add https://github.com/Swcmb/kaoyan-english-grader.git --skill kaoyan-english-grader
+```
+
+### 使用平台原生安装方式
 
 | 平台 | 安装方式 |
 |---|---|
@@ -90,7 +96,7 @@ npx skills add Swcmb/kaoyan-english-grader --skill check-the-licence-before-you-
 
 各平台的完整步骤：
 
-- [通用技能安装工具](docs/README.skills-cli.md)
+- [通用技能安装工具（含 Gitee 国内源）](docs/README.skills-cli.md)
 - [Claude Code](docs/README.claude-code.md)
 - [Codex](docs/README.codex.md)
 - [Cursor](docs/README.cursor.md)
@@ -99,7 +105,7 @@ npx skills add Swcmb/kaoyan-english-grader --skill check-the-licence-before-you-
 - [Antigravity](docs/README.antigravity.md)
 - [Kimi Code](docs/README.kimi-code.md)
 
-不同平台的命令、插件格式和安装范围由对应平台决定。通用安装工具与原生安装方式是两条独立路径，选择其中一种即可。
+不同平台的原生插件市场可能要求其支持的仓库托管平台；国内网络环境优先使用上面的 Gitee 通用 Skill 安装方式。
 
 ## 使用方法
 
@@ -161,17 +167,15 @@ npx skills add Swcmb/kaoyan-english-grader --skill check-the-licence-before-you-
 ```text
 kaoyan-english-grader/
 ├── skills/
-│   ├── kaoyan-english-grader/
-│   │   ├── SKILL.md
-│   │   └── references/
-│   │       ├── english1_essay_major.md
-│   │       ├── english1_essay_minor.md
-│   │       ├── english1_translation.md
-│   │       ├── english2_essay_major.md
-│   │       ├── english2_essay_minor.md
-│   │       └── english2_translation.md
-│   └── check-the-licence-before-you-copy/
-│       └── SKILL.md
+│   └── kaoyan-english-grader/
+│       ├── SKILL.md
+│       └── references/
+│           ├── english1_essay_major.md
+│           ├── english1_essay_minor.md
+│           ├── english1_translation.md
+│           ├── english2_essay_major.md
+│           ├── english2_essay_minor.md
+│           └── english2_translation.md
 ├── .claude-plugin/
 ├── .codex-plugin/
 ├── .cursor-plugin/
@@ -181,14 +185,7 @@ kaoyan-english-grader/
 ├── gemini-extension.json
 ├── kimi.plugin.json
 ├── GEMINI.md
-├── LICENSES/
-│   └── Apache-2.0.txt
-├── NOTICE
 ├── COPYING
-├── tests/
-│   └── test_third_party_attribution.py
-├── .github/workflows/
-│   └── test-third-party-attribution.yml
 ├── docs/
 │   ├── github-content-writing.md
 │   ├── third-party-license-review.md
@@ -197,7 +194,7 @@ kaoyan-english-grader/
 └── README.md
 ```
 
-考研英语批改 Skill 位于 `skills/kaoyan-english-grader`，六份题型规则放在其 `references` 目录中。第三方许可审查 Skill 位于 `skills/check-the-licence-before-you-copy`。平台清单负责让不同 Agent 发现和安装仓库中的 Skill。
+规范 Skill 位于 `skills/kaoyan-english-grader`，六份题型规则放在其 `references` 目录中。平台清单负责让不同 Agent 发现和安装同一份技能内容。
 
 ## 评分原则与边界
 
@@ -219,6 +216,5 @@ kaoyan-english-grader/
 
 ## 许可证
 
-本仓库原创内容采用 [GNU 通用公共许可证 v3.0 或更高版本（GPL-3.0-or-later）](LICENSE)，完整文本同时保存在 [COPYING](COPYING)。
+本仓库原创内容采用 [GNU 通用公共许可证 v3.0 或更高版本（GPL-3.0-or-later）](LICENSE)，完整文本同时保存在 [COPYING](COPYING)。今后引入的第三方文件如采用独立许可证，将保留其文件级标识、许可证文本和适用的 NOTICE。
 
-第三方改编 Skill [check-the-licence-before-you-copy](skills/check-the-licence-before-you-copy/SKILL.md) 保留上游 Apache-2.0 许可，完整文本位于 [LICENSES/Apache-2.0.txt](LICENSES/Apache-2.0.txt)，来源和修改说明见 [NOTICE](NOTICE)。其他第三方文件可能保留独立许可证、版权声明和 NOTICE，具体以对应文件及其来源证据为准。
