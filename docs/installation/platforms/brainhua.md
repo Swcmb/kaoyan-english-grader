@@ -20,7 +20,7 @@ This file is licensed under GPL-3.0-or-later. See ../../../LICENSE.
 
 ## 安装边界
 
-公开 App Store 介绍确认应用内 Skill 能力，但未说明支持标准 `SKILL.md` 文件夹和外部引用文件导入。应用内创建产生的是平台内部 Skill。若用本项目规则创建，应逐项核对六类档位、输出要求和边界。
+公开 App Store 介绍确认应用内 Skill 能力，但未说明支持标准 Agent Skill 文件夹或 ZIP 导入。应用内创建产生的是平台内部 Skill。若用本项目规则创建，应逐项核对六类档位、输出要求和边界。
 
 ## 验收
 
@@ -28,7 +28,7 @@ This file is licensed under GPL-3.0-or-later. See ../../../LICENSE.
 
 ## 本项目 Skill
 
-本仓库只提供一个自包含的标准 Agent Skill，六类题型的完整评分规则全部内嵌于 `skills/kaoyan-english-grader/SKILL.md`，不依赖 `（外部规则目录）` 或其他外部文件。目录安装时导入 `skills/kaoyan-english-grader/`；平台明确只接受单文件时，导入该目录中的 `SKILL.md`。
+本仓库只提供一个自包含的标准 Agent Skill，六类题型的完整评分规则全部内嵌于 `skills/kaoyan-english-grader/SKILL.md`，不依赖额外的规则文件或运行时服务。目录安装时导入 `skills/kaoyan-english-grader/`；平台明确只接受单文件时，导入该目录中的 `SKILL.md`。
 
 ## 官方资料
 
