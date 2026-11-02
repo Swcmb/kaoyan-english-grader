@@ -1,7 +1,7 @@
 {
   "name": "kaoyan-english-grader",
   "version": "1.0.0",
-  "description": "考研英语一/二翻译与作文批改，以及第三方许可证审查和署名完整性测试。",
+  "description": "考研英语一/二翻译、大作文和小作文六类题型模拟批改、逐句反馈与学习复盘。",
   "author": {
     "name": "Swcmb",
     "url": "https://github.com/Swcmb"
@@ -13,15 +13,13 @@
     "english",
     "translation",
     "essay",
-    "grading",
-    "license-compliance",
-    "third-party-licenses"
+    "grading"
   ],
   "skills": "./skills/",
   "interface": {
-    "displayName": "考研英语批改与开源合规",
-    "shortDescription": "考研英语批改与第三方许可证审查",
-    "longDescription": "覆盖英语一/二六种题型批改，并提供第三方代码、Skill、Prompt 和配置的授权核验、来源记录与署名回归测试。",
+    "displayName": "考研英语批改",
+    "shortDescription": "考研英语一/二翻译与作文批改",
+    "longDescription": "覆盖英语一和英语二翻译、大作文、小作文六种题型，提供模拟评分、逐句修改和学习复盘。",
     "developerName": "Swcmb",
     "websiteURL": "https://github.com/Swcmb/kaoyan-english-grader"
   }
