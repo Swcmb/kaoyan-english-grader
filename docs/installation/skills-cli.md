@@ -8,7 +8,7 @@ This file is licensed under GPL-3.0-or-later. See ../../LICENSE.
 
 [Vercel Skills CLI](https://github.com/vercel-labs/skills) 可以从 Git 仓库、URL 或本地目录发现标准 Agent Skill，并安装到受支持 Agent 的项目级或用户级目录。
 
-本仓库只有一个 Skill：`kaoyan-english-grader`。全部六类评分规则内嵌于 `skills/kaoyan-english-grader/SKILL.md`，不依赖 `references/` 或其他资源文件。
+本仓库只有一个 Skill：`kaoyan-english-grader`。全部六类评分规则内嵌于 `skills/kaoyan-english-grader/SKILL.md`，该文件可独立完成全部批改任务。
 
 ## 环境准备
 
