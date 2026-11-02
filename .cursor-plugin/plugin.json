@@ -1,7 +1,7 @@
 {
   "name": "kaoyan-english-grader",
-  "displayName": "考研英语批改与开源合规",
-  "description": "考研英语一/二六类题型批改，以及第三方许可证审查、来源记录和署名验证。",
+  "displayName": "考研英语批改",
+  "description": "考研英语一/二六类题型模拟评分、逐句批改和学习复盘。",
   "version": "1.0.0",
   "author": {
     "name": "Swcmb",
@@ -16,9 +16,7 @@
     "translation",
     "essay",
     "grading",
-    "education",
-    "license-compliance",
-    "third-party-licenses"
+    "education"
   ],
   "skills": "./skills/"
 }
