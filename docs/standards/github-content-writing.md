@@ -190,7 +190,7 @@ Issue 和 PR 标题已经承担页面主标题的作用，正文一般从 `##` �
 
 只将不需要所有读者立即查看的次要信息放入 `<details>`，例如大量日志、已在正文总结过的完整测试输出、可选环境信息和补充实验。
 
-```html
+````html
 <details>
 <summary>Show full diagnostic logs</summary>
 
@@ -201,7 +201,7 @@ Catalog entries returned: 0
 ```
 
 </details>
-```
+````
 
 正文先展示结论、关键错误和必要上下文，再折叠完整证据。不要隐藏根因、核心复现步骤、关键测试结论或需要评审者决定的事项。
 
