@@ -33,12 +33,12 @@ Kimi Code CLI 支持以下目录：
 
 | 作用范围 | 路径 |
 |---|---|
-| 用户级 Kimi 专属目录 | ~/.kimi-code/skills/kaoyan-english-grader/ |
+| 用户级通用目录（Skills CLI） | ~/.agents/skills/kaoyan-english-grader/ |
 | 用户级通用目录 | ~/.agents/skills/kaoyan-english-grader/ |
-| 项目级 Kimi 专属目录 | .kimi-code/skills/kaoyan-english-grader/ |
+| 项目级通用目录（Skills CLI） | .agents/skills/kaoyan-english-grader/ |
 | 项目级通用目录 | .agents/skills/kaoyan-english-grader/ |
 
-如果设置了 KIMI_CODE_HOME，Kimi 专属用户目录会随该变量变化；通用 ~/.agents/skills/ 不随其迁移。
+Skills CLI 当前将 Kimi Code CLI 映射到通用 .agents/skills/ 目录。Kimi 客户端自带的其他技能目录可能随其版本调整，使用原生路径时应以当前 CLI 官方文档为准。
 
 ## 方式三：通过 Kimi 插件安装
 
