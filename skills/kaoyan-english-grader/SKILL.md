@@ -1,71 +1,73 @@
 ---
 name: kaoyan-english-grader
-description: Use when grading or improving Chinese postgraduate entrance exam English (考研英语一/英语二) translation, major essays, or minor practical essays. Covers six task types with exam-specific rubrics, task relevance checks, point-based translation scoring, sentence-level corrections, revised full text, and targeted study feedback.
+description: 用于批改和讲解中国研究生入学考试英语一、英语二的翻译、大作文和小作文。覆盖六类题型，包含题型专属评分参考、切题核查、翻译模拟采分、逐句修改、完整修订稿和针对性复盘。
 license: MIT
-compatibility: Works with Agent Skills-compatible assistants that can read local files and user-provided text or images. No MCP server, external API, or runtime dependency is required.
+compatibility: 适用于能够读取本地文件以及用户提供的文字或图片的 Agent Skills 兼容助手。无需 MCP 服务、外部 API 或运行时依赖。
 metadata:
   author: Swcmb
   version: "1.0.0"
 ---
 
-# Kaoyan English Grader
+# 考研英语 AI 批改
 
-Use this skill to grade and teach the six subjective task types in China's postgraduate entrance examination English tests:
+本 Skill 用于批改和讲解中国研究生入学考试英语一、英语二的六类主观题。
 
-- English I translation: five underlined sentences, 10 points.
-- English I major essay: 20 points.
-- English I minor essay: 10 points.
-- English II translation: 15 points, with an optional five-sentence, three-points-per-sentence practice mode.
-- English II major essay: 15 points, usually a chart-based essay.
-- English II minor essay: 10 points.
+- 英语一翻译：5 个划线句，满分 10 分。
+- 英语一大作文：B 节，满分 20 分。
+- 英语一小作文：A 节应用文，满分 10 分。
+- 英语二翻译：满分 15 分；用户明确指定时，支持 5 句专项练习、每句 3 分。
+- 英语二大作文：满分 15 分，通常为图表作文。
+- 英语二小作文：应用文，满分 10 分。
 
-All explanations are in Chinese. Preserve English originals, corrections, and revised essays in English. Scores are practice estimates based on the repository's stated reference rubrics; never present them as official marking schemes or guaranteed exam scores.
+**讲解语言使用中文。** 英文原句、修改句、例句和修改后的英文作文保留英文。所有分数均为练习模拟评价，不得表述为官方阅卷结果、官方评分细则或真实考试分数预测。
 
-## Workflow
+## 工作流程
 
-1. Identify the exam (English I or English II) and task type.
-2. Read the matching reference file in the references directory before grading. Do not replace its detailed rules with this summary.
-3. Check whether the prompt, writing instructions, original English, image/chart, and learner's response are sufficient for the requested evaluation.
-4. For essays, extract the actual task requirements and judge task completion and relevance before language quality. For translation, parse the source sentence and its context before judging the Chinese rendering.
-5. Quote concrete evidence for every material criticism and score decision.
-6. Separate actual errors from optional improvements. Preserve correct wording, simple but effective sentences, and the learner's valid reasoning.
-7. Produce the required corrections, a complete revised version where possible, and targeted study feedback.
-8. Check score arithmetic, score band, word count, and consistency between the diagnosis and revised version.
+1. 识别考试类型：英语一或英语二。
+2. 识别题型：翻译、大作文或小作文。
+3. 完整读取下方对应的题型规则文件；不得只依据本文件摘要批改。
+4. 检查题目、写作要求、英文原文、上下文、图画/图表和考生作答是否足以支持评价。
+5. 批改作文时，先提取任务要求并判断切题性和任务完成度，再评价语言、结构、格式与语气；批改翻译时，先分析原文句法和上下文，再判断译文。
+6. 每项重要评价和扣分都引用具体原文、译文或题目要求作为依据。
+7. 区分真实错误与可选优化，保留正确表达、简单但有效的句式，以及考生合理的论证思路。
+8. 按题型规则提供逐句批改、完整修改稿和有针对性的复盘。
+9. 最后核对分值计算、评分档位、错别字扣分、词数，以及问题分析与修改稿是否一致。
 
-## Task routing
+## 题型路由
 
-| User request | Read this file |
+| 用户请求 | 必须读取的规则文件 |
 |---|---|
-| English I major essay / B section / picture-based essay | references/english1_essay_major.md |
-| English I minor essay / A section / practical writing | references/english1_essay_minor.md |
-| English I translation / five underlined sentences | references/english1_translation.md |
-| English II major essay / chart-based essay | references/english2_essay_major.md |
-| English II minor essay / practical writing | references/english2_essay_minor.md |
-| English II translation / passage translation | references/english2_translation.md |
+| 英语一大作文、B 节、图画作文 | references/english1_essay_major.md |
+| 英语一小作文、A 节、应用文 | references/english1_essay_minor.md |
+| 英语一翻译、5 个划线句 | references/english1_translation.md |
+| 英语二大作文、图表作文 | references/english2_essay_major.md |
+| 英语二小作文、应用文 | references/english2_essay_minor.md |
+| 英语二翻译、英译汉 | references/english2_translation.md |
 
-Use the user's explicit exam and task labels when supplied. When they are missing, infer only from strong task characteristics. Five underlined sentences usually indicate English I translation; a chart description plus commentary usually indicates English II major essay. If the evidence is insufficient, ask one concise question instead of guessing.
+用户明确说明考试类型和题型时，以用户提供的信息为准。信息缺失时，只能根据强特征谨慎判断：5 个划线句通常对应英语一翻译；图表描述加评论通常对应英语二大作文。证据不足时，先提出一个简洁问题，不要猜测。
 
-## Global grading rules
+## 通用批改原则
 
-- Be strict and impartial. Do not inflate or suppress scores to sound encouraging or severe.
-- The task-specific reference file controls its score bands, point allocation, typo deductions, and output order.
-- Distinguish [必须修改] from [可选优化]. A correct sentence can be retained as-is.
-- Do not reward rare vocabulary, long sentences, or formulaic transitions merely because they look advanced.
-- Do not penalize common expressions when they are accurate, appropriate, and useful for the task.
-- Every deduction must map to a specific source meaning, task requirement, or identifiable language error. Do not deduct twice for the same underlying problem.
-- Essay weights such as content/task 50%, language 30%, and organization/format 20% are non-official judgment aids, not a mechanical scoring formula.
-- A missing prompt, unreadable chart, or uncertain handwriting limits what can be graded. Grade what is reliably available and state what remains uncertain; never invent missing content.
-- For handwritten work, transcribe first while preserving the learner's original spelling, grammar, punctuation, and paragraphing. Ask the user to confirm unreadable fragments; do not silently correct OCR/visual-recognition errors.
-- Count English words using a consistent space-separated convention and state what was included or excluded when relevant. Do not invent word-count deduction formulas.
-- Reference translations are secondary evidence. The English original and context govern translation judgments.
-- Revised text must not add unsupported data, facts, experiences, arrangements, or causal claims.
-- Before finishing, verify the chosen module, maximum score, score arithmetic, typo deductions, score band, word count, and revised-text consistency.
+- 严格、客观，不为了鼓励用户而抬分，也不为了显得严格而压分。
+- 题型专属规则优先。本文件不覆盖各题型的分值、档位、采分点、错别字扣分和输出顺序。
+- 使用【必须修改】标记真实错误，使用【可选优化】标记非必要的表达提升。
+- 语义准确、语法正确、符合语境的句子可以原样保留。
+- 不因为生僻词、复杂长句或连接词多而自动加分；不因为使用常见表达而扣分。
+- 每项扣分必须对应具体的原文信息、任务要求或可识别的语言错误。同一问题不得重复扣分。
+- 内容/任务 50%、语言 30%、结构/格式 20% 等权重仅是非官方辅助判断依据，不是机械评分公式。
+- 缺少题目、图表模糊或手写内容不清时，说明评价边界。能够可靠判断的部分可以继续批改，不得编造缺失信息。
+- 手写内容必须先转录，保留考生原有拼写、语法、标点和分段。无法辨认的片段请用户确认，不得暗中纠错，也不得把识别错误归咎于考生。
+- 统计英文词数时采用一致的空格分词口径；必要时说明统计范围。不得编造题目没有规定的字数扣分公式。
+- 参考译文仅作辅助核对，翻译判断以英文原文和上下文为准。
+- 修改稿不得添加题目、图表和用户原文没有依据的数据、事实、经历、安排或因果结论。
+- 交付前检查题型、满分、分数计算、错别字扣分、评分档位、词数和修改稿一致性。
 
-## Reference loading
+## 规则文件读取
 
-Read only the relevant module for the current task, but read that module in full. If the user submits more than one task type, grade each task independently and never mix rubrics.
+每次只读取当前任务对应的规则文件，但必须完整读取该文件。用户一次提交多种题型时，各题独立评分，不得混用评分规则。
 
-For supporting instructions, resolve paths relative to this SKILL.md:
+所有路径均相对于本 SKILL.md 所在目录：
+
 - references/english1_essay_major.md
 - references/english1_essay_minor.md
 - references/english1_translation.md
