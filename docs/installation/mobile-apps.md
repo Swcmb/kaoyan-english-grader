@@ -6,44 +6,49 @@ This file is licensed under GPL-3.0-or-later. See ../../LICENSE.
 
 # 手机端 Skill 使用渠道
 
-本页区分手机端技能市场、应用内自定义流程，以及连接桌面或云端 Agent 的远程入口。三者的安装对象和运行位置不同。
+手机端技能能力主要分为平台技能市场、应用内创建个人 Skill，以及连接远程 Agent。三类能力的安装对象、文件兼容性和运行位置不同。
 
-## 手机端可直接使用的平台技能
+## 平台技能市场
 
-| 产品 | 入口 | 能力边界 | 指南 |
+| 产品 | 公开入口 | 已确认能力 | 文件导入边界 |
 | --- | --- | --- | --- |
-| 腾讯元宝 | 侧边栏 → 技能 → 全部 | 以平台市场为主 | [元宝 App](platforms/yuanbao-app.md) |
-| 千问 App | 工作助理 → 技能 → 更多技能 | 技能广场；手机本地导入未确认 | [千问 App](platforms/qwen-app.md) |
-| WorkBuddy 小程序 | SkillHub 指令安装；输入栏 `+` → 添加技能 | 对话添加；本地 ZIP 未确认 | [WorkBuddy 手机版](platforms/workbuddy-mobile.md) |
-| 智图Claw | 技能 / 技能市场 | 市场技能与 Gateway；本地归档导入未确认 | [智图Claw](platforms/zhitu-claw.md) |
-| 灵犀·晓伴 | AI 工具与技能中心 | 第三方技能扩展；标准文件导入未确认 | [灵犀·晓伴](platforms/lingxi-xiaoban.md) |
-| AionClaw | Skill 技能市场 | 市场安装；标准文件导入未确认 | [AionClaw](platforms/aionclaw.md) |
+| 腾讯元宝 | 侧边栏 → 技能 → 全部 | 浏览、安装和调用平台技能 | 本地标准文件导入未确认 |
+| 千问 App | 工作助理 → 技能 → 更多技能 | 技能广场浏览和调用 | 与桌面 QwenWork 分开管理 |
+| WorkBuddy 小程序 | SkillHub；输入栏 `+` → 添加技能 | 指令安装、对话添加 | 手机文件附件不是 Skill 导入 |
+| 智图Claw | 技能 / 技能市场 | 浏览、安装和 Gateway 连接 | 本地 ZIP 导入格式未确认 |
+| 灵犀·晓伴 | AI 工具与技能中心 | 第三方技能扩展 | 标准 Agent Skills 导入未确认 |
+| AionClaw | Skill 技能市场 | 市场技能安装 | 标准文件导入未确认 |
+| AgentOS | 技能商店 | 市场技能浏览和安装 | 自定义文件协议待核实 |
 
-## 应用内创建或沉淀个人 Skill
+市场安装的是平台发布条目。只有本项目真实出现在对应市场中，才能通过该市场直接安装本项目；名称相似不能作为安装证据。
 
-| 产品 | 用途 | 指南 |
+## 应用内创建个人 Skill
+
+| 产品 | 已记录的创建方式 | 与标准 Skill 的关系 |
 | --- | --- | --- |
-| 脑花 | 将协作中验证有效的流程、标准和方法沉淀为个人 Skill | [脑花](platforms/brainhua.md) |
-| 豆包 | 在电脑版工作任务模式创建技能，手机端调用账号可用技能 | [豆包手机端](platforms/doubao-mobile.md) |
+| 脑花 | 将协作中验证有效的流程沉淀为个人 Skill | 产品内部 Skill；标准导入未确认 |
+| 豆包 | 电脑版工作任务模式创建，手机端调用账号技能 | 创建、导入和开发者上架是不同流程 |
 
-应用内 Skill 属于产品内部格式。除非官方明确支持标准 Agent Skills 目录与引用文件，否则不能假定它兼容本仓库的 `SKILL.md`、`references/` 和 frontmatter。
+通过应用内创建迁移本项目规则时，应逐项检查英语一翻译、大作文、小作文，以及英语二对应三类题型共六份规则，确保评分档位、输出要求和边界均已迁移。
 
 ## 通过手机连接远程 Agent
 
-| 产品 | 手机端作用 | 技能运行位置 | 指南 |
-| --- | --- | --- | --- |
-| OpenClaw | 消息渠道或配套客户端远程对话 | OpenClaw Gateway 所在主机 | [OpenClaw](platforms/openclaw.md) |
-| 智图Claw | 连接 Gateway | Gateway 对应的 Agent 主机 | [智图Claw](platforms/zhitu-claw.md) |
-| AionClaw | 使用产品提供的远程工作流 | 以账号与服务端配置为准 | [AionClaw](platforms/aionclaw.md) |
+| 产品 | 手机端作用 | Skill 运行位置 |
+| --- | --- | --- |
+| OpenClaw 消息渠道或客户端 | 远程对话 | OpenClaw Gateway 所在主机 |
+| 智图Claw Gateway 连接 | 接入远程 Agent | 配置的 Gateway 主机 |
+| 其他远程工作流产品 | 按账号和服务端配置操作 | 以实际部署为准 |
 
-## 本仓库的手机端使用条件
+远程连接不会自动把 Skill 安装到手机。应先在远程 Agent 主机安装完整 Skill，再确认手机渠道连接的是同一 Agent 或工作区。
 
-本 Skill 包含主文件和六份评分规则。手机端必须支持完整导入该目录，或连接已安装本 Skill 的远程 Agent，才能复用全部规则。
+## 需要复用本项目全部规则时
 
-市场中名称相似的英语批改或作文润色技能，不代表已经安装本仓库。
+优先选择支持标准 Agent Skills 文件夹或完整 ZIP 的客户端，安装 `skills/kaoyan-english-grader/`。只接受单个文件的入口，可使用[内嵌六类规则的单文件版本](../../dist/kaoyan-english-grader-single-file/SKILL.md)。
 
-## 相关入口
+将 `SKILL.md` 作为普通聊天附件发送、从市场安装名称相似的技能，或保存一段个人提示词，都不能单独证明六类评分规则已完整安装。
 
-- [国内平台与 Agent 安装总览](README.md)
+## 相关文档
+
+- [安装渠道总览](README.md)
 - [Skills CLI 安装指南](skills-cli.md)
 - [Agent 自主安装协议](../../INSTALL.md)
