@@ -123,11 +123,11 @@ $$
 <details>
 <summary>查看完整诊断日志</summary>
 
-`text
+```text
 Request started: 10:30:00
 Request timed out: 10:30:04
 Catalog entries returned: 0
-`
+```
 
 </details>
 ```
