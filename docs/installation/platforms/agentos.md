@@ -18,7 +18,7 @@ AgentOS 的公开应用商店介绍和版本记录包含技能商店。本页记
 
 ## 安装边界
 
-公开资料提及自定义安装能力，但标准 `SKILL.md`、文件夹 ZIP 和外部引用文件协议尚未确认。只有当前版本明确支持完整目录导入且保留全部内嵌评分规则时，才能认定为标准 Skill 导入。
+公开资料提及自定义安装能力，但标准 `SKILL.md` 文件或完整目录 ZIP 的导入协议尚未确认。只有当前版本明确支持完整目录导入且保留全部内嵌评分规则时，才能认定为标准 Skill 导入。
 
 ## 验收
 
@@ -26,7 +26,7 @@ AgentOS 的公开应用商店介绍和版本记录包含技能商店。本页记
 
 ## 本项目 Skill
 
-本仓库只提供一个自包含的标准 Agent Skill，六类题型的完整评分规则全部内嵌于 `skills/kaoyan-english-grader/SKILL.md`，不依赖 `（外部规则目录）` 或其他外部文件。目录安装时导入 `skills/kaoyan-english-grader/`；平台明确只接受单文件时，导入该目录中的 `SKILL.md`。
+本仓库只提供一个自包含的标准 Agent Skill，六类题型的完整评分规则全部内嵌于 `skills/kaoyan-english-grader/SKILL.md`，不依赖额外的规则文件或运行时服务。目录安装时导入 `skills/kaoyan-english-grader/`；平台明确只接受单文件时，导入该目录中的 `SKILL.md`。
 
 ## 官方资料
 
