@@ -1,3 +1,9 @@
+<!--
+Copyright (C) 2026 kaoyan-english-grader contributors
+SPDX-License-Identifier: GPL-3.0-or-later
+This file is licensed under GPL-3.0-or-later. See LICENSE.
+-->
+
 # Claude Code 安装指南
 
 本仓库提供 Claude Code 插件入口，也提供可独立安装的标准 Agent Skill。
