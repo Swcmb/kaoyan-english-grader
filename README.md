@@ -11,17 +11,6 @@ This file is licensed under GPL-3.0-or-later. See LICENSE.
 
 **面向考研英语一、英语二六类主观题的自包含 Agent Skill**
 
-<p>
-  <a href="https://github.com/Swcmb/kaoyan-english-grader/stargazers">
-    <img src="https://img.shields.io/github/stars/Swcmb/kaoyan-english-grader?style=flat-square" alt="GitHub Stars">
-  </a>
-  <a href="https://github.com/Swcmb/kaoyan-english-grader/releases">
-    <img src="https://img.shields.io/github/v/release/Swcmb/kaoyan-english-grader?style=flat-square" alt="Latest Release">
-  </a>
-  <a href="LICENSE">
-    <img src="https://img.shields.io/github/license/Swcmb/kaoyan-english-grader?style=flat-square" alt="License">
-  </a>
-</p>
 
 <img src="docs/assets/hero.png" alt="Kaoyan English Grader — AI-powered English Exam Evaluation" width="100%">
 
