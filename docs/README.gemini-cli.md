@@ -27,7 +27,34 @@ npx skills add https://gitee.com/ianwusb/kaoyan-english-grader.git \
   -g
 ~~~
 
-## 方式二：手动安装
+## 方式二：使用 Gemini CLI 原生命令
+
+先将仓库克隆到本机：
+
+~~~bash
+git clone https://gitee.com/ianwusb/kaoyan-english-grader.git
+cd kaoyan-english-grader
+~~~
+
+安装到当前工作区：
+
+~~~bash
+gemini skills install ./skills/kaoyan-english-grader --scope workspace
+~~~
+
+安装到用户级目录：
+
+~~~bash
+gemini skills install ./skills/kaoyan-english-grader --scope user
+~~~
+
+检查安装：
+
+~~~bash
+gemini skills list
+~~~
+
+## 方式三：手动安装
 
 复制完整技能目录到以下任一路径：
 
@@ -51,9 +78,10 @@ npx skills add https://gitee.com/ianwusb/kaoyan-english-grader.git \
 
 ## 更新与卸载
 
-CLI 安装：npx skills update。手动安装：替换完整技能文件夹；卸载时删除上述目录中的 kaoyan-english-grader 子目录。
+Skills CLI 安装：npx skills update。Gemini CLI 原生安装可执行 gemini skills uninstall kaoyan-english-grader --scope workspace，用户级安装将 scope 改为 user。手动安装：替换完整技能文件夹；卸载时删除上述目录中的 kaoyan-english-grader 子目录。
 
 ## 官方资料
 
+- [Gemini CLI：Skills 命令与管理](https://geminicli.com/docs/cli/skills/)
 - [Gemini CLI：Managing Agent Skills](https://github.com/google-gemini/gemini-cli/blob/main/docs/cli/using-agent-skills.md)
 - [Skills CLI：Gemini CLI 安装目录](https://github.com/vercel-labs/skills/blob/main/docs/agents.md)
