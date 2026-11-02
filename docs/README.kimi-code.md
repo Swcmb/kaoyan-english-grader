@@ -54,7 +54,7 @@ Kimi Code CLI 按 Project > User 的优先级加载技能。默认 KIMI_CODE_HOM
 
 ## 验证
 
-1. 运行 /plugins list 检查插件，或在 / 技能列表中检查 kaoyan-english-grader。
+1. 运行 /plugins list 检查插件；独立 Skill 使用 /skill:kaoyan-english-grader 调用，也可以让 Agent 根据任务自动选择。
 2. 请求批改英语一翻译，确认能读取英语一翻译规则。
 3. 请求批改英语二图表作文，确认能读取英语二大作文规则。
 4. 若新技能未出现，开启新会话或重载插件。
