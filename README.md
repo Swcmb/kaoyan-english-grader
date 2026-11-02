@@ -32,15 +32,15 @@
 
 需要 Node.js 22.20 或更高版本。
 
-~~~bash
+```bash
 npx skills add Swcmb/kaoyan-english-grader --skill kaoyan-english-grader
-~~~
+```
 
 根据提示选择目标 Agent，以及项目级或用户级安装范围。
 
 指定多个 Agent 安装：
 
-~~~bash
+```bash
 npx skills add Swcmb/kaoyan-english-grader \
   --skill kaoyan-english-grader \
   -a claude-code \
@@ -55,7 +55,7 @@ npx skills add Swcmb/kaoyan-english-grader \
   -a trae \
   -a windsurf \
   -a cline
-~~~
+```
 
 添加 -g 参数可安装到用户级目录。支持的 Agent 名单请查看[安装工具文档](https://github.com/vercel-labs/skills/blob/main/docs/agents.md)。
 
@@ -91,58 +91,58 @@ npx skills add Swcmb/kaoyan-english-grader \
 
 **英语一大作文**
 
-~~~text
+```text
 请批改我的考研英语一大作文。
 题目及图画：……
 我的作文：……
-~~~
+```
 
 **英语一小作文**
 
-~~~text
+```text
 请批改我的考研英语一小作文。
 题目及写作要求：……
 我的作文：……
-~~~
+```
 
 **英语一翻译**
 
-~~~text
+```text
 请批改英语一翻译，共 5 个划线句。
 英文原文及上下文：……
 我的译文：……
 参考译文：……（可选）
-~~~
+```
 
 **英语二大作文**
 
-~~~text
+```text
 请批改我的考研英语二图表大作文。
 题目及写作要求：……
 图表：……
 我的作文：……
-~~~
+```
 
 **英语二小作文**
 
-~~~text
+```text
 请批改我的考研英语二小作文。
 题目及写作要求：……
 我的作文：……
-~~~
+```
 
 **英语二翻译**
 
-~~~text
+```text
 请批改我的考研英语二翻译。
 英文原文：……
 我的译文：……
 参考译文：……（可选）
-~~~
+```
 
 ## 项目结构
 
-~~~text
+```text
 kaoyan-english-grader/
 ├── skills/
 │   └── kaoyan-english-grader/
@@ -164,8 +164,11 @@ kaoyan-english-grader/
 ├── kimi.plugin.json
 ├── GEMINI.md
 ├── docs/
+│   ├── github-content-writing.md
+│   ├── third-party-license-review.md
+│   └── README.*.md
 └── LICENSE
-~~~
+```
 
 规范 Skill 位于 skills/kaoyan-english-grader。六份题型规则放在其 references 目录中，平台清单负责让不同 Agent 发现和安装同一份技能内容。
 
@@ -178,6 +181,15 @@ kaoyan-english-grader/
 5. 不猜测模糊手写内容，不编造图表数据、题目要求、事实或因果关系。
 6. 同一错误不重复扣分；正确但可以优化的表达不直接判错。
 
+## 参与贡献
+
+提交 Issue、Pull Request 或维护技术文档时，遵循以下规范：
+
+- [GitHub 内容写作与 Markdown 排版规范](docs/github-content-writing.md)
+- [第三方内容与许可证审查规范](docs/third-party-license-review.md)
+
+涉及复制、改编、翻译或再分发第三方材料时，先完成文件级授权审查，再进行修改和发布。
+
 ## 许可证
 
-本项目采用 [MIT 许可证](LICENSE)。
+本仓库原创内容采用 [MIT 许可证](LICENSE)。第三方文件可能保留独立许可证、版权声明和 NOTICE，具体以对应文件及其来源证据为准。
