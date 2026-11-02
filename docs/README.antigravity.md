@@ -1,30 +1,34 @@
-# Google Antigravity
+# Google Antigravity 安装指南
 
-The repository includes an Antigravity plugin manifest at .antigravity-plugin/plugin.json and a standard Agent Skill under skills/.
+本仓库包含 Antigravity 插件清单 .antigravity-plugin/plugin.json，以及标准 Agent Skill。
 
-## Install as a plugin
+## 作为插件安装
 
 ~~~bash
 agy plugin install https://github.com/Swcmb/kaoyan-english-grader
 ~~~
 
-Verify the installation:
+验证安装：
 
 ~~~bash
 agy plugin list
 ~~~
 
-To validate a local checkout before installing:
+安装前验证本地仓库：
 
 ~~~bash
 agy plugin validate --strict ./kaoyan-english-grader
 agy plugin install ./kaoyan-english-grader
 ~~~
 
-## Install as a standalone skill
+## 作为独立 Skill 安装
 
 ~~~bash
 npx skills add Swcmb/kaoyan-english-grader --skill kaoyan-english-grader --agent antigravity
 ~~~
 
-Use -g for global installation.
+添加 -g 参数可安装到用户级目录。
+
+## 验证
+
+要求 Antigravity 批改一道具体题目，检查它是否读取中文题型规则。
