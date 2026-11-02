@@ -4,72 +4,46 @@ SPDX-License-Identifier: GPL-3.0-or-later
 This file is licensed under GPL-3.0-or-later. See LICENSE.
 -->
 
-# Claude Code 安装与使用
+# Claude Code：安装与使用
 
-**推荐方式：从 Gitee 安装标准 Agent Skill。** 该方式保留主指令文件与六份题型规则的目录关系。
+Claude Code 支持标准 Agent Skills。项目级 Skill 随仓库共享；用户级 Skill 可在多个工作区复用。国内网络优先使用 Gitee。
 
-## 方式一：通过 Skills CLI 安装
+## 通过 Skills CLI 安装
 
-要求 Node.js 22.20 或更高版本。在项目根目录打开终端，执行：
+要求 Node.js 22.20 或更高版本。在目标项目根目录执行：
 
-~~~bash
+```bash
 npx skills add https://gitee.com/ianwusb/kaoyan-english-grader.git \
   --skill kaoyan-english-grader \
   --agent claude-code
-~~~
+```
 
-默认安装到当前项目的 Claude Code 技能目录。希望所有项目都能使用时，添加 -g：
+用户级安装增加 `-g`。按提示选择复制或符号链接：复制适合独立管理，符号链接适合多个 Agent 共用一份源文件。
 
-~~~bash
-npx skills add https://gitee.com/ianwusb/kaoyan-english-grader.git \
-  --skill kaoyan-english-grader \
-  --agent claude-code \
-  -g
-~~~
+## 手动安装
 
-CLI 会提示选择复制或符号链接方式。多个 Agent 共用一份文件时，选择符号链接；需要独立管理时，选择复制。
+将完整的 `skills/kaoyan-english-grader/` 复制到：
 
-## 方式二：手动安装
+| 范围 | 路径 |
+| --- | --- |
+| 项目级 | `.claude/skills/kaoyan-english-grader/` |
+| 用户级 | `~/.claude/skills/kaoyan-english-grader/` |
+| Windows 用户级 | `%USERPROFILE%/.claude/skills/kaoyan-english-grader/` |
 
-克隆仓库：
+目录必须包含 `SKILL.md` 和完整 `references/`。
 
-~~~bash
-git clone https://gitee.com/ianwusb/kaoyan-english-grader.git
-~~~
+## 调用与验证
 
-将整个技能目录复制到以下任一路径：
+1. 打开或重新加载 Claude Code。
+2. 使用 `/skills` 查看技能。
+3. 调用 `/kaoyan-english-grader`，或直接提出批改任务。
+4. 分别测试英语一翻译和英语二图表作文，核对分值与规则引用。
 
-- 项目级：项目根目录/.claude/skills/kaoyan-english-grader/
-- 用户级：~/.claude/skills/kaoyan-english-grader/
-
-Windows 用户的用户级目录为 %USERPROFILE%/.claude/skills/kaoyan-english-grader/。
-
-最终结构必须完整：
-
-~~~text
-kaoyan-english-grader/
-├── SKILL.md
-└── references/
-    ├── english1_essay_major.md
-    ├── english1_essay_minor.md
-    ├── english1_translation.md
-    ├── english2_essay_major.md
-    ├── english2_essay_minor.md
-    └── english2_translation.md
-~~~
-
-## 验证
-
-1. 打开或重新启动 Claude Code。
-2. 输入 /skills，检查列表中是否出现 kaoyan-english-grader。
-3. 输入 /kaoyan-english-grader，或直接要求批改英语一翻译。
-4. 再测试英语二图表作文，确认 Agent 能读取相应的 references 规则。
-
-若技能未出现，先检查 SKILL.md 是否位于技能目录根部，再开启新会话。
+技能未出现时，检查目录深度和文件名，再开启新会话。
 
 ## 更新与卸载
 
-Skills CLI 安装的技能可执行 npx skills update。手动安装时，用新版本完整替换目标目录。卸载时只删除 kaoyan-english-grader 文件夹，不要删除同级其他技能。
+Skills CLI 安装使用 `npx skills update`。手动安装时完整替换技能目录。卸载只删除 `kaoyan-english-grader/`。
 
 ## 官方资料
 

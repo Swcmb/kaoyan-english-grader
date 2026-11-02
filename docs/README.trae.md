@@ -4,73 +4,54 @@ SPDX-License-Identifier: GPL-3.0-or-later
 This file is licensed under GPL-3.0-or-later. See LICENSE.
 -->
 
-# Trae / Trae CN 安装与使用
+# Trae / Trae CN：安装与使用
 
-Trae 支持以 SKILL.md 定义的技能，并提供全局、项目两种安装范围。官方 IDE 文档展示了本地导入和技能市场安装流程。
+Trae 支持以 `SKILL.md` 定义技能，并提供全局和项目两种安装范围。官方 IDE 文档包含本地导入和技能市场流程。
 
-## 方式一：通过 Gitee 与 Skills CLI 安装
+## 通过 Skills CLI 安装
 
-在项目根目录打开终端：
+在项目根目录执行：
 
-~~~bash
+```bash
 npx skills add https://gitee.com/ianwusb/kaoyan-english-grader.git \
   --skill kaoyan-english-grader \
   --agent trae-cn
-~~~
+```
 
-默认安装到项目级 .trae/skills/。添加 -g 安装到用户级 ~/.trae-cn/skills/：
+用户级安装增加 `-g`。
 
-~~~bash
-npx skills add https://gitee.com/ianwusb/kaoyan-english-grader.git \
-  --skill kaoyan-english-grader \
-  --agent trae-cn \
-  -g
-~~~
+## 通过 Trae IDE 导入
 
-## 方式二：通过 Trae IDE 导入
+1. 打开 Trae。
+2. 进入 **设置 → 技能与命令**。
+3. 在“技能”区域选择 **创建**。
+4. 选择全局或项目范围。
+5. 选择 **导入本地技能**。
+6. 上传完整技能 ZIP，并确认名称、描述和指令。
+7. 保存后检查技能列表。
 
-1. 在 Trae 中打开 **设置 → 技能与命令**。
-2. 在“技能”区域选择 **创建**。
-3. 选择技能范围：全局或项目。
-4. 选择“导入本地技能”。
-5. 上传包含 SKILL.md 的文件；需要保留本仓库引用规则时，上传完整技能 ZIP。
-6. 检查自动识别的名称、描述和指令，确认创建。
+本仓库 ZIP 应包含 `SKILL.md` 和 `references/` 六份规则。压缩时可把文件放在 ZIP 根目录，也可保留最外层技能目录；导入后检查最终目录是否保留引用文件。
 
-本仓库 ZIP 的根目录应包含 SKILL.md 和 references/：
+## 手动安装路径
 
-~~~text
-kaoyan-english-grader/
-├── SKILL.md
-└── references/
-    ├── english1_essay_major.md
-    ├── english1_essay_minor.md
-    ├── english1_translation.md
-    ├── english2_essay_major.md
-    ├── english2_essay_minor.md
-    └── english2_translation.md
-~~~
+| 范围 | 路径 |
+| --- | --- |
+| 项目级 | `.trae/skills/kaoyan-english-grader/` |
+| 用户级 macOS/Linux | `~/.trae-cn/skills/kaoyan-english-grader/` |
+| 用户级 Windows | `%USERPROFILE%/.trae-cn/skills/kaoyan-english-grader/` |
 
-压缩时可将上述目录内容直接放在 ZIP 根目录，也可以保留最外层目录；导入后应检查 Trae 最终生成的技能目录中是否存在 references/。
-
-## 方式三：手动安装
-
-| 作用范围 | 路径 |
-|---|---|
-| 项目级 | .trae/skills/kaoyan-english-grader/ |
-| 用户级 macOS/Linux | ~/.trae-cn/skills/kaoyan-english-grader/ |
-| 用户级 Windows | %USERPROFILE%/.trae-cn/skills/kaoyan-english-grader/ |
-
-将整个目录放到目标位置，不要只放 SKILL.md。
+将完整目录放到目标位置，不要只复制主文件。
 
 ## 验证
 
-1. 打开设置 → 技能与命令，分别查看全局或项目技能列表。
-2. 在 Agent 对话中输入 /，检查技能是否出现。
-3. 执行英语一翻译和英语二大作文测试，确认引用规则文件可读取。
+1. 在“设置 → 技能与命令”中选择对应范围，检查技能列表。
+2. 在 Agent 对话中输入 `/`，确认技能可选。
+3. 测试英语一翻译和英语二大作文。
+4. 检查对应规则文件可读。
 
-## 模式与版本说明
+## 版本说明
 
-当前公开的 Trae IDE 技能文档描述的是设置、导入、项目/全局目录和技能市场流程，没有将基础 Skill 能力限定为 SOLO 模式。不同客户端产品线（TraeCode、TraeWork）和版本的菜单可能不同，应以当前客户端的技能管理页面为准。
+公开的 Trae IDE 技能文档包含设置、导入、项目/全局目录和技能市场流程。TraeCode、TraeWork 等产品线的菜单可能不同，以当前客户端技能管理页面为准。
 
 ## 官方资料
 

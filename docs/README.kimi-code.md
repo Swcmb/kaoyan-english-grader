@@ -4,67 +4,53 @@ SPDX-License-Identifier: GPL-3.0-or-later
 This file is licensed under GPL-3.0-or-later. See LICENSE.
 -->
 
-# Kimi Code 安装与使用
+# Kimi Code CLI：安装与使用
 
-Kimi Code CLI 支持标准 Agent Skills，也支持通过插件系统安装仓库插件。国内网络优先使用 Gitee + Skills CLI。
+Kimi Code CLI 支持标准 Agent Skills，也提供插件系统。本仓库的标准 Skill 目录和插件清单是两种独立安装对象。国内网络优先使用 Gitee 安装标准 Skill。
 
-## 方式一：通过 Gitee 安装标准 Skill
+## 通过 Skills CLI 安装
 
 在项目目录执行：
 
-~~~bash
+```bash
 npx skills add https://gitee.com/ianwusb/kaoyan-english-grader.git \
   --skill kaoyan-english-grader \
   --agent kimi-code-cli
-~~~
+```
 
-默认安装到项目级通用 .agents/skills/。添加 -g 安装到用户级：
+用户级安装增加 `-g`。
 
-~~~bash
-npx skills add https://gitee.com/ianwusb/kaoyan-english-grader.git \
-  --skill kaoyan-english-grader \
-  --agent kimi-code-cli \
-  -g
-~~~
+## 手动安装目录
 
-## 方式二：手动安装
+| 范围 | 路径 |
+| --- | --- |
+| 用户级 Kimi 专属 | `~/.kimi-code/skills/kaoyan-english-grader/` |
+| 用户级通用 | `~/.agents/skills/kaoyan-english-grader/` |
+| 项目级 Kimi 专属 | `.kimi-code/skills/kaoyan-english-grader/` |
+| 项目级通用 | `.agents/skills/kaoyan-english-grader/` |
 
-Kimi Code CLI 支持以下目录：
+Kimi Code CLI 按 Project → User 优先级加载。默认 `KIMI_CODE_HOME` 为 `~/.kimi-code`；修改该变量会移动 Kimi 专属用户目录，通用目录不随之迁移。
 
-| 作用范围 | 路径 |
-|---|---|
-| 用户级 Kimi 专属目录 | ~/.kimi-code/skills/kaoyan-english-grader/ |
-| 用户级通用目录 | ~/.agents/skills/kaoyan-english-grader/ |
-| 项目级 Kimi 专属目录 | .kimi-code/skills/kaoyan-english-grader/ |
-| 项目级通用目录 | .agents/skills/kaoyan-english-grader/ |
+## 通过 Kimi 插件安装
 
-Kimi Code CLI 按 Project > User 的优先级加载技能。默认 KIMI_CODE_HOME 为 ~/.kimi-code；修改该环境变量会移动 Kimi 专属用户目录。通用 ~/.agents/skills/ 不随其迁移。
+仓库提供 Kimi 插件清单。插件命令使用 GitHub URL：
 
-## 方式三：通过 Kimi 插件安装
-
-本仓库提供 Kimi 插件清单。插件路径使用 GitHub 仓库地址：
-
-~~~text
+```text
 /plugins install https://github.com/Swcmb/kaoyan-english-grader
 /plugins list
 /reload
-~~~
+```
 
-插件安装到用户管理目录并对所有项目生效，目前插件安装范围与独立 Skill 的项目级/用户级目录不同。插件修改后执行 /plugins reload 或开启新会话。此插件入口使用 GitHub URL；如需 Gitee 源，请使用前面的 Skills CLI。
+插件安装范围为用户管理目录，与独立 Skill 的项目级/用户级目录不同。更新后按当前版本执行 `/plugins reload` 或开启新会话。插件入口使用 GitHub URL；需要 Gitee 源时使用 Skills CLI。
 
-## 验证
+## 验证、更新与卸载
 
-1. 运行 /plugins list 检查插件；独立 Skill 使用 /skill:kaoyan-english-grader 调用，也可以让 Agent 根据任务自动选择。
-2. 请求批改英语一翻译，确认能读取英语一翻译规则。
-3. 请求批改英语二图表作文，确认能读取英语二大作文规则。
-4. 若新技能未出现，开启新会话或重载插件。
+使用 `/plugins list` 检查插件；独立 Skill 使用 `/skill:kaoyan-english-grader` 调用，或直接提交批改任务。分别测试英语一翻译和英语二大作文，确认对应引用文件可读。
 
-## 更新与卸载
-
-通过 Skills CLI 安装的技能使用 npx skills update。插件通过 /plugins 管理器更新或重新安装。卸载时只删除对应的技能或插件条目。
+Skills CLI 安装使用 `npx skills update`。插件通过 Kimi 插件管理命令更新或重装。卸载时只移除对应 Skill 或插件条目。
 
 ## 官方资料
 
 - [Kimi Code：Using Skills](https://www.kimi.ai/help/plugins-and-skills/use-skills-in-code)
 - [Kimi Code：Plugins 命令](https://www.kimi.com/code/docs/en/kimi-code-cli/customization/plugins.html)
-- [Skills CLI：Kimi Code CLI 安装目录](https://github.com/vercel-labs/skills/blob/main/docs/agents.md)
+- [Skills CLI：Kimi Code CLI 目录映射](https://github.com/vercel-labs/skills/blob/main/docs/agents.md)

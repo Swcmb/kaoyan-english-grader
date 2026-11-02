@@ -6,112 +6,93 @@ This file is licensed under GPL-3.0-or-later. See LICENSE.
 
 # 使用 Skills CLI 安装考研英语批改 Skill
 
-Skills CLI 可以从 Git 仓库读取标准 Agent Skill，并写入目标 Agent 的项目级或用户级技能目录。本仓库优先提供 Gitee 安装源，适合国内网络环境。
+Vercel Skills CLI 可从 Git 仓库获取标准 Agent Skill，并安装到所选 Agent 的项目级或用户级目录。本仓库提供 Gitee 镜像，国内网络优先使用 Gitee。
 
-不想手动选择安装命令时，可以直接把[仓库 README 中的自然语言安装指令](../README.md)发给当前 Agent。Agent 会读取仓库根目录的 [INSTALL.md](../INSTALL.md)，自行判断当前宿主支持的原生安装方式、Skills CLI 或手动部署路径，并负责安装验证。
+不想手动选择命令时，将 [README 中的自然语言安装指令](../README.md#自然语言安装) 发给当前 Agent。Agent 会读取 [INSTALL.md](../INSTALL.md)，识别当前宿主并验证安装结果。
 
-## 1. 环境要求
+## 环境要求
 
-- Node.js：22.20 或更高版本。
-- Git：能够访问目标仓库。
-- 目标 Agent：已安装并能读取其 Skills 目录。
+- Node.js 22.20 或更高版本。
+- Git 可访问所选仓库源。
+- 目标 Agent 在当前 Skills CLI 版本的支持清单中。
 
-先检查环境：
+检查环境：
 
-~~~bash
+```bash
 node --version
 npm --version
 git --version
-~~~
+```
 
-Node.js 版本低于要求时，先升级 Node.js，再执行安装。
+## 交互式安装
 
-## 2. 一条命令安装
+在目标项目目录执行：
 
-默认交互式安装：
+```bash
+npx skills add https://gitee.com/ianwusb/kaoyan-english-grader.git --skill kaoyan-english-grader
+```
 
-~~~bash
-npx skills add https://gitee.com/ianwusb/kaoyan-english-grader.git
-~~~
+按交互提示选择 Agent、安装范围和文件管理方式。安装后检查 Agent 是否发现技能，不要只凭 CLI 退出码判断成功。
 
-只安装本仓库的批改技能：
+## 指定 Agent
 
-~~~bash
-npx skills add https://gitee.com/ianwusb/kaoyan-english-grader.git \
-  --skill kaoyan-english-grader
-~~~
+例如安装到 Codex：
 
-命令运行后，按交互提示选择 Agent、安装范围和复制/链接策略。不要只看命令退出码；安装后还要在目标 Agent 中确认技能是否发现。
-
-## 3. 指定 Agent 安装
-
-在项目根目录打开终端，执行以下命令。每个 -a 参数对应一个目标 Agent：
-
-~~~bash
+```bash
 npx skills add https://gitee.com/ianwusb/kaoyan-english-grader.git \
   --skill kaoyan-english-grader \
-  -a claude-code \
-  -a codex \
-  -a cursor \
-  -a opencode \
-  -a gemini-cli \
-  -a antigravity \
-  -a kimi-code-cli \
-  -a qwen-code \
-  -a qoder \
-  -a trae-cn \
-  -a openclaw
-~~~
+  --agent codex
+```
 
-如果只需要一个产品，把上面其他 -a 参数删除即可。Skills CLI 的 Agent 标识和目录映射可能随版本增加；完整清单以其官方 agents 文档为准。
+如需同时安装到多个 Agent，可重复提供受支持的 `--agent` 参数：
 
-## 4. 项目级与用户级安装
-
-**项目级**技能只对当前项目生效，适合团队共享。进入目标项目目录后执行普通安装命令：
-
-~~~bash
-cd /path/to/your/project
+```bash
 npx skills add https://gitee.com/ianwusb/kaoyan-english-grader.git \
   --skill kaoyan-english-grader \
-  -a codex
-~~~
+  -a claude-code -a codex -a cursor -a opencode \
+  -a gemini-cli -a antigravity -a kimi-code-cli \
+  -a qwen-code -a qoder -a trae-cn -a openclaw
+```
 
-**用户级**技能对当前用户的多个项目生效，增加 -g：
+Agent ID 与目录映射可能随 CLI 版本调整。执行前查看[官方 Agent 清单](https://github.com/vercel-labs/skills/blob/main/docs/agents.md)，不要使用未经确认的标识。
 
-~~~bash
-npx skills add https://gitee.com/ianwusb/kaoyan-english-grader.git \
-  --skill kaoyan-english-grader \
-  -a codex \
-  -g
-~~~
+## 项目级与用户级安装
 
-项目级和用户级路径由所选 Agent 决定。例如 Codex 使用项目级 .agents/skills/ 与用户级 ~/.agents/skills/；Claude Code 使用项目级 .claude/skills/ 与用户级 ~/.claude/skills/。
+项目级安装写入当前工作区，适合随仓库共享。用户级安装适用于当前用户的多个工作区，增加 `-g`：
 
-## 5. 从本地克隆安装
+```bash
+# 项目级
+npx skills add https://gitee.com/ianwusb/kaoyan-english-grader.git --skill kaoyan-english-grader --agent codex
 
-网络环境无法稳定访问 Gitee Git 地址时，可以先克隆，再安装本地目录：
+# 用户级
+npx skills add https://gitee.com/ianwusb/kaoyan-english-grader.git --skill kaoyan-english-grader --agent codex -g
+```
 
-~~~bash
+具体目录由 Agent ID 决定。Codex 常用 `.agents/skills/`，Claude Code 常用 `.claude/skills/`；以当前 CLI 目录映射为准。
+
+## 从本地仓库安装
+
+网络不稳定时先克隆，再安装：
+
+```bash
 git clone https://gitee.com/ianwusb/kaoyan-english-grader.git
 cd kaoyan-english-grader
 npx skills add . --skill kaoyan-english-grader
-~~~
-
-从本地安装可以让 CLI 交互选择目标 Agent。若只给指定 Agent 安装，追加对应 -a 参数。
+```
 
 备用 GitHub 源：
 
-~~~bash
+```bash
 git clone https://github.com/Swcmb/kaoyan-english-grader.git
 cd kaoyan-english-grader
 npx skills add . --skill kaoyan-english-grader
-~~~
+```
 
-## 6. 安装结构与引用文件
+## 安装结构与验证
 
-CLI 应安装 skills/kaoyan-english-grader 这一整个技能目录。安装后的结构必须保持：
+必须保留如下结构：
 
-~~~text
+```text
 kaoyan-english-grader/
 ├── SKILL.md
 └── references/
@@ -121,51 +102,41 @@ kaoyan-english-grader/
     ├── english2_essay_major.md
     ├── english2_essay_minor.md
     └── english2_translation.md
-~~~
+```
 
-这六份引用规则决定题型对应的分值、评价维度、采分点和修改流程。只安装 SKILL.md 会造成规则不完整。
+安装后检查目标目录、六份引用文件和 Agent 发现状态。分别提交英语一翻译、英语二大作文测试，确认对应规则读取正常。
 
-## 7. 查看、更新和卸载
+## 查看、更新与卸载
 
-查看命令：
-
-~~~bash
+```bash
 npx skills list
-~~~
-
-更新已安装技能：
-
-~~~bash
 npx skills update
-~~~
+npx skills remove kaoyan-english-grader
+```
 
-更新后在目标 Agent 中启动新会话并重新验证。卸载时执行 npx skills remove kaoyan-english-grader；全局安装的技能增加 --global，指定平台时增加 --agent <agent-id>。也可以使用交互式 npx skills remove 选择目标。删除前确认安装范围，避免移除其他 Agent 或项目中的副本。
+使用卸载命令前确认工作区、安装范围与技能名称。全局安装和指定 Agent 的参数以当前 CLI 文档为准。
 
-## 8. 安装故障排查
+## 常见问题
 
-| 现象 | 检查方法 |
-|---|---|
-| Node.js 版本不满足 | 执行 node --version，升级到 22.20 或更高版本 |
-| Git 克隆失败 | 检查 Gitee 网络连接；使用先 clone 再本地安装方式 |
-| CLI 没有识别目标 Agent | 使用最新 Skills CLI，查看 agents 清单中的 agent id |
-| Agent 没有发现 Skill | 检查目标目录是否存在 kaoyan-english-grader/SKILL.md |
-| 批改时找不到题型规则 | 检查 references/ 六个 Markdown 文件是否完整保留 |
-| 安装后仍使用旧规则 | 开启新会话或重新加载技能，并检查当前安装路径 |
+| 现象 | 检查方向 |
+| --- | --- |
+| Node.js 版本不满足 | 检查 `node --version`，升级至 22.20 或更高版本 |
+| Git 克隆失败 | 检查网络；切换 Gitee/GitHub 源或先克隆再安装 |
+| Agent 未识别 | 更新 CLI 并核对官方 Agent ID 清单 |
+| Agent 未发现 Skill | 检查目标目录是否含 `kaoyan-english-grader/SKILL.md` |
+| 批改时缺少规则 | 检查 `references/` 六份文件是否完整 |
+| 仍使用旧版本 | 更新后开启新会话或按宿主要求重新加载 |
 
-## 9. 平台原生导入入口
+## 平台原生导入
 
-有些平台可以直接上传 ZIP 或 SKILL.md，不需要使用 CLI：
-
-- [Claude 网页版 / Desktop](README.claude.md)：Customize → Skills → Create skill → Upload a skill。
-- [Qoder IDE](README.qoder.md)：Extensions → Skills → Add Skills → Upload Skill。
-- [Trae](README.trae.md)：设置 → 技能与命令 → 创建 → 导入本地技能。
-- [WorkBuddy](README.workbuddy.md)：专家·技能·连接器 → 添加技能 → 上传技能。
-- [千问办公](README.qwenwork.md)：扩展 → 技能 → 添加 → 上传技能。
-
-使用原生导入时，推荐将 SKILL.md 和 references/ 六份文件打包在同一个 ZIP 中。
+- [Claude 网页版/Desktop](README.claude.md)：Customize → Skills 上传 ZIP。
+- [Qoder](README.qoder.md)：Extensions → Skills 上传技能包。
+- [Trae](README.trae.md)：设置 → 技能与命令 → 导入。
+- [WorkBuddy](README.workbuddy.md)：技能管理页上传 ZIP。
+- [QwenWork](README.qwenwork.md)：扩展 → 技能 → 上传 ZIP。
 
 ## 官方资料
 
 - [Skills CLI：命令文档](https://github.com/vercel-labs/skills/blob/main/docs/commands.md)
-- [Skills CLI：支持的 Agent 与目录映射](https://github.com/vercel-labs/skills/blob/main/docs/agents.md)
-- [Node.js 官方下载](https://nodejs.org/en/download)
+- [Skills CLI：Agent 与目录映射](https://github.com/vercel-labs/skills/blob/main/docs/agents.md)
+- [Node.js 下载](https://nodejs.org/en/download)
