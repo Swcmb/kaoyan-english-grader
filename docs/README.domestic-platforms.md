@@ -4,97 +4,95 @@ SPDX-License-Identifier: GPL-3.0-or-later
 This file is licensed under GPL-3.0-or-later. See LICENSE.
 -->
 
-# 国内 AI 平台与手机端 Skill 安装指南
+# 国内 AI 平台支持渠道索引
 
-本文补充国内 AI 助手、开发工具和手机 App 的 Skill 使用方式。这里区分两种能力：
+本页是国内产品适配总入口。每个渠道有独立操作文档，包含入口定位、安装步骤、使用验证和能力边界。
 
-- **导入自定义 Skill**：可以导入本仓库的 `SKILL.md` 和 `references/` 规则文件，或从标准 Agent Skill 目录读取。
-- **安装市场技能**：只能安装平台技能市场中已有的能力，不能据此推断平台支持导入任意第三方 `SKILL.md`。
+## 先区分三种支持方式
 
-本仓库的批改 Skill 依赖六份 `references/*.md` 题型规则。只导入 `SKILL.md` 而遗漏 `references/`，会导致题型路由后无法读取完整评分规则。
-
-## 桌面端与开发工具
-
-| 产品 | 自定义 Skill 支持 | 安装入口 / 方式 | 安装范围与注意事项 |
-|---|---|---|---|
-| 豆包（工作任务模式） | 支持创建自定义 Skill；开放平台支持开发者提交技能包 | 电脑版工作任务模式进入技能相关入口，通过对话创建自定义技能；服务方可通过豆包开放平台上传 ZIP 技能包 | 官方公开的 ZIP 上传流程面向开发者，涉及企业资质和平台审核。个人用户是否能导入任意本地 `SKILL.md`/文件夹，以及 `.agent/skills/` 是否为当前正式扫描目录，尚缺少稳定的官方说明；以客户端版本为准。 |
-| 腾讯元宝 | 有限支持 | App 或电脑端侧边栏进入「技能」，浏览并安装平台提供的技能 | 普通用户侧的公开流程以技能市场安装、使用为主。服务方可以通过元宝开放平台接入技能；这不代表普通用户可以直接导入任意本地 `SKILL.md`。 |
-| WorkBuddy | 支持 | 桌面端进入「专家·技能·连接器」→「添加技能」→「上传技能」，导入本地技能包；也可以查找或创建技能 | 支持用户级和项目级技能。常见目录为用户级 `~/.workbuddy/skills/`、项目级 `.workbuddy/skills/`；部分版本/工作区也会扫描 `.agents/skills/`。目录优先级和实际路径以当前版本文档为准。 |
-| 千问办公（QwenWork） | 支持 | 左侧「扩展」→「技能」；可从 Skill 广场安装、在对话中搜索安装，或上传本地 `SKILL.md` 及辅助文件 | 官方文档列出的本地目录为 `~/.qwenworkcn/skills/`。也可以在对话中提供开源仓库地址，让它下载并安装；Gitee 地址是否可直接拉取取决于当前网络与版本。 |
-| Trae / TraeCode | 支持 | 「设置」→「技能与命令」→「创建」→选择全局/项目→导入 `SKILL.md` 或包含技能文件的 ZIP；也可从插件市场安装 | 项目级：`.trae/skills/`。全局：macOS/Linux `~/.trae-cn/skills/`，Windows `%USERPROFILE%/.trae-cn/skills/`。当前官方 IDE 文档描述的是 TraeCode 的 Skill 能力，没有将其限定为 SOLO 模式。 |
-| Qoder | 支持 | IDE 终端使用 Skills CLI，或手动放置 Skill 文件夹；IDE 会话、Quest 和 CLI 均支持 Skills | 用户级：`~/.qoder/skills/`；项目级：`.qoder/skills/`。 |
-
-### Qoder 与 Trae：从 Gitee 安装
-
-Vercel Skills CLI 当前列出 Qoder、Trae CN 为受支持的 Agent 目标。国内网络环境可以使用本仓库的 Gitee 源：
-
-**Qoder（IDE / Quest / CLI）**
-
-```bash
-npx skills add https://gitee.com/ianwusb/kaoyan-english-grader.git \
-  --skill kaoyan-english-grader \
-  --agent qoder
-```
-
-**Trae CN**
-
-```bash
-npx skills add https://gitee.com/ianwusb/kaoyan-english-grader.git \
-  --skill kaoyan-english-grader \
-  --agent trae-cn
-```
-
-安装后在对应 Agent 的 Skill 列表中确认已加载，并测试它是否能读取六份题型规则文件。
-
-### WorkBuddy：桌面端与手机端
-
-桌面端可以通过「上传技能」导入本地技能包。用户级与项目级目录可以分别用于跨项目复用和当前项目协作；常见目录为：
-
-```text
-用户级：~/.workbuddy/skills/kaoyan-english-grader/
-项目级：.workbuddy/skills/kaoyan-english-grader/
-```
-
-如果 WorkBuddy 当前版本通过通用 Agent Skill 目录发现技能，也可以将整个技能文件夹放在项目级 `.agents/skills/` 下。首次安装后按客户端提示刷新或重启，并在技能管理界面确认加载结果。
-
-WorkBuddy 微信小程序是手机端入口。官方文档说明可以通过 SkillHub 安装技能包，并在对话输入框的「添加技能」入口中为当前对话启用技能。手机端的主要路径是 SkillHub，不应将其描述为支持从手机文件管理器直接导入任意 ZIP。
-
-## 手机 App：市场使用与自定义导入的区别
-
-| 产品 | 手机端已确认的 Skill 能力 | 自定义导入情况 |
+| 类型 | 含义 | 本仓库适配情况 |
 |---|---|---|
-| WorkBuddy 微信小程序 | 可通过 SkillHub 安装技能包，并在当前对话中添加技能 | 官方公开流程以 SkillHub 安装为主；未确认手机端可直接上传本地 `SKILL.md`/ZIP。 |
-| 千问 App（含工作助理） | 手机端「工作助理」→「技能」可浏览和调用技能 | 目前公开资料确认的是技能广场使用；与桌面端千问办公（QwenWork）的本地 `SKILL.md` 上传能力分开看待。 |
-| 腾讯元宝 App | 侧边栏「技能」可安装和使用平台技能 | 普通用户端以市场技能为主；任意本地 Skill 文件导入尚无公开依据。 |
-| 脑花 | App Store 当前列出的 iPhone App 支持调用和沉淀个人 Skill，强调把协作流程、标准和方法转成可复用能力 | 属于应用内工作流沉淀；未确认可导入标准 Agent Skill 文件夹或 ZIP。当前 App Store 列表显示仅适用于 iPhone。 |
-| 智图Claw | iPhone/iPad App 支持浏览、安装和管理技能包，并连接智图 Gateway | App Store 描述没有说明可从本地导入 ZIP/TAR.GZ；不要将技能市场能力等同于任意本地包导入。 |
-| 灵犀·晓伴 | Android App 介绍包含「AI 工具与技能中心」及第三方技能扩展 | 已确认技能扩展能力，尚未找到标准 `SKILL.md` 或本地 ZIP 导入说明。 |
-| AgentOS（艾嘿） | 产品介绍曾提及技能商店与自定义技能 | 当前上架状态存在不确定性；第三方商店追踪记录显示其 iOS 应用在 2026-10-07 前后已无法正常获取。此项仅作产品线索，暂不列为稳定安装目标。 |
-| AionClaw | 官方网站介绍内置/社区 Skills，并支持手机聊天渠道远程联动桌面端 | 官方下载页列出 Windows、macOS 和云端服务，未确认有独立 Android/iOS App；应归为手机远程操控入口，而非手机原生 Skill 安装器。 |
+| **本地导入标准 Skill** | 上传完整技能文件夹/ZIP，或将 Skill 放入产品发现目录 | 可用于本仓库完整批改规则 |
+| **平台技能市场** | 只能安装平台当前上架的技能 | 需要平台上架本项目，不能直接等同于本地导入 |
+| **应用内沉淀/远程调用** | 把对话流程保存成应用内技能，或通过手机连接远程 Agent | 需将本仓库规则转成该产品支持的格式，或在远程主机安装 |
 
-## 本仓库 Skill 的导入要求
+本仓库技能由 SKILL.md 和 references/ 下六份题型规则组成。只有在目标产品能保留整套目录结构时，才能视为完整导入。
 
-1. **保留完整目录。** 本 Skill 的结构是 `SKILL.md` 加 `references/` 下六份题型规则文件。通过支持 ZIP 的平台导入时，应把 `skills/kaoyan-english-grader/` 目录中的内容一起打包，并确保 ZIP 内的 `SKILL.md` 位于技能包根目录。
-2. **单文件上传时补齐引用文件。** 对于只提供 `SKILL.md` 上传入口的平台，按平台要求同时上传 `references/` 中的六份 Markdown 文件；如果平台无法保留相对目录，需确认它是否支持读取辅助文件。
-3. **市场型平台不要误判。** 腾讯元宝、千问 App 等手机端可以安装平台市场中的技能，但市场安装能力不等于可以把本仓库文件直接导入个人账号。
-4. **安装后验证。** 分别提交英语一翻译、英语二大作文测试，确认 Agent 能读取对应规则文件、区分题型分值，并按中文输出批改结果。
+## 桌面 AI 助手
 
-## 官方文档与产品页面
+| 产品 | 支持等级 | 适合的安装方式 | 操作文档 |
+|---|---|---|---|
+| 豆包工作任务模式 | 自定义创建；本地文件导入取决于客户端入口 | 工作任务中创建技能；开发者可通过开放平台上传 ZIP 并审核上架 | [豆包详细指南](README.doubao.md) |
+| 腾讯元宝 | 技能市场安装 | 从侧边栏技能入口安装现成平台技能；本地标准 Skill 导入尚未确认 | [腾讯元宝详细指南](README.yuanbao.md) |
+| WorkBuddy | 本地 ZIP 导入 | 专家·技能·连接器 → 添加技能 → 上传技能 | [WorkBuddy 桌面端详细指南](README.workbuddy.md) |
+| 千问办公（QwenWork） | 本地 SKILL.md/ZIP 导入 | 扩展 → 技能 → 添加 → 上传技能 | [千问办公详细指南](README.qwenwork.md) |
+| Trae / Trae CN | 本地 SKILL.md/ZIP 导入；全局/项目级 | 设置 → 技能与命令 → 创建/导入；或 Skills CLI | [Trae 详细指南](README.trae.md) |
+| Qoder | 本地 SKILL.md/ZIP 导入；IDE/CLI | Extensions → Skills → Add Skills → Upload Skill；或 Skills CLI | [Qoder 详细指南](README.qoder.md) |
 
-- [豆包开放平台：Skill 接入指南](https://open.doubao.com/document/doubao-developer-guide/skill-integration-guide)
-- [腾讯元宝：官方账号的技能安装入口说明](https://www.sina.cn/media/7914117279)
-- [豆包：工作任务模式与自定义技能功能报道](https://www.ithome.com/0/992/607.htm)
-- [WorkBuddy：技能安装与管理](https://cloud.tencent.com/document/product/1831/134432)
-- [WorkBuddy：微信小程序简介](https://www.codebuddy.cn/docs/workbuddymini/quick-start/Overview)
-- [WorkBuddy：小程序添加附件与技能](https://www.codebuddy.cn/docs/workbuddymini/features/Attachments-and-Skills)
-- [千问办公：技能帮助文档](https://qwenwork.cn/docs/features/skills)
-- [TraeCode：技能（Skill）](https://docs.trae.cn/ide_skills)
-- [Qoder IDE：Skills](https://docs.qoder.com/zh/extensions/skills)
-- [Qoder CLI：技能](https://docs.qoder.com/zh/cli/Skills)
-- [Vercel Skills CLI：支持的 Agent 与目录](https://github.com/vercel-labs/skills/blob/main/docs/agents.md)
-- [脑花 App Store 页面](https://apps.apple.com/cn/app/脑花-ai-全能助手/id6762169454)
-- [智图Claw App Store 页面](https://apps.apple.com/cn/app/智图claw/id6760357112)
-- [灵犀·晓伴 App Store 页面](https://apps.apple.com/cn/app/灵犀-晓伴/id6766031151)
-- [千问 App：手机端工作助理技能入口说明](https://www.sina.cn/news/detail/5345244153646127.html)
-- [AgentOS（艾嘿）：应用商店状态追踪](https://chrome-stats.com/d/id6759725374)
-- [AionClaw 官方网站](https://www.aionclaw.cn/)
+## 开发工具与 Agent CLI
+
+这些产品原生支持标准 Agent Skills 或可通过 Skills CLI 安装：
+
+| 产品 | Skills CLI 参数 | 详细操作 |
+|---|---|---|
+| Claude Code | claude-code | [Claude Code](README.claude-code.md) |
+| Codex | codex | [Codex](README.codex.md) |
+| Cursor | cursor | [Cursor](README.cursor.md) |
+| OpenCode | opencode | [OpenCode](README.opencode.md) |
+| Gemini CLI | gemini-cli | [Gemini CLI](README.gemini-cli.md) |
+| Qwen Code | qwen-code | [Qwen Code](README.qwen-code.md) |
+| Antigravity | antigravity | [Antigravity](README.antigravity.md) |
+| Kimi Code CLI | kimi-code-cli | [Kimi Code](README.kimi-code.md) |
+| Trae CN | trae-cn | [Trae](README.trae.md) |
+| Qoder | qoder | [Qoder](README.qoder.md) |
+| OpenClaw | openclaw | [OpenClaw](README.openclaw.md) |
+
+统一安装命令模板：
+
+~~~bash
+npx skills add https://gitee.com/ianwusb/kaoyan-english-grader.git \
+  --skill kaoyan-english-grader \
+  --agent AGENT_ID
+~~~
+
+将 AGENT_ID 替换为表格中的参数。需要全局安装时增加 -g。每个工具的实际目录映射和发现范围以其独立文档为准。
+
+## 手机 App 与小程序
+
+手机端渠道的能力差异较大。下表所说的“能安装技能”，可能指市场技能、应用内工作流或远程 Agent 能力，并非全部都能导入本地 SKILL.md。
+
+| 手机端产品 | 已确认能力 | 本仓库完整 Skill 导入情况 | 操作文档 |
+|---|---|---|---|
+| 豆包 App | 使用账号已有技能 | 手机端创建/本地导入流程不明确，创建请使用电脑版 | [豆包手机端](README.doubao-mobile.md) |
+| 腾讯元宝 App | 技能市场浏览、安装、调用 | 未确认支持本地 SKILL.md/ZIP | [元宝 App](README.yuanbao-app.md) |
+| 千问 App | 工作助理技能广场 | 手机端本地导入未确认；桌面 QwenWork 可上传 | [千问 App](README.qwen-app.md) |
+| WorkBuddy 微信小程序 | SkillHub 安装；当前对话添加技能 | 手机端按 SkillHub 流程使用；本地 ZIP 导入未确认 | [WorkBuddy 手机版](README.workbuddy-mobile.md) |
+| 脑花 | 将协作流程沉淀成个人 Skill | 属于应用内流程沉淀；标准 Skill 文件导入未确认 | [脑花](README.brainhua.md) |
+| 智图Claw | 技能市场、技能管理、Gateway 连接 | 本地 ZIP/TAR.GZ 导入格式未确认 | [智图Claw](README.zhitu-claw.md) |
+| 灵犀·晓伴 | AI 工具与技能中心、第三方技能扩展 | 标准 SKILL.md/ZIP 导入未确认 | [灵犀·晓伴](README.lingxi-xiaoban.md) |
+| AgentOS（艾嘿） | 产品历史版本提供技能商店和自定义安装能力 | 文件格式和当前上架状态需按地区确认 | [AgentOS](README.agentos.md) |
+| AionClaw | iOS/Android App 和 Skill 技能市场 | 标准本地文件导入未确认 | [AionClaw](README.aionclaw.md) |
+
+## 极客向与自托管渠道
+
+| 产品 | 方式 | 详细操作 |
+|---|---|---|
+| OpenClaw | 在 Gateway/Agent 主机上安装标准 Skill，手机通过消息渠道远程使用 | [OpenClaw 安装指南](README.openclaw.md) |
+
+OpenClaw 适合愿意管理服务器、Gateway、权限和消息渠道的用户。手机主要是远程对话入口，技能运行在 Agent 主机上。Termux 等 Android 自托管方式属于自行部署，需要另行处理运行时和设备兼容性。
+
+暂未将 Air-Ko 列为本仓库正式适配渠道：目前没有找到足够明确且可复现的官方 Skill 安装/发现文档。找到可核验的操作入口后再加入，避免仅凭产品描述宣称支持。
+
+## 导入前检查
+
+1. 下载或克隆仓库后，只取 skills/kaoyan-english-grader/ 作为技能包来源。
+2. 确认 ZIP 根目录能看到 SKILL.md 和 references/。
+3. 导入后检查六份题型规则是否保留。
+4. 至少测试英语一翻译和英语二大作文，核对分值、题型路由和引用文件。
+5. 不支持文件夹或 ZIP 导入的平台，按该产品自身支持方式使用市场技能或建立应用内流程；不要把普通聊天附件当作 Skill 安装。
+
+## 相关入口
+
+- [通用 Skills CLI 安装](README.skills-cli.md)
+- [Claude 网页版 / Desktop 自定义 Skill 上传](README.claude.md)
+- [平台安装方式与 CLI 参数总表](https://github.com/vercel-labs/skills/blob/main/docs/agents.md)
