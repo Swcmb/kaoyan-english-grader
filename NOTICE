@@ -1,0 +1,31 @@
+THIRD-PARTY MATERIALS
+=====================
+
+1. skills/check-the-licence-before-you-copy/SKILL.md
+
+   Copyright 2026 everyWAN.
+
+   Source repository:
+   https://github.com/everywan-dev/claude-code-engineering
+
+   Original file:
+   skills/check-the-licence-before-you-copy/SKILL.md
+
+   Upstream file blob:
+   db514d0a599d9b2fe7f9499406cd89fd348c56e8
+
+   Upstream project license:
+   Apache License, Version 2.0
+
+   Full license text:
+   LICENSES/Apache-2.0.txt
+
+   Changes made in this repository:
+   - Translated the skill from English into Chinese.
+   - Adapted the workflow for file-level license review in this repository.
+   - Added explicit attribution-preservation tests and repository-specific links.
+   - Updated: 2026-11-02
+
+   This adapted skill retains the upstream Apache-2.0 license and notices.
+   The repository's GPL-3.0-or-later license applies to repository-authored
+   material; it does not replace the Apache-2.0 terms applicable to this file.
