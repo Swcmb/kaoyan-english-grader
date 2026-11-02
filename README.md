@@ -6,7 +6,7 @@ This file is licensed under GPL-3.0-or-later. See LICENSE.
 
 # 考研英语 AI 批改
 
-面向考研英语备考的跨平台 AI 批改 Skill，覆盖英语一、英语二的翻译、大作文和小作文，共六类题型。支持 Claude Code、Codex、Cursor、OpenCode、Gemini CLI、Antigravity、Kimi Code 等 Agent。
+面向考研英语备考的跨平台 AI 批改 Skill，覆盖英语一、英语二的翻译、大作文和小作文，共六类题型。支持 Claude Code、Codex、Cursor、OpenCode、Gemini CLI、Antigravity、Kimi Code、Trae、Qoder 等 Agent，并提供豆包、WorkBuddy、千问办公等国内平台的导入指南。
 
 > **评分说明：** 本项目提供基于练习评分参考的模拟评价，不是官方阅卷标准、官方采分点或真实考试分数预测。所有评分仅供备考训练使用。
 
@@ -58,6 +58,8 @@ npx skills add https://gitee.com/ianwusb/kaoyan-english-grader.git \
   -a gemini-cli \
   -a antigravity \
   -a kimi-code-cli \
+  -a qoder \
+  -a trae-cn \
   -a qwen-code \
   -a github-copilot \
   -a trae \
@@ -93,9 +95,16 @@ npx skills add https://github.com/Swcmb/kaoyan-english-grader.git --skill kaoyan
 | Qwen Code | 通过扩展命令安装 |
 | Antigravity | 通过插件命令安装 |
 | Kimi Code | 通过 /plugins install 安装插件 |
+| Trae / TraeCode | 通过 Skills CLI 安装，或在「设置 → 技能与命令」导入 `SKILL.md` / ZIP |
+| Qoder | 通过 Skills CLI 安装，或放入用户级/项目级 Skills 目录 |
+| 豆包工作任务模式 | 通过「技能·连接器·伙伴」创建或导入技能；导入入口以客户端版本为准 |
+| 腾讯元宝 | 支持安装技能市场中的服务技能；普通用户端未确认可直接导入本仓库的 `SKILL.md` |
+| WorkBuddy | 通过「专家·技能·连接器」导入本地技能包；手机端可经 SkillHub 获取技能 |
+| 千问办公（QwenWork） | 通过「扩展 → 技能」上传 `SKILL.md` 及辅助文件，或在对话中搜索安装 |
 
 各平台的完整步骤：
 
+- [国内平台与手机端 Skill 安装指南](docs/README.domestic-platforms.md)
 - [通用技能安装工具（含 Gitee 国内源）](docs/README.skills-cli.md)
 - [Claude Code](docs/README.claude-code.md)
 - [Codex](docs/README.codex.md)
@@ -105,7 +114,7 @@ npx skills add https://github.com/Swcmb/kaoyan-english-grader.git --skill kaoyan
 - [Antigravity](docs/README.antigravity.md)
 - [Kimi Code](docs/README.kimi-code.md)
 
-不同平台的原生插件市场可能要求其支持的仓库托管平台；国内网络环境优先使用上面的 Gitee 通用 Skill 安装方式。
+不同平台的原生插件市场可能要求其支持的仓库托管平台。手机 App 中的技能市场通常只提供平台技能安装，和导入任意第三方 `SKILL.md` 是两种能力；各产品的支持边界与手机端入口见[国内平台与手机端指南](docs/README.domestic-platforms.md)。国内网络环境优先使用上面的 Gitee 通用 Skill 安装方式。
 
 ## 使用方法
 
