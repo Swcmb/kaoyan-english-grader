@@ -4,63 +4,46 @@ SPDX-License-Identifier: GPL-3.0-or-later
 This file is licensed under GPL-3.0-or-later. See ../../../LICENSE.
 -->
 
-# 千问办公（QwenWork）：安装与使用
+# QwenWork：安装与使用
 
-QwenWork 支持从技能广场安装技能、在对话中搜索技能，也支持上传本地 `SKILL.md` 或 ZIP。本仓库依赖六份引用规则，推荐使用 ZIP 导入。
+QwenWork 提供技能广场、对话搜索、开源仓库获取和本地文件上传。完整目录版可以保留引用规则；单文件版本适用于只上传一个 `SKILL.md` 的入口。
 
-## 上传本地 ZIP
+## 安装与使用
 
-1. 从 Gitee 克隆仓库：
+### 本地目录版上传
 
-   ```bash
-   git clone https://gitee.com/ianwusb/kaoyan-english-grader.git
-   ```
+1. 打开 QwenWork。
+2. 进入 **扩展 → 技能**。
+3. 点击 **Install Skill** 或当前页面中的上传入口。
+4. 上传 `SKILL.md` 及其辅助文件；目录版同时提供 `references/` 六份规则。
+5. 等待导入完成，在已安装区域检查状态。
 
-2. 进入 `skills/kaoyan-english-grader/`，确认包含 `SKILL.md` 和 `references/`。
-3. 将该目录内容打包为 ZIP，使 ZIP 根部直接包含主文件和引用目录。
-4. 打开 QwenWork，点击左侧 **扩展 → 技能**。
-5. 点击 **添加 → 上传技能**，选择 ZIP。
-6. 等待解析完成，在“已安装”区域检查状态。
+### 单文件版
 
-单文件上传适合没有外部引用的 Skill。本仓库应使用完整 ZIP。
+只接收单个文件时，上传[内嵌全部规则的 SKILL.md](../../../dist/kaoyan-english-grader-single-file/SKILL.md)。
 
-## 在对话中搜索安装
-
-可以在对话框输入：
-
-```text
-请查找并安装考研英语 AI 批改 Skill。
-如果技能库中没有对应技能，请明确告诉我，不要创建一个缺少评分规则的版本。
-```
-
-确认搜索结果名称、来源和能力说明，再按页面提示安装。
-
-## 从仓库地址获取
-
-公开文档说明可以向 QwenWork 提供开源仓库地址并要求下载到本地技能目录。Gitee 可访问性取决于当前运行环境。
+### 从仓库获取
 
 ```text
 请从这个仓库获取考研英语批改 Skill：
 https://gitee.com/ianwusb/kaoyan-english-grader.git
 
-只安装 skills/kaoyan-english-grader 这一个技能。
+只安装 skills/kaoyan-english-grader。
 保留 SKILL.md 和 references/ 下全部题型规则。
-完成后报告安装路径，并检查六份规则文件。
+完成后报告实际路径，并检查六份文件。
 ```
 
-下载失败时改用 ZIP 上传。
+也可以在技能广场搜索并安装平台已有条目。
 
-## 使用与验证
+## 能力边界
 
-直接提出“批改我的考研英语一翻译”，或在输入框输入 `/` 并选择技能。到 **扩展 → 技能 → 已安装** 检查状态。
+技能广场安装的是平台收录条目；本地上传和从仓库获取是独立渠道。目录版必须连同所有辅助文件导入。单文件版可独立使用，不依赖引用目录。
 
-分别测试英语一翻译和英语二大作文，确认对应规则可读取。
+## 验收
 
-## 更新与卸载
-
-在技能管理区域按当前版本提供的流程更新或卸载。本地 ZIP 导入时，重新打包最新目录并上传。移除前核对技能名称。
+确认技能出现在目标产品的已安装列表，并分别测试英语一翻译和英语二大作文，核对对应规则、分值和输出要求。
 
 ## 官方资料
 
+- [QwenWork：Skills 官方文档](https://docs.qwenwork.ai/desktop/skills)
 - [QwenWork：技能帮助文档](https://qwenwork.cn/docs/features/skills)
-- [阿里云帮助中心：QwenWork Skills](https://www.alibabacloud.com/help/zh/qwenwork/skills)
