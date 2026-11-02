@@ -1,6 +1,12 @@
-# 考研英语 AI 批改
+<!--
+Copyright (C) 2026 kaoyan-english-grader contributors
+SPDX-License-Identifier: GPL-3.0-or-later
+This file is licensed under GPL-3.0-or-later. See LICENSE.
+-->
 
-一套面向考研英语一、英语二主观题的跨平台 AI 批改 Skill，覆盖翻译、大作文和小作文，共六种题型。支持通过通用技能安装工具或各 Agent 的原生插件、扩展机制安装，可用于 Claude Code、Codex、Cursor、OpenCode、Gemini CLI、Antigravity、Kimi Code 等工具。
+# 考研英语 AI 批改与开源合规 Skills
+
+一组面向 AI 编程助手的跨平台 Agent Skills：提供考研英语一、英语二翻译与作文六类题型的模拟批改，以及第三方代码、Skill、Prompt 和配置的许可证审查与署名完整性检查。支持通过通用技能安装工具或各 Agent 的原生插件、扩展机制安装。
 
 > **评分说明：** 本项目提供基于练习评分参考的模拟评价，不是官方阅卷标准、官方采分点或真实考试分数预测。所有评分仅供备考训练使用。
 
@@ -14,6 +20,8 @@
 - **完整修改与复盘：** 提供逐句讲解、修改后全文、实用表达积累和针对性练习建议。
 - **支持手写图片：** 先转录再批改；无法辨认的内容会请求确认，不将识别错误当成考生错误。
 - **跨平台使用：** 采用标准 Agent Skill 结构，评分规则集中维护，不依赖特定编辑器。
+- **第三方许可证审查：** 在复制、改编、vendor 或发布第三方内容前，核对文件级授权、许可证文本、NOTICE 和来源标识。
+- **署名完整性测试：** 对第三方许可证原文、NOTICE 和改编文件的来源声明建立自动化回归测试。
 
 ## 支持的题型
 
@@ -58,6 +66,14 @@ npx skills add Swcmb/kaoyan-english-grader \
 ```
 
 添加 -g 参数可安装到用户级目录。支持的 Agent 名单请查看[安装工具文档](https://github.com/vercel-labs/skills/blob/main/docs/agents.md)。
+
+### 安装第三方许可证审查 Skill
+
+该 Skill 用于在复制、改编、翻译、vendor 或发布第三方材料前审查文件级许可证，并验证来源和署名不会在重命名、移动或重新打包时丢失。
+
+~~~bash
+npx skills add Swcmb/kaoyan-english-grader --skill check-the-licence-before-you-copy
+~~~
 
 ### 方式二：使用平台原生安装方式
 
@@ -145,8 +161,8 @@ npx skills add Swcmb/kaoyan-english-grader \
 ```text
 kaoyan-english-grader/
 ├── skills/
-│   └── kaoyan-english-grader/
-│       ├── SKILL.md
+│   ├── kaoyan-english-grader/
+│   │   ├── SKILL.md
 │       └── references/
 │           ├── english1_essay_major.md
 │           ├── english1_essay_minor.md
@@ -163,6 +179,14 @@ kaoyan-english-grader/
 ├── gemini-extension.json
 ├── kimi.plugin.json
 ├── GEMINI.md
+├── LICENSES/
+│   └── Apache-2.0.txt
+├── NOTICE
+├── COPYING
+├── tests/
+│   └── test_third_party_attribution.py
+├── .github/workflows/
+│   └── test-third-party-attribution.yml
 ├── docs/
 │   ├── github-content-writing.md
 │   ├── third-party-license-review.md
@@ -170,7 +194,7 @@ kaoyan-english-grader/
 └── LICENSE
 ```
 
-规范 Skill 位于 skills/kaoyan-english-grader。六份题型规则放在其 references 目录中，平台清单负责让不同 Agent 发现和安装同一份技能内容。
+考研英语批改 Skill 位于 skills/kaoyan-english-grader，六份题型规则放在其 references 目录中。第三方许可审查 Skill 位于 skills/check-the-licence-before-you-copy。平台清单负责让不同 Agent 发现和安装仓库中的 Skill。
 
 ## 评分原则与边界
 
@@ -192,4 +216,6 @@ kaoyan-english-grader/
 
 ## 许可证
 
-本仓库原创内容采用 [MIT 许可证](LICENSE)。第三方文件可能保留独立许可证、版权声明和 NOTICE，具体以对应文件及其来源证据为准。
+本仓库原创内容采用 [GNU 通用公共许可证 v3.0 或更高版本（GPL-3.0-or-later）](LICENSE)，完整文本同时保存在 [COPYING](COPYING)。
+
+第三方改编 Skill [check-the-licence-before-you-copy](skills/check-the-licence-before-you-copy/SKILL.md) 保留上游 Apache-2.0 许可，完整文本位于 [LICENSES/Apache-2.0.txt](LICENSES/Apache-2.0.txt)，来源和修改说明见 [NOTICE](NOTICE)。其他第三方文件可能保留独立许可证、版权声明和 NOTICE，具体以对应文件及其来源证据为准。
