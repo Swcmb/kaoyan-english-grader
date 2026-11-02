@@ -1,9 +1,9 @@
 {
   "$schema": "https://antigravity.google/schemas/v1/plugin.json",
   "name": "kaoyan-english-grader",
-  "displayName": "考研英语批改",
+  "displayName": "考研英语批改与开源合规",
   "version": "1.0.0",
-  "description": "Practice grading for all six postgraduate entrance exam English I and II translation and essay task types.",
+  "description": "跨平台 Agent Skills：考研英语一/二批改与第三方许可证审查。",
   "category": "Education",
   "keywords": [
     "kaoyan",
@@ -11,7 +11,9 @@
     "translation",
     "essay",
     "grading",
-    "education"
+    "education",
+    "license-compliance",
+    "third-party-licenses"
   ],
   "author": {
     "name": "Swcmb",
@@ -19,9 +21,10 @@
   },
   "homepage": "https://github.com/Swcmb/kaoyan-english-grader",
   "repository": "https://github.com/Swcmb/kaoyan-english-grader",
-  "license": "MIT",
+  "license": "GPL-3.0-or-later",
   "suggestedPrompts": [
     "请批改我的考研英语一大作文，并检查图画寓意与论证是否切题。",
-    "请按考研英语二翻译规则逐句划分模拟采分点并评分。"
+    "请按考研英语二翻译规则逐句划分模拟采分点并评分。",
+    "复制或改编第三方 Skill 之前，先检查许可证和署名要求。"
   ]
 }
