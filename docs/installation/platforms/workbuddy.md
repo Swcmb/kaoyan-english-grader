@@ -44,6 +44,10 @@ kaoyan-english-grader/
 
 检查技能状态，并分别测试英语一翻译和英语二大作文，确认完整规则、题型路由与模拟分值可用。
 
+## 本仓库的 Skill 版本选择
+
+若当前导入入口能保留完整目录或 ZIP 内的相对路径，使用标准版 `skills/kaoyan-english-grader/`，确保 `SKILL.md` 与 `references/` 六份规则完整保留。若产品实际只接受单个标准 `SKILL.md` 文件，再使用独立完整版 `skills/kaoyan-english-grader-full/SKILL.md`。技能市场条目、应用内创建和本地文件导入属于不同流程；市场安装要求本项目已真实上架，应用内创建则需手动迁移并核对规则。
+
 ## 官方资料
 
 - [WorkBuddy：技能安装与管理](https://cloud.tencent.com/document/product/1831/134432)

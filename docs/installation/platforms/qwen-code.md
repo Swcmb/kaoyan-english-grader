@@ -34,6 +34,10 @@ npx skills add https://gitee.com/ianwusb/kaoyan-english-grader.git \
 
 确认技能出现在目标产品的已安装列表，并分别测试英语一翻译和英语二大作文，核对对应规则、分值和输出要求。
 
+## 本仓库的 Skill 版本选择
+
+优先安装标准版 `skills/kaoyan-english-grader/`，并完整保留 `SKILL.md` 与 `references/` 六份规则。完整目录安装是按项目原始结构直接复用全部评分规则的标准方式。只有当平台无法保留引用目录、但支持单个标准 `SKILL.md` 导入时，才使用独立完整版 `skills/kaoyan-english-grader-full/SKILL.md`。支持标准 Skill 目录的平台也可以安装完整版，但不推荐用它替代标准版。
+
 ## 官方资料
 
 - [Qwen Code：Agent Skills](https://qwenlm.github.io/qwen-code-docs/en/users/features/skills/)

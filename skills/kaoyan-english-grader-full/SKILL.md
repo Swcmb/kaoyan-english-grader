@@ -1,6 +1,6 @@
 ---
-name: kaoyan-english-grader-complete
-description: 独立完整的考研英语一、英语二六类主观题批改 Skill，内嵌所有题型评分规则，无需外部 references 文件。
+name: kaoyan-english-grader-full
+description: 单文件完整版本，内嵌考研英语一、英语二翻译、大作文和小作文六类题型的全部评分规则。适用于无法保留标准 Skill 引用目录、但支持导入单个 SKILL.md 的平台。
 license: GPL-3.0-or-later
 compatibility: 适用于能够读取本地文件以及用户提供的文字或图片的 Agent Skills 兼容助手。无需 MCP 服务、外部 API 或运行时依赖。
 metadata:

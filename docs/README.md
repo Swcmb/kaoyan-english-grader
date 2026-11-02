@@ -6,15 +6,20 @@ This file is licensed under GPL-3.0-or-later. See ../LICENSE.
 
 # 文档中心
 
-按任务查找安装、平台兼容、文档规范和版本发布信息。
+按任务查找 Skill 版本、安装渠道、平台兼容、文档规范和版本发布信息。
 
-## 安装与使用
+## Skill 与安装
 
-- [安装总览](installation/README.md)：目录版、单文件版、平台技能市场、应用内创建和远程 Agent 的区别。
+- [安装与版本选择](installation/README.md)：两个 Skill 的区别、推荐顺序及各类平台能力边界。
 - [Skills CLI](installation/skills-cli.md)：从 Git 仓库安装标准 Agent Skill。
-- [手机端渠道](installation/mobile-apps.md)：移动市场、个人 Skill 创建和远程连接。
-- [平台指南](installation/platforms/)：各产品安装入口与能力边界。
-- [Agent 安装协议](../INSTALL.md)：自动识别宿主、安装和验收。
+- [手机端渠道](installation/mobile-apps.md)：技能市场、应用内创建和远程 Agent 的区别。
+- [平台指南](installation/platforms/)：各产品安装入口、文件格式和能力边界。
+- [Agent 安装协议](../INSTALL.md)：识别平台、选择 Skill、安装和验收。
+
+## 两个 Skill
+
+- 标准版：[`skills/kaoyan-english-grader/`](../skills/kaoyan-english-grader/SKILL.md)，需完整保留 `SKILL.md` 与 `references/` 六份规则。
+- 完整版：[`skills/kaoyan-english-grader-full/SKILL.md`](../skills/kaoyan-english-grader-full/SKILL.md)，六类规则全部内嵌，供单文件导入场景使用。
 
 ## 文档规范
 
@@ -26,22 +31,3 @@ This file is licensed under GPL-3.0-or-later. See ../LICENSE.
 ## 发布
 
 - [GitHub Releases 发布说明](releasing.md)：版本标签、源码归档、SHA-256 和故障排查。
-
-## 目录结构
-
-```text
-docs/
-├── installation/
-│   ├── README.md
-│   ├── mobile-apps.md
-│   ├── skills-cli.md
-│   └── platforms/
-├── standards/
-│   ├── github-content-writing.md
-│   ├── open-source-docs.md
-│   ├── local-dev-docs.md
-│   └── third-party-license-review.md
-└── releasing.md
-```
-
-平台菜单、文件导入和账号权限会随版本、地区与灰度调整。未经确认的产品能力应标记为待核实，并以当前官方资料和客户端为准。

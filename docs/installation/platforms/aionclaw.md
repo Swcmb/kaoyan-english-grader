@@ -24,6 +24,10 @@ AionClaw 的公开应用商店页面介绍 iOS、Android 客户端和 Skill 市�
 
 检查技能是否出现在目标产品的技能列表，并分别提交英语一翻译和英语二大作文测试。确认题型路由、分值、对应规则和输出结构正确。上传成功或保存成功不能替代实际调用验证。
 
+## 本仓库的 Skill 版本选择
+
+手机端若只是连接 Gateway 或远程 Agent，Skill 应安装在实际运行 Agent 的主机上。优先安装标准版并保留完整 `references/`；只有远程平台无法保留引用目录、但支持单个标准 `SKILL.md` 时，才使用独立完整版。手机端市场、对话添加和文件附件不等于远程主机已安装本项目 Skill。
+
 ## 官方资料
 
 - [AionClaw：Apple App Store](https://apps.apple.com/cn/app/aionclaw-%E7%9C%9F%E6%AD%A3%E8%83%BD%E5%81%9A%E4%BA%8B%E7%9A%84ai%E9%BE%99%E8%99%BE%E5%8A%A9%E6%89%8B/id6775734154)

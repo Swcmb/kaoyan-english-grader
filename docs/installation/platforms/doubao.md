@@ -33,6 +33,10 @@ This file is licensed under GPL-3.0-or-later. See ../../../LICENSE.
 
 检查技能是否出现在目标产品中，并分别测试英语一翻译和英语二大作文。核对题型路由、评分档位、引用规则和输出要求。上传或保存成功不能替代真实任务验证。
 
+## 本仓库的 Skill 版本选择
+
+若当前导入入口能保留完整目录或 ZIP 内的相对路径，使用标准版 `skills/kaoyan-english-grader/`，确保 `SKILL.md` 与 `references/` 六份规则完整保留。若产品实际只接受单个标准 `SKILL.md` 文件，再使用独立完整版 `skills/kaoyan-english-grader-full/SKILL.md`。技能市场条目、应用内创建和本地文件导入属于不同流程；市场安装要求本项目已真实上架，应用内创建则需手动迁移并核对规则。
+
 ## 官方资料
 
 - [豆包开放平台：Skill 接入指南](https://open.doubao.com/document/doubao-developer-guide/skill-integration-guide)

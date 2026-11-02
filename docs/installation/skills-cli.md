@@ -4,13 +4,22 @@ SPDX-License-Identifier: GPL-3.0-or-later
 This file is licensed under GPL-3.0-or-later. See ../../LICENSE.
 -->
 
-# 使用 Skills CLI 安装
+# 使用 Skills CLI 安装考研英语批改 Skill
 
-[Skills CLI](https://github.com/vercel-labs/skills) 可以从 Git 仓库或本地目录安装标准 Agent Skill，并按目标 Agent 配置项目级或用户级发现路径。本仓库建议使用 Gitee 镜像，GitHub 为备用来源。
+[Vercel Skills CLI](https://github.com/vercel-labs/skills) 可从 Git 仓库、URL 或本地目录获取标准 Agent Skill，并安装到所选 Agent 的项目级或用户级目录。**本仓库默认安装标准版**，完整保留主文件和六份引用规则。
 
-## 环境准备
+## 两个 Skill
 
-当前 CLI 文档要求 Node.js 22.20 或更高版本，并需要 npm/npx 与 Git。
+| Skill | CLI 名称 | 安装对象 | 推荐用途 |
+| --- | --- | --- | --- |
+| 标准版 | `kaoyan-english-grader` | `skills/kaoyan-english-grader/` 完整目录 | 默认推荐，适用于支持标准 Skill 目录的平台 |
+| 完整版 | `kaoyan-english-grader-full` | `skills/kaoyan-english-grader-full/SKILL.md` | 平台无法保留引用目录、只支持单文件导入时使用 |
+
+完整版内嵌全部六类评分规则。支持标准 Skill 目录的平台也可安装完整版，但不推荐用它替代标准版。
+
+## 环境要求
+
+Skills CLI 当前文档要求 Node.js 22.20 或更高版本。还需要 Git 能访问所选仓库源，并且目标 Agent 在当前 CLI 支持清单中。
 
 ```bash
 node --version
@@ -18,50 +27,43 @@ npm --version
 git --version
 ```
 
-确认 Node.js 满足 CLI 当前要求，且网络能够访问所选 Git 源。
-
-## 交互式安装
-
-在目标项目目录执行：
+## 安装标准版（推荐）
 
 ```bash
 npx skills add https://gitee.com/ianwusb/kaoyan-english-grader.git \
   --skill kaoyan-english-grader
 ```
 
-按提示选择 Agent、安装范围和文件管理方式。需要独立副本时选择复制；多个 Agent 共用源目录且宿主支持符号链接时，可选择链接。
-
-## 指定 Agent
+指定 Codex：
 
 ```bash
 npx skills add https://gitee.com/ianwusb/kaoyan-english-grader.git \
   --skill kaoyan-english-grader --agent codex
 ```
 
-多个 Agent 可按 CLI 当前参数格式传入：
+Agent ID 以当前官方清单为准：[Skills CLI Agent 清单](https://github.com/vercel-labs/skills/blob/main/docs/agents.md)。
+
+## 安装完整版
+
+仅在平台不能完整保留标准版主文件与 `references/` 目录、但支持标准单文件 Skill 时使用：
 
 ```bash
 npx skills add https://gitee.com/ianwusb/kaoyan-english-grader.git \
-  --skill kaoyan-english-grader --agent claude-code codex cursor opencode
+  --skill kaoyan-english-grader-full
 ```
 
-Agent ID 和目录映射可能变化。执行前查看[官方 Agent 清单](https://github.com/vercel-labs/skills/blob/main/docs/agents.md)，不要根据产品名称猜测 ID。
+该版本是独立 Skill，六类规则全部位于单个 `SKILL.md` 中。支持完整目录安装的平台应优先安装标准版。
 
 ## 项目级与用户级安装
 
-项目级安装写入当前工作区，适合随项目共享；用户级安装增加 `-g`：
+项目级安装写入当前工作区，适合随项目共享。用户级安装适用于多个工作区，增加 `-g`：
 
 ```bash
-# 项目级
-npx skills add https://gitee.com/ianwusb/kaoyan-english-grader.git \
-  --skill kaoyan-english-grader --agent codex
-
-# 用户级
-npx skills add https://gitee.com/ianwusb/kaoyan-english-grader.git \
-  --skill kaoyan-english-grader --agent codex -g
+npx skills add https://gitee.com/ianwusb/kaoyan-english-grader.git --skill kaoyan-english-grader --agent codex
+npx skills add https://gitee.com/ianwusb/kaoyan-english-grader.git --skill kaoyan-english-grader --agent codex -g
 ```
 
-最终目录由 Agent ID 与 CLI 版本决定，以安装输出和当前映射文档为准。
+具体目录由 Agent ID 决定，以 CLI 当前目录映射为准。
 
 ## 从本地仓库安装
 
@@ -71,33 +73,13 @@ cd kaoyan-english-grader
 npx skills add . --skill kaoyan-english-grader
 ```
 
-GitHub 备用源：
-
-```bash
-git clone https://github.com/Swcmb/kaoyan-english-grader.git
-cd kaoyan-english-grader
-npx skills add . --skill kaoyan-english-grader
-```
+需要安装完整版时，将名称改为 `kaoyan-english-grader-full`。
 
 ## 安装结构与验证
 
-CLI 安装标准目录版，目标目录应包含：
+标准版必须保留主文件和六份 `references/` 规则。完整版只有一个 `SKILL.md`，并在文件内部包含六个完整题型章节。安装后检查目标目录、文件完整性和 Agent 发现状态。分别提交英语一翻译和英语二大作文测试，确认对应规则读取正常。不要只凭 CLI 退出码判断安装成功。
 
-```text
-kaoyan-english-grader/
-├── SKILL.md
-└── references/
-    ├── english1_essay_major.md
-    ├── english1_essay_minor.md
-    ├── english1_translation.md
-    ├── english2_essay_major.md
-    ├── english2_essay_minor.md
-    └── english2_translation.md
-```
-
-检查目录结构和文件可读性，再分别提交英语一翻译与英语二大作文测试题，确认规则路由正确。CLI 成功提示不能替代实际使用验证。
-
-## 查看、更新和卸载
+## 查看、更新与卸载
 
 ```bash
 npx skills list
@@ -106,11 +88,4 @@ npx skills update kaoyan-english-grader
 npx skills remove kaoyan-english-grader
 ```
 
-更新和卸载前确认技能名称、工作区与安装范围。命令行为变化时运行 `npx skills --help`，并查看[官方命令文档](https://github.com/vercel-labs/skills/blob/main/docs/commands.md)。
-
-## 官方资料
-
-- [Skills CLI 项目与环境要求](https://github.com/vercel-labs/skills)
-- [命令参考](https://github.com/vercel-labs/skills/blob/main/docs/commands.md)
-- [Agent ID 与目录映射](https://github.com/vercel-labs/skills/blob/main/docs/agents.md)
-- [Node.js 下载](https://nodejs.org/en/download)
+管理完整版时，将名称替换为 `kaoyan-english-grader-full`。执行卸载前确认工作区、安装范围与技能名称。CLI 命令和参数可能变化，遇到行为差异时以当前 `npx skills --help` 和[官方命令文档](https://github.com/vercel-labs/skills/blob/main/docs/commands.md)为准。
