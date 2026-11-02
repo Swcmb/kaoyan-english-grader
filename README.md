@@ -97,7 +97,7 @@ npx skills add https://github.com/Swcmb/kaoyan-english-grader.git --skill kaoyan
 | Kimi Code | 通过 /plugins install 安装插件 |
 | Trae / TraeCode | 通过 Skills CLI 安装，或在「设置 → 技能与命令」导入 `SKILL.md` / ZIP |
 | Qoder | 通过 Skills CLI 安装，或放入用户级/项目级 Skills 目录 |
-| 豆包工作任务模式 | 通过「技能·连接器·伙伴」创建或导入技能；导入入口以客户端版本为准 |
+| 豆包工作任务模式 | 通过工作任务模式创建自定义技能；开发者可通过开放平台提交 ZIP 技能包，个人本地文件导入以客户端版本为准 |
 | 腾讯元宝 | 支持安装技能市场中的服务技能；普通用户端未确认可直接导入本仓库的 `SKILL.md` |
 | WorkBuddy | 通过「专家·技能·连接器」导入本地技能包；手机端可经 SkillHub 获取技能 |
 | 千问办公（QwenWork） | 通过「扩展 → 技能」上传 `SKILL.md` 及辅助文件，或在对话中搜索安装 |
