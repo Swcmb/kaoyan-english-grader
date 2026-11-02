@@ -1,0 +1,21 @@
+{
+  "name": "kaoyan-english-grader",
+  "version": "1.0.0",
+  "description": "Practice grading for all six postgraduate entrance exam English I and II translation and essay task types.",
+  "author": {
+    "name": "Swcmb",
+    "url": "https://github.com/Swcmb"
+  },
+  "homepage": "https://github.com/Swcmb/kaoyan-english-grader",
+  "repository": "https://github.com/Swcmb/kaoyan-english-grader",
+  "license": "MIT",
+  "keywords": [
+    "kaoyan",
+    "english",
+    "translation",
+    "essay",
+    "grading",
+    "education"
+  ],
+  "skills": "./skills/"
+}
