@@ -6,7 +6,7 @@ This file is licensed under GPL-3.0-or-later. See ../../../LICENSE.
 
 # WorkBuddy 桌面端：安装与使用
 
-WorkBuddy 提供技能搜索、技能创建和本地技能包上传。本项目依赖六份引用规则，目录版上传时应保留完整目录。
+WorkBuddy 提供技能搜索、技能创建和本地技能包上传。本项目依赖六份内嵌评分规则，目录版上传时应保留完整目录。
 
 ## 安装与使用
 
@@ -17,7 +17,7 @@ WorkBuddy 提供技能搜索、技能创建和本地技能包上传。本项目�
 ```text
 kaoyan-english-grader/
 ├── SKILL.md
-└── references/
+└── 外部规则文件
     ├── english1_essay_major.md
     ├── english1_essay_minor.md
     ├── english1_translation.md
@@ -34,7 +34,7 @@ kaoyan-english-grader/
 4. 选择 ZIP 并等待解析完成。
 5. 在技能列表确认技能出现并启用。
 
-只接收单个文件时，使用[内嵌六类规则的完整单文件版本](../../../dist/kaoyan-english-grader-single-file/SKILL.md)。
+只接收单个文件时，使用[内嵌六类规则的完整单文件版本](../../../skills/kaoyan-english-grader/SKILL.md)。
 
 ## 能力边界
 
@@ -44,9 +44,9 @@ kaoyan-english-grader/
 
 检查技能状态，并分别测试英语一翻译和英语二大作文，确认完整规则、题型路由与模拟分值可用。
 
-## 本仓库的 Skill 版本选择
+## 本项目 Skill
 
-若当前导入入口能保留完整目录或 ZIP 内的相对路径，使用标准版 `skills/kaoyan-english-grader/`，确保 `SKILL.md` 与 `references/` 六份规则完整保留。若产品实际只接受单个标准 `SKILL.md` 文件，再使用独立完整版 `skills/kaoyan-english-grader-full/SKILL.md`。技能市场条目、应用内创建和本地文件导入属于不同流程；市场安装要求本项目已真实上架，应用内创建则需手动迁移并核对规则。
+本仓库只提供一个自包含的标准 Agent Skill，六类题型的完整评分规则全部内嵌于 `skills/kaoyan-english-grader/SKILL.md`。安装时导入 `skills/kaoyan-english-grader/` 目录即可；平台明确只接受单文件时，直接导入该目录中的 `SKILL.md`。该 Skill 不依赖额外的规则文件或运行时服务。
 
 ## 官方资料
 
