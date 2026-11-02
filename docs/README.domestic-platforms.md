@@ -17,7 +17,7 @@ This file is licensed under GPL-3.0-or-later. See LICENSE.
 
 | 产品 | 自定义 Skill 支持 | 安装入口 / 方式 | 安装范围与注意事项 |
 |---|---|---|---|
-| 豆包（工作任务模式） | 支持创建自定义 Skill；客户端版本提供技能导入能力 | 电脑版侧边栏进入「技能·连接器·伙伴」，使用对话创建或技能导入入口 | 以当前客户端提供的导入方式和范围选项为准。豆包开放平台的开发者上架流程是另一条路径：需企业资质、上传 ZIP 包并通过平台审核，面向服务方发布能力，不等同于个人本地安装。 |
+| 豆包（工作任务模式） | 支持创建自定义 Skill；开放平台支持开发者提交技能包 | 电脑版工作任务模式进入技能相关入口，通过对话创建自定义技能；服务方可通过豆包开放平台上传 ZIP 技能包 | 官方公开的 ZIP 上传流程面向开发者，涉及企业资质和平台审核。个人用户是否能导入任意本地 `SKILL.md`/文件夹，以及 `.agent/skills/` 是否为当前正式扫描目录，尚缺少稳定的官方说明；以客户端版本为准。 |
 | 腾讯元宝 | 有限支持 | App 或电脑端侧边栏进入「技能」，浏览并安装平台提供的技能 | 普通用户侧的公开流程以技能市场安装、使用为主。服务方可以通过元宝开放平台接入技能；这不代表普通用户可以直接导入任意本地 `SKILL.md`。 |
 | WorkBuddy | 支持 | 桌面端进入「专家·技能·连接器」→「添加技能」→「上传技能」，导入本地技能包；也可以查找或创建技能 | 支持用户级和项目级技能。常见目录为用户级 `~/.workbuddy/skills/`、项目级 `.workbuddy/skills/`；部分版本/工作区也会扫描 `.agents/skills/`。目录优先级和实际路径以当前版本文档为准。 |
 | 千问办公（QwenWork） | 支持 | 左侧「扩展」→「技能」；可从 Skill 广场安装、在对话中搜索安装，或上传本地 `SKILL.md` 及辅助文件 | 官方文档列出的本地目录为 `~/.qwenworkcn/skills/`。也可以在对话中提供开源仓库地址，让它下载并安装；Gitee 地址是否可直接拉取取决于当前网络与版本。 |
@@ -69,7 +69,7 @@ WorkBuddy 微信小程序是手机端入口。官方文档说明可以通过 Ski
 | 脑花 | App Store 当前列出的 iPhone App 支持调用和沉淀个人 Skill，强调把协作流程、标准和方法转成可复用能力 | 属于应用内工作流沉淀；未确认可导入标准 Agent Skill 文件夹或 ZIP。当前 App Store 列表显示仅适用于 iPhone。 |
 | 智图Claw | iPhone/iPad App 支持浏览、安装和管理技能包，并连接智图 Gateway | App Store 描述没有说明可从本地导入 ZIP/TAR.GZ；不要将技能市场能力等同于任意本地包导入。 |
 | 灵犀·晓伴 | Android App 介绍包含「AI 工具与技能中心」及第三方技能扩展 | 已确认技能扩展能力，尚未找到标准 `SKILL.md` 或本地 ZIP 导入说明。 |
-| AgentOS（艾嘿） | 曾有技能商店与自定义技能介绍 | 第三方 App 商店追踪页面报告其 iOS 上架已于 2026-10-07 移除；当前可用性需重新核实，暂不列为稳定安装目标。 |
+| AgentOS（艾嘿） | 产品介绍曾提及技能商店与自定义技能 | 当前上架状态存在不确定性；第三方商店追踪记录显示其 iOS 应用在 2026-10-07 前后已无法正常获取。此项仅作产品线索，暂不列为稳定安装目标。 |
 | AionClaw | 官方网站介绍内置/社区 Skills，并支持手机聊天渠道远程联动桌面端 | 官方下载页列出 Windows、macOS 和云端服务，未确认有独立 Android/iOS App；应归为手机远程操控入口，而非手机原生 Skill 安装器。 |
 
 ## 本仓库 Skill 的导入要求
@@ -83,6 +83,7 @@ WorkBuddy 微信小程序是手机端入口。官方文档说明可以通过 Ski
 
 - [豆包开放平台：Skill 接入指南](https://open.doubao.com/document/doubao-developer-guide/skill-integration-guide)
 - [腾讯元宝：官方账号的技能安装入口说明](https://www.sina.cn/media/7914117279)
+- [豆包：工作任务模式与自定义技能功能报道](https://www.ithome.com/0/992/607.htm)
 - [WorkBuddy：技能安装与管理](https://cloud.tencent.com/document/product/1831/134432)
 - [WorkBuddy：微信小程序简介](https://www.codebuddy.cn/docs/workbuddymini/quick-start/Overview)
 - [WorkBuddy：小程序添加附件与技能](https://www.codebuddy.cn/docs/workbuddymini/features/Attachments-and-Skills)
@@ -94,4 +95,6 @@ WorkBuddy 微信小程序是手机端入口。官方文档说明可以通过 Ski
 - [脑花 App Store 页面](https://apps.apple.com/cn/app/脑花-ai-全能助手/id6762169454)
 - [智图Claw App Store 页面](https://apps.apple.com/cn/app/智图claw/id6760357112)
 - [灵犀·晓伴 App Store 页面](https://apps.apple.com/cn/app/灵犀-晓伴/id6766031151)
+- [千问 App：手机端工作助理技能入口说明](https://www.sina.cn/news/detail/5345244153646127.html)
+- [AgentOS（艾嘿）：应用商店状态追踪](https://chrome-stats.com/d/id6759725374)
 - [AionClaw 官方网站](https://www.aionclaw.cn/)
