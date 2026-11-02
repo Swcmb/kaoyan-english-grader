@@ -1,0 +1,26 @@
+{
+  "name": "kaoyan-english-grader",
+  "version": "1.0.0",
+  "description": "Practice grading for all six postgraduate entrance exam English I and II translation and essay task types.",
+  "author": {
+    "name": "Swcmb",
+    "url": "https://github.com/Swcmb"
+  },
+  "homepage": "https://github.com/Swcmb/kaoyan-english-grader",
+  "license": "MIT",
+  "keywords": [
+    "kaoyan",
+    "english",
+    "translation",
+    "essay",
+    "grading"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "考研英语批改",
+    "shortDescription": "考研英语一/二翻译与作文批改",
+    "longDescription": "覆盖英语一和英语二翻译、大作文、小作文六种题型，提供模拟评分、逐句修改和学习复盘。",
+    "developerName": "Swcmb",
+    "websiteURL": "https://github.com/Swcmb/kaoyan-english-grader"
+  }
+}
