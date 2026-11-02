@@ -1,13 +1,13 @@
 {
   "name": "kaoyan-english-grader",
-  "description": "A focused plugin for postgraduate entrance exam English grading.",
+  "description": "考研英语批改与第三方许可证审查的跨平台 Agent Skills 集合。",
   "owner": {
     "name": "Swcmb"
   },
   "plugins": [
     {
       "name": "kaoyan-english-grader",
-      "description": "Grading and study feedback for English I/II translation, major essays, and minor essays.",
+      "description": "英语一/二翻译与作文批改，以及第三方许可证审查和来源归属验证。",
       "version": "1.0.0",
       "source": "./",
       "author": {
