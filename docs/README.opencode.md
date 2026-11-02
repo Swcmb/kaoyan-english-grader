@@ -1,3 +1,9 @@
+<!--
+Copyright (C) 2026 kaoyan-english-grader contributors
+SPDX-License-Identifier: GPL-3.0-or-later
+This file is licensed under GPL-3.0-or-later. See LICENSE.
+-->
+
 # OpenCode 安装指南
 
 OpenCode 原生支持 Agent Skills 格式。它可以从项目级 .agents/skills/、.opencode/skills/，以及用户级 ~/.agents/skills/、~/.config/opencode/skills/ 目录发现技能。
