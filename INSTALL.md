@@ -18,7 +18,7 @@ This file is licensed under GPL-3.0-or-later. See LICENSE.
 | Skill 目录 | `skills/kaoyan-english-grader/` |
 | Skill 主文件 | `skills/kaoyan-english-grader/SKILL.md` |
 
-本仓库只提供一个自包含的标准 Agent Skill。英语一、英语二翻译、大作文和小作文六类题型的评分规则全部写在同一个 `SKILL.md` 中，不依赖 `references/`、远程资源、MCP 服务或外部运行时。
+本仓库只提供一个自包含的标准 Agent Skill。英语一、英语二翻译、大作文和小作文六类题型的评分规则全部写在同一个 `SKILL.md` 中，不依赖额外的评分规则文件、远程资源、MCP 服务或外部运行时。
 
 默认只安装本项目 Skill，不安装仓库级开发配置、其他插件或无关文件。
 
