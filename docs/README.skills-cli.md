@@ -8,6 +8,8 @@ This file is licensed under GPL-3.0-or-later. See LICENSE.
 
 Skills CLI 可以从 Git 仓库读取标准 Agent Skill，并写入目标 Agent 的项目级或用户级技能目录。本仓库优先提供 Gitee 安装源，适合国内网络环境。
 
+不想手动选择安装命令时，可以直接把[仓库 README 中的自然语言安装指令](../README.md)发给当前 Agent。Agent 会读取仓库根目录的 [INSTALL.md](../INSTALL.md)，自行判断当前宿主支持的原生安装方式、Skills CLI 或手动部署路径，并负责安装验证。
+
 ## 1. 环境要求
 
 - Node.js：22.20 或更高版本。
