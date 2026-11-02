@@ -4,44 +4,71 @@ SPDX-License-Identifier: GPL-3.0-or-later
 This file is licensed under GPL-3.0-or-later. See LICENSE.
 -->
 
-# Codex 安装指南
+# OpenAI Codex 安装与使用
 
-> 国内网络环境优先使用 Gitee 镜像安装标准 Skill：
->
-> ```bash
-> npx skills add https://gitee.com/ianwusb/kaoyan-english-grader.git --skill kaoyan-english-grader --agent codex
-> ```
->
-> 将 `AGENT_NAME` 替换为当前平台对应的 Agent 标识。下方的平台原生插件安装方式作为补充；需要 Gitee 国内源时，优先使用此方式。
+Codex 原生发现 Agent Skills。项目级技能适合与仓库一起提交；用户级技能适合在所有项目中复用。
 
-本仓库提供通用插件清单、Codex 兼容清单和仓库级插件市场入口。
+## 方式一：通过 Gitee 安装
 
-## 作为插件安装
-
-将 GitHub 仓库添加为插件市场：
+在项目根目录打开 Codex 终端，执行：
 
 ~~~bash
-codex plugin marketplace add Swcmb/kaoyan-english-grader
+npx skills add https://gitee.com/ianwusb/kaoyan-english-grader.git \
+  --skill kaoyan-english-grader \
+  --agent codex
 ~~~
 
-随后打开 Codex，执行 /plugins，找到 kaoyan-english-grader 插件市场并安装插件。安装后开启新会话。
-
-更新插件市场元数据：
+默认安装到当前项目的 .agents/skills/。添加 -g 可安装到用户级 ~/.agents/skills/：
 
 ~~~bash
-codex plugin marketplace upgrade kaoyan-english-grader
+npx skills add https://gitee.com/ianwusb/kaoyan-english-grader.git \
+  --skill kaoyan-english-grader \
+  --agent codex \
+  -g
 ~~~
 
-## 作为独立 Skill 安装
+## 方式二：手动安装
 
-Codex 会从项目级 .agents/skills 目录或用户级 ~/.agents/skills 目录发现技能。使用通用安装工具：
+克隆仓库：
 
 ~~~bash
-npx skills add https://gitee.com/ianwusb/kaoyan-english-grader.git --skill kaoyan-english-grader --agent codex
+git clone https://gitee.com/ianwusb/kaoyan-english-grader.git
 ~~~
 
-添加 -g 参数可安装到用户级目录。
+将完整技能目录复制到目标路径：
+
+- 项目级：项目根目录/.agents/skills/kaoyan-english-grader/
+- 用户级：~/.agents/skills/kaoyan-english-grader/
+
+Windows 用户的用户级目录对应 %USERPROFILE%/.agents/skills/kaoyan-english-grader/。
+
+目录中必须同时有 SKILL.md 和 references/。不要只复制主文件。
+
+## 方式三：让 Codex 下载并安装
+
+在 Codex 对话中请求：
+
+~~~text
+请从以下 Git 仓库安装考研英语批改 Skill：
+https://gitee.com/ianwusb/kaoyan-english-grader.git
+
+只安装 kaoyan-english-grader，并保留其 references 子目录。
+~~~
+
+Codex 的下载能力受当前网络和运行环境权限影响。执行后检查实际写入目录，不要仅凭回复判断安装成功。
 
 ## 验证
 
-要求 Codex 批改一道具体题目，确认其读取 skills/kaoyan-english-grader/references/ 下对应的中文规则文件。
+1. 在 Codex 中开启新会话。
+2. 输入 /skills 或询问当前可用的 Skills。
+3. 调用 $kaoyan-english-grader，或描述一项考研英语批改任务。
+4. 分别测试英语一翻译与英语二大作文，确认两类任务使用对应分值和规则。
+
+## 更新与卸载
+
+CLI 安装的技能可使用 npx skills update 更新。手动安装时，用新版本完整覆盖目标目录。删除项目级目录会影响使用该仓库的团队成员；删除用户级目录只影响当前用户。
+
+## 官方资料
+
+- [Codex：构建 Skills](https://learn.chatgpt.com/docs/build-skills)
+- [Skills CLI：支持 Agent 与安装目录](https://github.com/vercel-labs/skills/blob/main/docs/agents.md)
