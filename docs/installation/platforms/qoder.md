@@ -27,17 +27,10 @@ npx skills add https://gitee.com/ianwusb/kaoyan-english-grader.git \
 
 ZIP 结构：
 
-```text
+~~~text
 kaoyan-english-grader/
-├── SKILL.md
-└── 外部规则文件
-    ├── english1_essay_major.md
-    ├── english1_essay_minor.md
-    ├── english1_translation.md
-    ├── english2_essay_major.md
-    ├── english2_essay_minor.md
-    └── english2_translation.md
-```
+└── SKILL.md
+~~~
 
 ### 手动安装
 
@@ -49,7 +42,7 @@ kaoyan-english-grader/
 
 ## 能力边界
 
-IDE 和 CLI 的重新加载方式可能不同，按当前客户端处理。导入后检查主文件与六份引用文件均可读取；只看到 Installed 状态还不够。
+IDE 和 CLI 的重新加载方式可能不同，按当前客户端处理。导入后确认 `SKILL.md` 内容完整且 Agent 能正常调用；只看到 Installed 状态还不够。
 
 ## 验收
 
