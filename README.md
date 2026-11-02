@@ -142,6 +142,14 @@ npx skills add https://github.com/Swcmb/kaoyan-english-grader.git \
 
 ```text
 kaoyan-english-grader/
+├── .github/
+│   └── workflows/
+│       └── publish.yml
+├── .claude-plugin/
+├── .codex-plugin/
+├── .cursor-plugin/
+├── .antigravity-plugin/
+├── .agents/plugins/marketplace.json
 ├── skills/
 │   └── kaoyan-english-grader/
 │       ├── SKILL.md
@@ -152,25 +160,31 @@ kaoyan-english-grader/
 │           ├── english2_essay_major.md
 │           ├── english2_essay_minor.md
 │           └── english2_translation.md
-├── .claude-plugin/
-├── .codex-plugin/
-├── .cursor-plugin/
-├── .antigravity-plugin/
-├── .agents/plugins/marketplace.json
-├── plugin.json
+├── docs/
+│   ├── README.*.md
+│   ├── github-content-writing.md
+│   ├── releasing.md
+│   └── third-party-license-review.md
+├── Dockerfile
+├── GEMINI.md
+├── INSTALL.md
+├── LICENSE
+├── README.md
 ├── gemini-extension.json
 ├── kimi.plugin.json
-├── INSTALL.md
-├── GEMINI.md
-├── LICENSE
-├── COPYING
-└── docs/
-    ├── README.*.md
-    ├── github-content-writing.md
-    └── third-party-license-review.md
+└── plugin.json
 ```
 
 只分发 Skill 时，复制 `skills/kaoyan-english-grader/` 完整目录。不要只复制 `SKILL.md`，六份 `references/` 文件是题型批改所需的规则。
+
+## Releases & Packages
+
+推送版本标签（例如 `v1.0.0`）后，GitHub Actions 会自动发布：
+
+- **[GitHub Releases](https://github.com/Swcmb/kaoyan-english-grader/releases)：** ZIP、TAR.GZ 源码包和 SHA-256 校验文件。
+- **[GitHub Packages（GHCR）](https://github.com/users/Swcmb/packages?repo_name=kaoyan-english-grader)：** 同版本 OCI 包，Skill 文件位于镜像内的 `/opt/skills/kaoyan-english-grader/`。
+
+发布和下载方式见[版本发布指南](docs/releasing.md)。
 
 ## 文档与贡献
 
@@ -178,6 +192,7 @@ kaoyan-english-grader/
 - [手机端渠道索引](docs/README.mobile-apps.md)
 - [Skills CLI 安装指南](docs/README.skills-cli.md)
 - [Agent 自主安装规范](INSTALL.md)
+- [版本发布指南](docs/releasing.md)
 - [GitHub 内容写作与 Markdown 排版规范](docs/github-content-writing.md)
 - [第三方内容与许可证审查规范](docs/third-party-license-review.md)
 
@@ -185,4 +200,4 @@ Issue、PR 和技术说明应结论先行，区分事实、假设、方案与验
 
 ## 许可证
 
-本仓库原创内容采用 [GNU GPL-3.0-or-later](LICENSE)，完整文本同时保存在 [COPYING](COPYING)。第三方文件继续保留各自的许可证、版权声明和必要通知。
+本仓库原创内容采用 [GNU GPL-3.0-or-later](LICENSE)。第三方文件继续保留各自的许可证、版权声明和必要通知。

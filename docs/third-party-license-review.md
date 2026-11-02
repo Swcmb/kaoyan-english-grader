@@ -95,7 +95,7 @@ GNU 将 Apache-2.0 列为与 GPL-3.0 兼容；Apache 软件基金会也说明 Ap
 
 ### 当前仓库
 
-本仓库原创内容采用 `GPL-3.0-or-later`。根目录 `LICENSE` 和 `COPYING` 保存完整 GPLv3 文本。新建原创 Markdown 文件应添加 `SPDX-License-Identifier: GPL-3.0-or-later` 文件级标识。
+本仓库原创内容采用 `GPL-3.0-or-later`，完整许可证文本保存在根目录 `LICENSE`。新建原创 Markdown 文件应添加 `SPDX-License-Identifier: GPL-3.0-or-later` 文件级标识。
 
 第三方文件保留上游 SPDX 标识、版权声明和许可证。仓库默认许可证不会覆盖独立授权的第三方文件。
 
