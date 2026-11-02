@@ -1,6 +1,6 @@
 {
   "name": "kaoyan-english-grader",
   "version": "1.0.0",
-  "description": "Practice grading and feedback for postgraduate entrance exam English I and II translation and essays.",
+  "description": "考研英语一/二翻译与作文批改，以及第三方许可证审查和署名验证。",
   "contextFileName": "GEMINI.md"
 }
