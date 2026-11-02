@@ -53,7 +53,7 @@ npx skills add https://gitee.com/ianwusb/kaoyan-english-grader.git \
 
 公开的 Trae IDE 技能文档包含设置、导入、项目/全局目录和技能市场流程。TraeCode、TraeWork 等产品线的菜单可能不同，以当前客户端技能管理页面为准。
 
-## 官方资料
+## 官方文档与参考资料
 
 - [Trae：技能（Skill）](https://docs.trae.cn/ide_skills)
 - [Skills CLI：Trae 与 Trae CN 路径](https://github.com/vercel-labs/skills/blob/main/docs/agents.md)

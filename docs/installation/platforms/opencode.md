@@ -43,7 +43,7 @@ OpenCode 按需加载技能：先读取名称和描述，任务匹配时再读�
 
 Skills CLI 安装使用 `npx skills update`。手动安装时替换完整技能目录；卸载时只删除目标范围下的 `kaoyan-english-grader/`。
 
-## 官方资料
+## 官方文档与参考资料
 
 - [OpenCode：Agent Skills](https://opencode.ai/docs/skills)
 - [Skills CLI：安装与更新命令](https://github.com/vercel-labs/skills/blob/main/docs/commands.md)

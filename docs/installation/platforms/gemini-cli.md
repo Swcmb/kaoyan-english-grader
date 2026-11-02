@@ -75,7 +75,7 @@ gemini skills uninstall kaoyan-english-grader --scope user
 
 手动安装时，替换或删除目标路径下的 `kaoyan-english-grader/`。
 
-## 官方资料
+## 官方文档与参考资料
 
 - [Gemini CLI：Skills 命令与管理](https://geminicli.com/docs/cli/skills/)
 - [Gemini CLI：Managing Agent Skills](https://github.com/google-gemini/gemini-cli/blob/main/docs/cli/using-agent-skills.md)

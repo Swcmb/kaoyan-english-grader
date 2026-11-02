@@ -54,7 +54,7 @@ https://gitee.com/ianwusb/kaoyan-english-grader.git
 
 CLI 安装后按 Skills CLI 流程执行 `npx skills update`。手动安装时完整替换目标目录。删除项目级副本会影响使用该仓库的团队成员；删除用户级副本只影响当前用户。
 
-## 官方资料
+## 官方文档与参考资料
 
 - [Codex：构建 Skills](https://learn.chatgpt.com/docs/build-skills)
 - [Skills CLI：Agent 与目录映射](https://github.com/vercel-labs/skills/blob/main/docs/agents.md)

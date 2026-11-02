@@ -45,7 +45,7 @@ npx skills add https://gitee.com/ianwusb/kaoyan-english-grader.git \
 
 Skills CLI 安装使用 `npx skills update`。手动安装时完整替换技能目录。卸载只删除 `kaoyan-english-grader/`。
 
-## 官方资料
+## 官方文档与参考资料
 
 - [Claude Code：Agent Skills 概览](https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview)
 - [Skills CLI：命令说明](https://github.com/vercel-labs/skills/blob/main/docs/commands.md)

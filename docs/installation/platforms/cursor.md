@@ -49,7 +49,7 @@ npx skills add https://gitee.com/ianwusb/kaoyan-english-grader.git \
 
 再次运行 Skills CLI 安装命令并按提示更新，或手动替换完整目录。卸载时只删除目标范围下的 `kaoyan-english-grader/`。
 
-## 官方资料
+## 官方文档与参考资料
 
 - [Cursor：Agent Skills](https://cursor.com/docs/skills)
 - [Cursor：个人 Skills 与 Cloud Agents](https://cursor.com/help/customization/skills)

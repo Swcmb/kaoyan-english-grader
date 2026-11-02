@@ -65,7 +65,7 @@ agy plugin install ./kaoyan-english-grader
 
 Skills CLI 安装使用 `npx skills update`。插件使用 `agy plugin` 管理命令更新或重新安装。卸载时仅删除本技能对应的目录或插件。
 
-## 官方资料
+## 官方文档与参考资料
 
 - [Google Antigravity：Agent Skills](https://antigravity.google/docs/skills?app=antigravity)
 - [Google Antigravity：Plugins](https://www.antigravity.google/docs/plugins)

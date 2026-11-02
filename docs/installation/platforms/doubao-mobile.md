@@ -33,7 +33,7 @@ This file is licensed under GPL-3.0-or-later. See LICENSE.
 
 若账号和客户端支持完整技能包导入，在电脑版导入本仓库完整目录，并检查 `references/` 六份规则。没有导入入口时，可在豆包中按本仓库规则创建个人技能，并核对六类题型是否迁移完整。
 
-## 官方资料
+## 官方文档与参考资料
 
 - [豆包开放平台：Skill 接入指南](https://open.doubao.com/document/doubao-developer-guide/skill-integration-guide)
 - [豆包工作任务模式技能功能介绍](https://www.sina.cn/news/detail/5334379914069294.html)

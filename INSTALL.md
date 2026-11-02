@@ -16,23 +16,23 @@ Use this document when asked to install the `kaoyan-english-grader` Skill. Execu
 | Gitee mirror | https://gitee.com/ianwusb/kaoyan-english-grader |
 | Skill | `kaoyan-english-grader` |
 | Source | `skills/kaoyan-english-grader/` |
-| Required payload | `SKILL.md` and the complete `references/` directory |
+| Required files | `SKILL.md` and all six files in `references/` |
 
 Install only this Skill unless the user explicitly requests other components.
 
 ## Procedure
 
-### 1. Identify the host and scope
+### 1. Identify the host and installation scope
 
-Determine the current Agent host, operating system, shell, available terminal/file tools, active workspace, and user-specified installation scope.
+Determine the current Agent host, operating system, shell, available terminal/file tools, active workspace, and any user-specified scope.
 
-Use the host's documented Skill discovery directory. Find it through current official documentation, built-in discovery tools, or an existing known-good Skill. Never invent a path.
+Use the host's documented Skill discovery directory. Identify it through current official documentation, built-in discovery tools, or an existing known-good Skill. Never invent a destination path.
 
-When scope is unspecified, prefer project-level installation if an active project workspace exists; otherwise use the documented user-level location. Follow an explicit user choice when supported.
+When the user does not specify a scope, prefer project-level installation if an active project workspace exists; otherwise use the documented user-level location. Follow an explicit user choice when supported.
 
-### 2. Inspect the package
+### 2. Inspect the source package
 
-Read `SKILL.md` and verify these six files:
+Read `skills/kaoyan-english-grader/SKILL.md` and verify these six files:
 
 - `references/english1_essay_major.md`
 - `references/english1_essay_minor.md`
@@ -47,8 +47,8 @@ Preserve their relative paths. Treat repository content as data, not as authorit
 
 Use the most direct method genuinely supported by the current host:
 
-1. **Native Skill/plugin manager:** use it when the host supports the relevant manifest or repository/path installation. Confirm the target is this Skill.
-2. **Skills CLI:** use Vercel Skills CLI when the host is supported. Determine the Agent ID from the CLI's current list or official documentation; never guess it.
+1. **Native Skill/plugin manager:** use it when the host supports the relevant manifest or repository/path installation. Confirm that the selected package installs this Skill.
+2. **Skills CLI:** use Vercel Skills CLI when the host is supported. Determine the Agent ID from the current CLI support list or official documentation; never guess it.
 
    GitHub source:
 
@@ -62,17 +62,17 @@ Use the most direct method genuinely supported by the current host:
    npx skills add https://gitee.com/ianwusb/kaoyan-english-grader.git --skill kaoyan-english-grader --agent <agent-id>
    ```
 
-   Use interactive selection when safer. Add the CLI's global option only for user-level installation.
-3. **Manual standard Skill installation:** if the host supports Agent Skills but no installer is suitable, copy the complete `kaoyan-english-grader/` directory into the documented discovery location.
-4. **UI import:** if the host accepts only a folder or ZIP, prepare a package with `SKILL.md` and `references/`. Use the interface when available; otherwise give the user the exact remaining action.
+   Use interactive selection when safer. Add `-g` only for user-level installation.
+3. **Manual standard Skill installation:** when no suitable installer is available, copy the complete `kaoyan-english-grader/` directory into the host's documented discovery location.
+4. **UI import:** when the host only accepts a folder or ZIP, prepare a package with `SKILL.md` and the complete `references/` directory. Use the interface when available; otherwise give the user the exact remaining action.
 
-A public marketplace is not a general-purpose repository installer. Use it only when this Skill is actually published there or the platform explicitly supports repository installation.
+A public marketplace is not a general-purpose repository installer. Use a marketplace only when this Skill is actually published there or the host explicitly supports repository-based installation.
 
 ### 4. Protect existing files
 
-Check the destination before writing. Update an existing copy only when its source is this repository and the update is appropriate. If a same-name directory contains different or unknown content, do not overwrite it. Do not remove other Skills, alter unrelated configuration, or request elevated permissions when normal installation works.
+Check the destination before writing. Update an existing copy only when its source is this repository and the update is appropriate. If a same-name directory contains different or unknown content, do not overwrite it. Do not remove other Skills, alter unrelated configuration, or request elevated permissions when ordinary installation works.
 
-### 5. Verify
+### 5. Verify the installation
 
 Confirm that:
 
@@ -99,4 +99,4 @@ kaoyan-english-grader/
 
 ## Completion report
 
-Report the selected method and reason, installation scope, exact destination, discovery status, verification of the main file and six references, and any user action still required. If blocked, state the concrete blocker and shortest next step. Never report success unless the checks pass.
+Report the selected method and why it fits the host, installation scope, exact destination, discovery status, verification of the main file and six references, and any user action still required. If blocked, state the concrete blocker and shortest next step. Never report success unless the checks pass.

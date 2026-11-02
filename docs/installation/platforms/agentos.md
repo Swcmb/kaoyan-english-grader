@@ -39,7 +39,7 @@ AgentOS 的应用商店版本历史包含技能商店改版、“默认/已装�
 
 使用本仓库时，检查技能是否可见，并分别测试英语一翻译和英语二大作文。
 
-## 官方资料
+## 官方文档与参考资料
 
 - [AgentOS：加拿大区 App Store 页面](https://apps.apple.com/ca/app/agentos/id6759725374)
 - [AgentOS：智利区 App Store 页面](https://apps.apple.com/cl/app/agentos/id6759725374)

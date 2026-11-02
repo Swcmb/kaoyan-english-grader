@@ -68,7 +68,7 @@ references/
 
 两种安装副本分别管理，不会自动同步。
 
-## 官方资料
+## 官方文档与参考资料
 
 - [Claude：使用 Skills](https://support.claude.com/en/articles/12512180-use-skills-in-claude)
 - [Claude：创建自定义 Skills](https://support.claude.com/en/articles/12512198-how-to-create-custom-skills)

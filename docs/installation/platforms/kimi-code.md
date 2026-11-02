@@ -49,7 +49,7 @@ Kimi Code CLI 按 Project → User 优先级加载。默认 `KIMI_CODE_HOME` 为
 
 Skills CLI 安装使用 `npx skills update`。插件通过 Kimi 插件管理命令更新或重装。卸载时只移除对应 Skill 或插件条目。
 
-## 官方资料
+## 官方文档与参考资料
 
 - [Kimi Code：Using Skills](https://www.kimi.ai/help/plugins-and-skills/use-skills-in-code)
 - [Kimi Code：Plugins 命令](https://www.kimi.com/code/docs/en/kimi-code-cli/customization/plugins.html)

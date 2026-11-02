@@ -72,7 +72,7 @@ openclaw skills info kaoyan-english-grader
 
 安装前检查来源、`SKILL.md`、脚本、网络请求和文件访问范围。不要为了跳过未知风险提示而盲目使用 `--force`。本仓库核心规则是 Markdown 文件，仍需检查实际下载内容。
 
-## 官方资料
+## 官方文档与参考资料
 
 - [OpenClaw：Skills 系统与安装](https://docs.openclaw.ai/skills)
 - [OpenClaw：Skills CLI](https://docs.openclaw.ai/cli/skills)

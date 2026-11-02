@@ -36,7 +36,7 @@ AionClaw 提供 iOS 和 Android App。应用商店介绍包含 Skill 市场、�
 
 使用简单任务确认技能触发，再提交英语一翻译和英语二大作文，检查分值与规则引用。
 
-## 官方资料
+## 官方文档与参考资料
 
 - [AionClaw：Apple App Store](https://apps.apple.com/cn/app/aionclaw-%E7%9C%9F%E6%AD%A3%E8%83%BD%E5%81%9A%E4%BA%8B%E7%9A%84ai%E9%BE%99%E8%99%BE%E5%8A%A9%E6%89%8B/id6775734154)
 - [AionClaw：Google Play](https://play.google.com/store/apps/details?id=com.abunda.aionclaw)

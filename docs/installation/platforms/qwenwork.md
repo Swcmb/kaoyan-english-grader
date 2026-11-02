@@ -60,7 +60,7 @@ https://gitee.com/ianwusb/kaoyan-english-grader.git
 
 在技能管理区域按当前版本提供的流程更新或卸载。本地 ZIP 导入时，重新打包最新目录并上传。移除前核对技能名称。
 
-## 官方资料
+## 官方文档与参考资料
 
 - [QwenWork：技能帮助文档](https://qwenwork.cn/docs/features/skills)
 - [阿里云帮助中心：QwenWork Skills](https://www.alibabacloud.com/help/zh/qwenwork/skills)

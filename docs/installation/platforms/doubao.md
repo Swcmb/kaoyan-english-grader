@@ -62,7 +62,7 @@ This file is licensed under GPL-3.0-or-later. See LICENSE.
 
 分别测试英语一翻译和英语二大作文，检查评分维度、分值和题型规则。使用自建精简版技能时，还要确认六类题型均已迁移。
 
-## 官方与参考资料
+## 官方文档与参考资料
 
 - [豆包开放平台：Skill 接入指南](https://open.doubao.com/document/doubao-developer-guide/skill-integration-guide)
 - [豆包工作：技能、连接器与工作伙伴介绍](https://www.feishu.cn/content/article/7677519271848610746)

@@ -44,7 +44,7 @@ npx skills add https://gitee.com/ianwusb/kaoyan-english-grader.git \
 
 Skills CLI 安装使用 `npx skills update`。手动安装时完整替换技能目录；卸载时只删除对应范围下的 `kaoyan-english-grader/`。
 
-## 官方资料
+## 官方文档与参考资料
 
 - [Qwen Code：Agent Skills](https://qwenlm.github.io/qwen-code-docs/en/users/features/skills/)
 - [Skills CLI：Qwen Code 目录映射](https://github.com/vercel-labs/skills/blob/main/docs/agents.md)

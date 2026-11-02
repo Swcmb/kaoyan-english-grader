@@ -25,7 +25,7 @@ This file is licensed under GPL-3.0-or-later. See LICENSE.
 
 千问 App 手机端公开资料确认了技能浏览和调用入口，但尚未确认普通用户可从手机文件系统导入任意第三方 `SKILL.md` 或 ZIP。桌面端 QwenWork 已公开本地技能包上传能力；两者不是同一界面。
 
-需要使用本仓库完整规则时，优先使用桌面端 [QwenWork](README.qwenwork.md) 上传 ZIP，或选择支持标准 Agent Skills 的开发工具。
+需要使用本仓库完整规则时，优先使用桌面端 [QwenWork](qwenwork.md) 上传 ZIP，或选择支持标准 Agent Skills 的开发工具。
 
 ## 验证与官方资料
 

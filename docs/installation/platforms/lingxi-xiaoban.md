@@ -35,7 +35,7 @@ App Store 也提供 iOS 产品页面。地区可用性和设备兼容性以相�
 
 若当前版本新增本地导入入口，先核对文件格式和目录要求，并验证 `SKILL.md` 与 `references/` 六份规则是否完整保留。
 
-## 官方资料
+## 官方文档与参考资料
 
 - [灵犀·晓伴：小米应用商店](https://app.mi.com/details?id=com.lxxb)
 - [灵犀·晓伴：App Store](https://apps.apple.com/cn/app/%E7%81%B5%E7%8A%80-%E6%99%93%E4%BC%B4/id6766031151)
