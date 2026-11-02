@@ -153,7 +153,6 @@ Skill 采用单主文件设计，评分规则与批改指令集中管理，方�
 | Kimi | [查看案例](https://www.kimi.com/share/1a19b9c5-cef2-8042-8000-0000e812461c) |
 | WorkBuddy | [查看案例](https://www.workbuddy.link/p/Tv43s0sCbLxhLLmb1Cyta2) |
 
-> 若链接无法打开，可能是分享已过期、需要登录或被平台限制访问。请以本地安装后的实际批改结果为准。
 
 ## 安装方式
 
