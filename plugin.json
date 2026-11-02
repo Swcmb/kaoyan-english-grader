@@ -2,14 +2,14 @@
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "kaoyan-english-grader",
   "version": "1.0.0",
-  "description": "Practice grading and feedback for all six postgraduate entrance exam English I and II translation and essay task types.",
+  "description": "跨平台 Agent Skills：考研英语一/二翻译与作文批改，以及第三方内容许可证审查和署名完整性验证。",
   "author": {
     "name": "Swcmb",
     "url": "https://github.com/Swcmb"
   },
   "homepage": "https://github.com/Swcmb/kaoyan-english-grader",
   "repository": "https://github.com/Swcmb/kaoyan-english-grader",
-  "license": "MIT",
+  "license": "GPL-3.0-or-later",
   "keywords": [
     "agent-skill",
     "postgraduate-exam",
@@ -18,14 +18,18 @@
     "translation",
     "essay",
     "grading",
-    "education"
+    "education",
+    "agent-skills",
+    "license-compliance",
+    "third-party-licenses",
+    "markdown"
   ],
   "extensions": {
     "com.openai": {
       "interface": {
-        "displayName": "考研英语批改",
-        "shortDescription": "考研英语一/二翻译与作文六种题型批改",
-        "longDescription": "按题型进行审题、模拟评分、逐句纠错、完整修改和针对性复盘。评分仅供练习参考。",
+        "displayName": "考研英语批改与开源合规",
+        "shortDescription": "考研英语一/二批改与第三方许可证审查",
+        "longDescription": "包含考研英语六类题型模拟批改，以及第三方代码、Skill、Prompt 和配置的文件级许可证审查、来源记录与署名测试。",
         "developerName": "Swcmb",
         "category": "Education",
         "capabilities": [
@@ -34,7 +38,8 @@
         "websiteURL": "https://github.com/Swcmb/kaoyan-english-grader",
         "defaultPrompt": [
           "批改我的考研英语一大作文，检查图画寓意与论证是否切题。",
-          "批改我的考研英语二翻译，逐意群划分模拟采分点。"
+          "批改我的考研英语二翻译，逐意群划分模拟采分点。",
+          "在复制第三方 Skill 或代码之前，检查它的许可证、NOTICE 和文件级署名要求。"
         ]
       }
     }
