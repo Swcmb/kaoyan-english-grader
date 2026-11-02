@@ -6,7 +6,7 @@ This file is licensed under GPL-3.0-or-later. See ../../../LICENSE.
 
 # Kimi Code CLI：安装与使用
 
-Kimi Code CLI 支持标准 Agent Skills，也提供插件系统。标准目录版和 Kimi 插件是两个独立安装对象。
+Kimi Code CLI 支持标准 Agent Skills，也提供插件系统。Skill 目录安装与 Kimi 插件是两个独立安装对象。
 
 ## 安装与使用
 
