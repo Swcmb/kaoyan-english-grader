@@ -18,7 +18,7 @@ Claude 网页版和 Desktop 的自定义 Skill 上传由账号内 Skills 管理�
 kaoyan-english-grader.zip
 └── kaoyan-english-grader/
     ├── SKILL.md
-    └── references/
+    └── （外部规则目录）
         ├── english1_essay_major.md
         ├── english1_essay_minor.md
         ├── english1_translation.md
@@ -37,15 +37,15 @@ kaoyan-english-grader.zip
 
 ## 能力边界
 
-自定义 Skill 上传的账号计划、代码执行设置和组织策略以当前帮助中心及账号界面为准。ZIP 必须保留主文件和引用目录。Claude Code 的本地 Skill 目录由另一套机制管理。
+自定义 Skill 上传的账号计划、代码执行设置和组织策略以当前帮助中心及账号界面为准。ZIP 必须保留完整 Skill 文件。Claude Code 的本地 Skill 目录由另一套机制管理。
 
 ## 验收
 
-检查技能是否出现在目标产品中，并分别测试英语一翻译和英语二大作文。核对题型路由、评分档位、引用规则和输出要求。上传或保存成功不能替代真实任务验证。
+检查技能是否出现在目标产品中，并分别测试英语一翻译和英语二大作文。核对题型路由、评分档位、内嵌评分规则和输出要求。上传或保存成功不能替代真实任务验证。
 
-## 本仓库的 Skill 版本选择
+## 本项目 Skill
 
-技能市场只安装平台实际上架的条目；只有能够核验本项目的发布者和来源时，才能称为安装了本项目。应用内创建生成平台内部 Skill，需要将六类评分规则迁移并逐项核对，不能视为标准文件导入。若当前版本明确支持标准 Skill 目录或完整 ZIP，优先安装标准版；若只能导入单个标准 `SKILL.md`，使用独立完整版 `skills/kaoyan-english-grader-full/SKILL.md`。支持标准目录的平台也可安装完整版，但不推荐替代标准版。
+本仓库只提供一个自包含的标准 Agent Skill，六类题型的完整评分规则全部内嵌于 `skills/kaoyan-english-grader/SKILL.md`，不依赖 `（外部规则目录）` 或其他外部文件。目录安装时导入 `skills/kaoyan-english-grader/`；平台明确只接受单文件时，导入该目录中的 `SKILL.md`。
 
 ## 官方资料
 
