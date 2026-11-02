@@ -23,7 +23,12 @@ npx skills add Swcmb/kaoyan-english-grader \
   --agent opencode \
   --agent gemini-cli \
   --agent antigravity \
-  --agent kimi-code-cli
+  --agent kimi-code-cli \
+  --agent qwen-code \
+  --agent github-copilot \
+  --agent trae \
+  --agent windsurf \
+  --agent cline
 ~~~
 
 Use -g for global installation across projects:
