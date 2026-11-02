@@ -34,7 +34,7 @@ This file is licensed under GPL-3.0-or-later. See LICENSE.
 
 只有本项目真实上架元宝技能市场后，用户才能通过市场安装本项目。元宝开放平台是服务方接入渠道，需要按平台要求提交审核，不是普通用户的即时安装命令。
 
-需要完整六类批改规则时，可选择 [QwenWork](README.qwenwork.md)、[WorkBuddy](workbuddy.md)、[Trae](README.trae.md)、[Qoder](README.qoder.md)，或 Claude Code、Codex、Cursor、OpenCode 等标准 Agent Skills 客户端。
+需要完整六类批改规则时，可选择 [QwenWork](qwenwork.md)、[WorkBuddy](workbuddy.md)、[Trae](trae.md)、[Qoder](qoder.md)，或 Claude Code、Codex、Cursor、OpenCode 等标准 Agent Skills 客户端。
 
 ## 验证与排查
 
