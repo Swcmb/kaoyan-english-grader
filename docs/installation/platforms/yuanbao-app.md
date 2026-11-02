@@ -1,7 +1,7 @@
 <!--
 Copyright (C) 2026 kaoyan-english-grader contributors
 SPDX-License-Identifier: GPL-3.0-or-later
-This file is licensed under GPL-3.0-or-later. See LICENSE.
+This file is licensed under GPL-3.0-or-later. See ../../../LICENSE.
 -->
 
 # 腾讯元宝 App：技能市场安装与调用
@@ -27,7 +27,7 @@ This file is licensed under GPL-3.0-or-later. See LICENSE.
 
 公开的元宝用户端流程没有明确说明普通用户可导入任意本地 `SKILL.md` 或 ZIP。技能市场安装与标准 Agent Skill 文件夹导入是不同能力。
 
-需要本仓库完整批改流程时，选择支持本地 Skill 导入的桌面 Agent 或 QwenWork、WorkBuddy 等渠道。
+需要本仓库完整批改流程时，选择支持本地 Skill 导入的桌面 Agent 或 [QwenWork](qwenwork.md)、[WorkBuddy](workbuddy.md) 等渠道。
 
 ## 验证与官方资料
 

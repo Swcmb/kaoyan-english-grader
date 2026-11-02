@@ -1,7 +1,7 @@
 <!--
 Copyright (C) 2026 kaoyan-english-grader contributors
 SPDX-License-Identifier: GPL-3.0-or-later
-This file is licensed under GPL-3.0-or-later. See LICENSE.
+This file is licensed under GPL-3.0-or-later. See ../../../LICENSE.
 -->
 
 # 智图Claw：技能市场与 Gateway 连接
@@ -19,12 +19,7 @@ This file is licensed under GPL-3.0-or-later. See LICENSE.
 
 智图Claw 可连接桌面端或托管环境中的 Agent。先准备正在运行且允许手机访问的 Gateway。
 
-连接前核对：
-
-- Gateway 服务已启动。
-- 手机与 Gateway 网络互通。
-- 使用 Gateway 提供的有效地址和认证信息。
-- 不要将访问令牌、密钥或管理密码粘贴到公开聊天或技能说明中。
+连接前确认服务已启动、手机与 Gateway 网络互通，并使用 Gateway 提供的有效地址和认证信息。不要将访问令牌、密钥或管理密码粘贴到公开聊天或技能说明中。
 
 连接字段和认证方式以当前 App 与 Gateway 版本为准。
 
@@ -32,7 +27,7 @@ This file is licensed under GPL-3.0-or-later. See LICENSE.
 
 1. 打开技能区域或技能市场。
 2. 浏览分类或搜索目标技能。
-3. 打开详情，核对名称、用途和来源。
+3. 查看详情，核对名称、用途和来源。
 4. 按界面提示安装。
 5. 在技能管理页确认状态。
 6. 返回对话提交任务，检查 Agent 是否调用。
@@ -45,9 +40,6 @@ App Store 公开说明尚未明确列出手机端本地 ZIP/TAR.GZ 导入格式�
 
 ## 验证与官方资料
 
-- App 显示 Gateway 已连接。
-- 技能管理页显示目标技能已安装。
-- 对话能够实际调用技能。
-- 使用本仓库时，英语一翻译和英语二大作文均可读取对应规则。
+使用本仓库时，确认 App 显示 Gateway 已连接、技能管理页显示目标技能，并且英语一翻译和英语二大作文均可读取对应规则。
 
 [智图Claw：App Store 页面](https://apps.apple.com/cn/app/%E6%99%BA%E5%9B%BEclaw/id6760357112)

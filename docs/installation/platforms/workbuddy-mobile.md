@@ -1,7 +1,7 @@
 <!--
 Copyright (C) 2026 kaoyan-english-grader contributors
 SPDX-License-Identifier: GPL-3.0-or-later
-This file is licensed under GPL-3.0-or-later. See LICENSE.
+This file is licensed under GPL-3.0-or-later. See ../../../LICENSE.
 -->
 
 # WorkBuddy 微信小程序：安装与调用 Skill
@@ -13,8 +13,8 @@ WorkBuddy 手机端通过微信小程序使用。公开文档说明，用户可�
 1. 在微信中打开 WorkBuddy 小程序并登录。
 2. 在 SkillHub 页面查找目标技能。
 3. 打开详情，复制页面提供的安装指令。
-4. 回到 WorkBuddy 小程序。
-5. 将指令粘贴到对话框并发送。
+4. 回到 WorkBuddy 小程序并进入目标对话。
+5. 粘贴指令并发送。
 6. 等待安装完成，再从添加技能列表确认技能可用。
 
 执行前检查发布者、来源和命令内容，不要运行来源不明的安装指令。
@@ -39,7 +39,7 @@ WorkBuddy 手机端通过微信小程序使用。公开文档说明，用户可�
 
 若 SkillHub 已发布兼容的本项目技能包，可复制其安装指令到小程序。没有对应条目时，使用 [WorkBuddy 桌面端 ZIP 导入](workbuddy.md)，或选择支持标准 Skill 文件导入的平台。
 
-## 官方文档与参考资料
+## 官方资料
 
 - [WorkBuddy 小程序：添加附件与技能](https://www.codebuddy.cn/docs/workbuddymini/features/Attachments-and-Skills)
 - [WorkBuddy 小程序：快速开始](https://www.codebuddy.cn/docs/workbuddymini/quick-start/Overview)
