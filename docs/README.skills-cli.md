@@ -31,7 +31,9 @@ npx skills add https://gitee.com/ianwusb/kaoyan-english-grader.git \
   --agent opencode \
   --agent gemini-cli \
   --agent antigravity \
-  --agent kimi-code-cli
+  --agent kimi-code-cli \
+  --agent qoder \
+  --agent trae-cn
 ```
 
 网络环境无法直接访问 Gitee Git 地址时，先克隆仓库，再从本地目录安装：
@@ -59,6 +61,8 @@ npx skills update kaoyan-english-grader
 ```
 
 ## 支持的平台
+
+除上面的常用 Agent 外，当前 Skills CLI 也提供 `qoder` 与 `trae-cn` 目标，可分别安装到 Qoder 和中文 Trae 的技能目录。WorkBuddy、豆包、QwenWork 等产品优先使用各自的本地技能导入入口，详见[国内平台与手机端 Skill 安装指南](README.domestic-platforms.md)。
 
 安装工具支持的 Agent 名单会持续变化，请查看其维护文档：
 
