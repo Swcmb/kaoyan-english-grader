@@ -1,3 +1,3 @@
 @./skills/kaoyan-english-grader/SKILL.md
 
-Use the Kaoyan English Grader workflow for requests to grade or improve postgraduate entrance exam English I/II translation, major essays, and minor essays. The skill routes to the appropriate reference file and treats all scores as practice estimates.
+当用户要求批改或提升考研英语一、英语二的翻译、大作文或小作文时，使用“考研英语 AI 批改”工作流程。根据考试类型和题型读取对应中文规则文件。所有分数均为练习模拟评价。
