@@ -1,7 +1,7 @@
 <!--
 Copyright (C) 2026 kaoyan-english-grader contributors
 SPDX-License-Identifier: GPL-3.0-or-later
-This file is licensed under GPL-3.0-or-later. See LICENSE.
+This file is licensed under GPL-3.0-or-later. See ../../../LICENSE.
 -->
 
 # 腾讯元宝：技能市场与自定义智能体
@@ -40,9 +40,7 @@ This file is licensed under GPL-3.0-or-later. See LICENSE.
 
 检查目标技能是否显示已安装、首次授权是否完成，以及对话能否实际调用。技能未出现时刷新技能页并确认账号和客户端版本。
 
-> **支持边界：** 本指南描述元宝技能市场与智能体能力，不代表普通用户可以直接导入本仓库标准 Skill 文件。
-
-## 官方文档与参考资料
+## 官方资料
 
 - [元宝官方：技能上新与安装步骤](https://weibo.com/2/detail/5354654420435913)
 - [元宝技能入口与调用介绍](https://www.xmsumi.com/detail/4386)

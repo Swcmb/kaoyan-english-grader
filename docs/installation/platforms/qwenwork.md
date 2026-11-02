@@ -1,7 +1,7 @@
 <!--
 Copyright (C) 2026 kaoyan-english-grader contributors
 SPDX-License-Identifier: GPL-3.0-or-later
-This file is licensed under GPL-3.0-or-later. See LICENSE.
+This file is licensed under GPL-3.0-or-later. See ../../../LICENSE.
 -->
 
 # 千问办公（QwenWork）：安装与使用
@@ -26,7 +26,7 @@ QwenWork 支持从技能广场安装技能、在对话中搜索技能，也支�
 
 ## 在对话中搜索安装
 
-可在对话框输入：
+可以在对话框输入：
 
 ```text
 请查找并安装考研英语 AI 批改 Skill。
@@ -37,7 +37,7 @@ QwenWork 支持从技能广场安装技能、在对话中搜索技能，也支�
 
 ## 从仓库地址获取
 
-官方文档说明可以向 QwenWork 提供开源仓库地址并要求下载到本地技能目录。Gitee 可访问性取决于当前运行环境。
+公开文档说明可以向 QwenWork 提供开源仓库地址并要求下载到本地技能目录。Gitee 可访问性取决于当前运行环境。
 
 ```text
 请从这个仓库获取考研英语批改 Skill：
@@ -60,7 +60,7 @@ https://gitee.com/ianwusb/kaoyan-english-grader.git
 
 在技能管理区域按当前版本提供的流程更新或卸载。本地 ZIP 导入时，重新打包最新目录并上传。移除前核对技能名称。
 
-## 官方文档与参考资料
+## 官方资料
 
 - [QwenWork：技能帮助文档](https://qwenwork.cn/docs/features/skills)
 - [阿里云帮助中心：QwenWork Skills](https://www.alibabacloud.com/help/zh/qwenwork/skills)
