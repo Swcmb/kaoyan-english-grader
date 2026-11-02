@@ -6,23 +6,18 @@ This file is licensed under GPL-3.0-or-later. See ../../../LICENSE.
 
 # OpenAI Codex：安装与使用
 
-Codex 支持 Agent Skills。项目级技能随仓库共享；用户级技能可在多个工作区复用。完整安装必须保留主文件和六份题型规则。
+Codex 支持标准 Agent Skills。项目级目录可随仓库共享，用户级目录可跨工作区使用。
 
-## 安装方式
+## 安装与使用
 
-### 使用 Skills CLI
+### Skills CLI
 
 ```bash
 npx skills add https://gitee.com/ianwusb/kaoyan-english-grader.git \
-  --skill kaoyan-english-grader \
-  --agent codex
+  --skill kaoyan-english-grader --agent codex
 ```
 
-用户级安装增加 `-g`。
-
 ### 手动安装
-
-将完整技能目录复制到：
 
 | 范围 | 路径 |
 | --- | --- |
@@ -30,29 +25,17 @@ npx skills add https://gitee.com/ianwusb/kaoyan-english-grader.git \
 | 用户级 | `~/.agents/skills/kaoyan-english-grader/` |
 | Windows 用户级 | `%USERPROFILE%/.agents/skills/kaoyan-english-grader/` |
 
-不要只复制 `SKILL.md`；`references/` 下的六份规则是批改流程的一部分。
+也可以在 Codex 对话中要求它从仓库获取 Skill，并检查文件实际路径。
 
-### 通过 Codex 对话获取
+## 能力边界
 
-```text
-请从以下 Git 仓库安装考研英语批改 Skill：
-https://gitee.com/ianwusb/kaoyan-english-grader.git
+不要只复制 `SKILL.md`；`references/` 六份规则属于目录版的完整内容。Codex 插件与本项目独立 Skill 是不同安装对象。
 
-只安装 kaoyan-english-grader，保留 references 子目录。
-安装后报告实际路径，并验证六份题型规则。
-```
+## 验收
 
-下载能力取决于当前环境的网络和文件权限。要求 Codex 检查实际文件，不要只凭对话回复判断成功。
+检查技能是否出现在目标产品中，并分别测试英语一翻译和英语二大作文。核对题型路由、评分档位、引用规则和输出要求。上传或保存成功不能替代真实任务验证。
 
-## 调用与验证
-
-开启新会话后使用 `/skills` 查看技能，或使用 `$kaoyan-english-grader` 调用。分别测试英语一翻译与英语二大作文，确认题型路由、分值和引用规则正确。
-
-## 更新与卸载
-
-Skills CLI 安装使用 `npx skills update kaoyan-english-grader`。手动安装时完整替换目标目录。删除项目级副本会影响使用该仓库的团队成员；删除用户级副本只影响当前用户。
-
-## 参考资料
+## 官方资料
 
 - [Codex：构建 Skills](https://learn.chatgpt.com/docs/build-skills)
-- [Skills CLI：Agent 与目录映射](https://github.com/vercel-labs/skills/blob/main/docs/agents.md)
+- [Skills CLI：Agent 路径映射](https://github.com/vercel-labs/skills/blob/main/docs/agents.md)
