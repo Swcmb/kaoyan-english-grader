@@ -10,10 +10,6 @@ This file is licensed under GPL-3.0-or-later. See LICENSE.
 
 **面向考研英语一、英语二六类主观题的自包含 Agent Skill**
 
-[![License: GPL-3.0-or-later](https://img.shields.io/badge/License-GPL--3.0--or-later-blue.svg)](LICENSE)
-[![GitHub Releases](https://img.shields.io/github/v/release/Swcmb/kaoyan-english-grader?display_name=tag)](https://github.com/Swcmb/kaoyan-english-grader/releases)
-[![GitHub Actions](https://github.com/Swcmb/kaoyan-english-grader/actions/workflows/publish.yml/badge.svg)](https://github.com/Swcmb/kaoyan-english-grader/actions/workflows/publish.yml)
-
 <img src="docs/assets/hero.png" alt="Kaoyan English Grader — AI-powered English Exam Evaluation" width="100%">
 
 <p>
