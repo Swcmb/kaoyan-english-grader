@@ -1,18 +1,18 @@
-# Install with the Agent Skills CLI
+# 使用通用技能安装工具
 
-The repository packages one portable Agent Skill under skills/kaoyan-english-grader. The community skills CLI can install it into the native skill directory for many coding agents, avoiding platform-specific file copying.
+本仓库将标准 Agent Skill 放在 skills/kaoyan-english-grader 目录中。通用技能安装工具可以将它安装到多种编程 Agent 的技能目录，无需手动复制平台文件。
 
-## Install interactively
+## 交互式安装
 
-Requires Node.js 22.20 or later.
+需要 Node.js 22.20 或更高版本。
 
 ~~~bash
 npx skills add Swcmb/kaoyan-english-grader --skill kaoyan-english-grader
 ~~~
 
-Choose one or more detected agents and choose project or global scope.
+根据提示选择一个或多个 Agent，以及项目级或用户级安装范围。
 
-## Install into selected agents
+## 指定 Agent 安装
 
 ~~~bash
 npx skills add Swcmb/kaoyan-english-grader \
@@ -23,36 +23,23 @@ npx skills add Swcmb/kaoyan-english-grader \
   --agent opencode \
   --agent gemini-cli \
   --agent antigravity \
-  --agent kimi-code-cli \
-  --agent qwen-code \
-  --agent github-copilot \
-  --agent trae \
-  --agent windsurf \
-  --agent cline
+  --agent kimi-code-cli
 ~~~
 
-Use -g for global installation across projects:
+添加 -g 参数可安装到用户级目录。
+
+## 更新
 
 ~~~bash
-npx skills add Swcmb/kaoyan-english-grader \
-  --skill kaoyan-english-grader \
-  --agent codex \
-  --agent opencode \
-  --global
-~~~
-
-The CLI also supports other agents. Run npx skills add --help for the current supported-agent list and options.
-
-## Update and remove
-
-~~~bash
-npx skills check
 npx skills update kaoyan-english-grader
-npx skills remove kaoyan-english-grader
 ~~~
 
-## Source and compatibility
+## 支持的平台
 
-The installer reads the skill from the repository's skills/ directory and creates links or copies in each target agent's supported location. Agent-specific capabilities vary; this skill uses only portable Markdown instructions and relative reference files, so it does not require hooks, MCP servers, shell scripts, or host-specific tools.
+安装工具支持的 Agent 名单会持续变化，请查看其维护文档：
 
-For native plugin installation methods, see the platform-specific guides linked from the main README.
+[查看 Agent 支持列表](https://github.com/vercel-labs/skills/blob/main/docs/agents.md)
+
+## 验证安装
+
+在目标 Agent 中查看已安装技能，或直接要求它批改英语一/英语二的翻译或作文。确认 Agent 能够读取对应的题型规则文件。
