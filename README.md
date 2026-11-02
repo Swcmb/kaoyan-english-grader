@@ -2,7 +2,7 @@
 
 一套面向考研英语一、英语二主观题的跨平台 AI 批改 Skill，覆盖翻译、大作文和小作文，共六种题型。支持通过通用技能安装工具或各 Agent 的原生插件、扩展机制安装，可用于 Claude Code、Codex、Cursor、OpenCode、Gemini CLI、Antigravity、Kimi Code 等工具。
 
-> **评分说明：** 本项目提供的是基于练习评分参考的模拟评价，不是官方阅卷标准、官方采分点或真实考试分数预测。所有评分仅供备考训练使用。
+> **评分说明：** 本项目提供基于练习评分参考的模拟评价，不是官方阅卷标准、官方采分点或真实考试分数预测。所有评分仅供备考训练使用。
 
 ## 功能一览
 
@@ -32,8 +32,6 @@
 
 需要 Node.js 22.20 或更高版本。
 
-交互式安装：
-
 ~~~bash
 npx skills add Swcmb/kaoyan-english-grader --skill kaoyan-english-grader
 ~~~
@@ -59,9 +57,7 @@ npx skills add Swcmb/kaoyan-english-grader \
   -a cline
 ~~~
 
-添加 -g 参数可安装到用户级目录。可通过以下文档查看安装工具支持的全部 Agent：
-
-[Agent Skills 支持的工具列表](https://github.com/vercel-labs/skills/blob/main/docs/agents.md)
+添加 -g 参数可安装到用户级目录。支持的 Agent 名单请查看[安装工具文档](https://github.com/vercel-labs/skills/blob/main/docs/agents.md)。
 
 ### 方式二：使用平台原生安装方式
 
@@ -71,8 +67,8 @@ npx skills add Swcmb/kaoyan-english-grader \
 | Codex | 添加插件市场后，在 /plugins 中安装；也可作为独立 Skill 安装 |
 | Cursor | 安装本地插件，或使用通用技能安装工具 |
 | OpenCode | 原生发现 Agent Skill，或使用通用技能安装工具 |
-| Gemini CLI | 通过 extensions install 安装扩展 |
-| Qwen Code | 通过 extensions install 安装扩展 |
+| Gemini CLI | 通过扩展命令安装 |
+| Qwen Code | 通过扩展命令安装 |
 | Antigravity | 通过插件命令安装 |
 | Kimi Code | 通过 /plugins install 安装插件 |
 
