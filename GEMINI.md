@@ -8,16 +8,15 @@ This file is licensed under GPL-3.0-or-later. See LICENSE.
 
 本文件是 Gemini CLI 及能够读取仓库指令的 Gemini 类 Agent 的入口。
 
-## Skill 选择
+## Skill 使用规则
 
-仓库提供两个独立 Skill：
+考研英语批改任务统一使用唯一的自包含 Skill：
 
-- 默认使用标准版：@./skills/kaoyan-english-grader/SKILL.md
-- 只有用户明确选择完整版，或目标平台无法保留标准 Skill 的 `references/` 目录且只支持单文件导入时，使用：@./skills/kaoyan-english-grader-full/SKILL.md
+- `@./skills/kaoyan-english-grader/SKILL.md`
 
-标准版依赖同目录下的六份 `references/` 规则文件。完整目录安装时必须保留主文件与引用目录。完整版已将六类规则内嵌到单个文件中，不依赖外部引用；支持标准 Skill 目录的平台优先使用标准版。
+处理英语一、英语二的翻译、大作文或小作文时，先识别考试与题型，再完整读取对应题型的评分规则。六类题型的全部评分规则均位于该文件中，不依赖额外引用目录。
 
-处理考研英语一、英语二的翻译、大作文或小作文时，先识别考试与题型，再完整读取所选版本中的对应评分规则。所有分数均为练习模拟评价，不得表述为官方阅卷结果或真实分数预测。
+讲解语言使用中文；英文原句、修改句、例句和修改后的英文作文保留英文。所有分数均为练习模拟评价，不得表述为官方阅卷结果、官方评分细则或真实考试分数预测。
 
 ## 文档规范
 
@@ -32,4 +31,4 @@ This file is licensed under GPL-3.0-or-later. See LICENSE.
 
 完成后检查相对链接、Markdown、命令和路径，执行对应测试并如实报告。未运行的检查标记为未执行。
 
-除用户明确要求外，不修改两个 Skill 的评分规则内容。
+除用户明确要求外，不修改 Skill 的评分规则内容。
