@@ -1,3 +1,9 @@
+<!--
+Copyright (C) 2026 kaoyan-english-grader contributors
+SPDX-License-Identifier: GPL-3.0-or-later
+This file is licensed under GPL-3.0-or-later. See LICENSE.
+-->
+
 # 使用通用技能安装工具
 
 本仓库将标准 Agent Skill 放在 skills/kaoyan-english-grader 目录中。通用技能安装工具可以将它安装到多种编程 Agent 的技能目录，无需手动复制平台文件。
