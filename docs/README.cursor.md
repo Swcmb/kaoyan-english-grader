@@ -1,3 +1,9 @@
+<!--
+Copyright (C) 2026 kaoyan-english-grader contributors
+SPDX-License-Identifier: GPL-3.0-or-later
+This file is licensed under GPL-3.0-or-later. See LICENSE.
+-->
+
 # Cursor 安装指南
 
 本仓库包含通用插件清单 plugin.json 和 Cursor 专用清单 .cursor-plugin/plugin.json。
