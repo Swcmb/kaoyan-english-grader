@@ -25,7 +25,7 @@ This file is licensed under GPL-3.0-or-later. See ../LICENSE.
 
 ## 发布
 
-- [版本发布与 GitHub Packages](releasing.md)：Git 标签、GitHub Releases、GHCR OCI 包和下载方法。
+- [GitHub Releases 发布说明](releasing.md)：版本标签、Release 资产、SHA-256 校验和故障排查。
 
 ## 目录结构
 

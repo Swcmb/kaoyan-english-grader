@@ -1,4 +1,4 @@
-name: Publish Release and GHCR Package
+name: Publish GitHub Release
 
 on:
   push:
@@ -9,7 +9,7 @@ permissions:
   contents: read
 
 concurrency:
-  group: publish-${{ github.ref }}
+  group: release-${{ github.ref }}
   cancel-in-progress: false
 
 jobs:
@@ -60,64 +60,3 @@ jobs:
             dist/kaoyan-english-grader-${{ github.ref_name }}.zip
             dist/kaoyan-english-grader-${{ github.ref_name }}.tar.gz
             dist/SHA256SUMS
-
-  package:
-    name: Publish OCI package to GHCR
-    runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      packages: write
-    steps:
-      - name: Check out repository
-        uses: actions/checkout@v7
-
-      - name: Validate release tag
-        shell: bash
-        run: |
-          if [[ ! "${GITHUB_REF_NAME}" =~ ^v[0-9]+\.[0-9]+\.[0-9]+(-[0-9A-Za-z.-]+)?$ ]]; then
-            echo "Invalid release tag: ${GITHUB_REF_NAME}"
-            echo "Expected vMAJOR.MINOR.PATCH, optionally followed by a prerelease suffix."
-            exit 1
-          fi
-
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v4
-
-      - name: Log in to GitHub Container Registry
-        uses: docker/login-action@v4
-        with:
-          registry: ghcr.io
-          username: ${{ github.actor }}
-          password: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Prepare image metadata
-        id: meta
-        shell: bash
-        run: |
-          image="ghcr.io/${GITHUB_REPOSITORY,,}"
-          version="${GITHUB_REF_NAME#v}"
-
-          {
-            echo "tags<<EOF"
-            echo "${image}:${GITHUB_REF_NAME}"
-            echo "${image}:${version}"
-            echo "EOF"
-
-            echo "labels<<EOF"
-            echo "org.opencontainers.image.title=kaoyan-english-grader"
-            echo "org.opencontainers.image.description=考研英语一、英语二六类主观题 AI 批改 Skill"
-            echo "org.opencontainers.image.source=https://github.com/${GITHUB_REPOSITORY}"
-            echo "org.opencontainers.image.licenses=GPL-3.0-or-later"
-            echo "org.opencontainers.image.version=${version}"
-            echo "org.opencontainers.image.revision=${GITHUB_SHA}"
-            echo "EOF"
-          } >> "${GITHUB_OUTPUT}"
-
-      - name: Build and publish GHCR package
-        uses: docker/build-push-action@v7
-        with:
-          context: .
-          file: ./Dockerfile
-          push: true
-          tags: ${{ steps.meta.outputs.tags }}
-          labels: ${{ steps.meta.outputs.labels }}

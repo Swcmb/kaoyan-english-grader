@@ -126,30 +126,27 @@ kaoyan-english-grader/
 ├── .claude-plugin/           # Claude 插件元数据
 ├── .codex-plugin/            # Codex 插件元数据
 ├── .cursor-plugin/           # Cursor 插件元数据
-├── .github/workflows/        # CI 与发布工作流
+├── .github/workflows/        # GitHub Release 工作流
 ├── docs/
 │   ├── installation/         # 安装索引与平台指南
 │   ├── standards/            # 文档与许可证规范
-│   └── releasing.md          # Releases / Packages 发布说明
+│   └── releasing.md          # GitHub Releases 发布说明
 ├── skills/
 │   └── kaoyan-english-grader/
 │       ├── SKILL.md
 │       └── references/       # 六份题型评分规则
-├── Dockerfile                # GHCR OCI 包
 ├── GEMINI.md                 # Gemini 类 Agent 仓库指令
 ├── INSTALL.md                # Agent 自主安装协议
 ├── LICENSE
 └── README.md
 ```
 
-## Releases 与 GitHub Packages
+## GitHub Releases
 
-推送符合格式的版本标签（例如 `v1.0.0`）后，GitHub Actions 并行执行：
+推送符合格式的版本标签（例如 `v1.0.0`）后，GitHub Actions 自动创建 Release，并附加完整源码 ZIP、TAR.GZ 和 SHA-256 校验文件。
 
-- **[GitHub Releases](https://github.com/Swcmb/kaoyan-english-grader/releases)：** 发布完整源码 ZIP、TAR.GZ 和 SHA-256 校验文件。
-- **[GitHub Packages（GHCR）](https://github.com/users/Swcmb/packages?repo_name=kaoyan-english-grader)：** 发布包含完整 Skill 目录的 OCI 包，路径为 `/opt/skills/kaoyan-english-grader/`。
-
-发布方式、镜像提取和首次可见性设置见 [版本发布说明](docs/releasing.md)。
+- [查看 Releases](https://github.com/Swcmb/kaoyan-english-grader/releases)
+- [版本发布说明](docs/releasing.md)
 
 ## 文档
 
