@@ -1,6 +1,6 @@
 {
   "name": "kaoyan-english-grader",
   "version": "1.0.0",
-  "description": "考研英语一/二翻译与作文批改，以及第三方许可证审查和署名验证。",
+  "description": "考研英语一/二翻译、大作文和小作文六类题型模拟批改。",
   "contextFileName": "GEMINI.md"
 }
