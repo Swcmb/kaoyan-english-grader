@@ -35,6 +35,24 @@ This file is licensed under GPL-3.0-or-later. See LICENSE.
 
 ## 快速安装
 
+### 自然语言安装（推荐）
+
+将下面这段话直接发送给你正在使用的 AI Agent。Agent 会识别当前宿主工具和运行环境，自行选择兼容的安装方式，执行安装并验证结果。
+
+```text
+请直接帮我安装这个仓库中的「考研英语 AI 批改」Skill（kaoyan-english-grader）。
+
+仓库地址：https://github.com/Swcmb/kaoyan-english-grader
+Agent 安装说明：https://raw.githubusercontent.com/Swcmb/kaoyan-english-grader/main/INSTALL.md
+国内网络备用说明：https://gitee.com/ianwusb/kaoyan-english-grader/raw/main/INSTALL.md
+
+请先读取并遵循仓库的 Agent 安装说明，自行识别当前 Agent、操作系统和工作区，选择当前环境真正支持的原生 Skill/插件安装方式、Skills CLI 或手动部署方式。请安装完整的 kaoyan-english-grader 目录，保留 SKILL.md 和 references/ 下的六份规则文件；根据当前工作区和宿主约定判断项目级或用户级安装范围。
+
+请直接执行安装并验证 Agent 是否能够发现该 Skill。不要只给我安装教程或命令；遇到当前环境无法自动完成的 UI 操作、权限限制或其他阻塞时，明确说明具体原因和我需要完成的最后一步。不要覆盖同名的其他 Skill，也不要修改无关项目文件。
+```
+
+自然语言安装会根据 Agent 的实际能力选择路径；支持情况以当前 Agent 的官方机制为准。Agent 无法直接操作宿主 UI 时，会给出需要用户完成的最后一步。
+
 <details>
 <summary><strong>国内网络：从 Gitee 安装（推荐）</strong></summary>
 
