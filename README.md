@@ -49,7 +49,12 @@ npx skills add Swcmb/kaoyan-english-grader \
   -a opencode \
   -a gemini-cli \
   -a antigravity \
-  -a kimi-code-cli
+  -a kimi-code-cli \
+  -a qwen-code \
+  -a github-copilot \
+  -a trae \
+  -a windsurf \
+  -a cline
 ~~~
 
 Add -g or --global for user-wide installation. Update an installed skill with npx skills update kaoyan-english-grader.
