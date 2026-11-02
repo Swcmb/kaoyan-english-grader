@@ -8,6 +8,10 @@ This file is licensed under GPL-3.0-or-later. See LICENSE.
 
 本页是国内产品适配总入口。每个渠道有独立操作文档，包含入口定位、安装步骤、使用验证和能力边界。
 
+## 让 Agent 自行判断并安装
+
+不需要先判断自己使用的是哪一种 Agent，也不需要手动选择 CLI 命令。将 README 中的[自然语言安装指令](../README.md)发给当前 Agent，或直接让它读取仓库根目录的 [INSTALL.md](../INSTALL.md)。Agent 应先识别宿主环境，再从原生安装机制、Skills CLI、手动部署或 UI 导入中选择实际可用的方式，并在完成后验证 Skill 与六份引用规则文件。
+
 ## 先区分三种支持方式
 
 | 类型 | 含义 | 本仓库适配情况 |
