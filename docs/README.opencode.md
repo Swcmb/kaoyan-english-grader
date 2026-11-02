@@ -6,12 +6,20 @@ This file is licensed under GPL-3.0-or-later. See LICENSE.
 
 # OpenCode 安装指南
 
+> 国内网络环境优先使用 Gitee 镜像安装标准 Skill：
+>
+> ```bash
+> npx skills add https://gitee.com/ianwusb/kaoyan-english-grader.git --skill kaoyan-english-grader --agent opencode
+> ```
+>
+> 将 `AGENT_NAME` 替换为当前平台对应的 Agent 标识。下方的平台原生插件安装方式作为补充；需要 Gitee 国内源时，优先使用此方式。
+
 OpenCode 原生支持 Agent Skills 格式。它可以从项目级 .agents/skills/、.opencode/skills/，以及用户级 ~/.agents/skills/、~/.config/opencode/skills/ 目录发现技能。
 
 ## 推荐安装方式
 
 ~~~bash
-npx skills add Swcmb/kaoyan-english-grader --skill kaoyan-english-grader --agent opencode
+npx skills add https://gitee.com/ianwusb/kaoyan-english-grader.git --skill kaoyan-english-grader --agent opencode
 ~~~
 
 添加 -g 参数可安装到用户级目录。
