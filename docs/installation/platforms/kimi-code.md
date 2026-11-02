@@ -6,32 +6,27 @@ This file is licensed under GPL-3.0-or-later. See ../../../LICENSE.
 
 # Kimi Code CLI：安装与使用
 
-Kimi Code CLI 支持标准 Agent Skills，也提供插件系统。本仓库的标准 Skill 目录和插件清单是两种独立安装对象。国内网络可优先使用 Gitee 安装标准 Skill。
+Kimi Code CLI 支持标准 Agent Skills，也提供插件系统。标准目录版和 Kimi 插件是两个独立安装对象。
 
-## 安装标准 Skill
+## 安装与使用
+
+### 安装标准 Skill
 
 ```bash
 npx skills add https://gitee.com/ianwusb/kaoyan-english-grader.git \
-  --skill kaoyan-english-grader \
-  --agent kimi-code-cli
+  --skill kaoyan-english-grader --agent kimi-code-cli
 ```
-
-用户级安装增加 `-g`。
 
 ### 手动安装路径
 
-| 范围 | 路径 |
-| --- | --- |
-| 用户级 Kimi 专属 | `~/.kimi-code/skills/kaoyan-english-grader/` |
-| 用户级通用 | `~/.agents/skills/kaoyan-english-grader/` |
-| 项目级 Kimi 专属 | `.kimi-code/skills/kaoyan-english-grader/` |
-| 项目级通用 | `.agents/skills/kaoyan-english-grader/` |
+| 范围 | Kimi 专属目录 | 通用目录 |
+| --- | --- | --- |
+| 用户级 | `~/.kimi-code/skills/kaoyan-english-grader/` | `~/.agents/skills/kaoyan-english-grader/` |
+| 项目级 | `.kimi-code/skills/kaoyan-english-grader/` | `.agents/skills/kaoyan-english-grader/` |
 
-Kimi Code CLI 按 Project → User 优先级加载。默认 `KIMI_CODE_HOME` 为 `~/.kimi-code`；修改该变量会移动 Kimi 专属用户目录，通用目录不随之迁移。
+默认 `KIMI_CODE_HOME` 为 `~/.kimi-code`，修改该变量会影响 Kimi 专属目录。
 
-## 通过 Kimi 插件安装
-
-仓库提供 Kimi 插件清单。插件命令使用 GitHub URL：
+### 插件安装
 
 ```text
 /plugins install https://github.com/Swcmb/kaoyan-english-grader
@@ -39,16 +34,16 @@ Kimi Code CLI 按 Project → User 优先级加载。默认 `KIMI_CODE_HOME` 为
 /reload
 ```
 
-插件安装范围为用户管理目录，与独立 Skill 的项目级/用户级目录不同。插件入口使用 GitHub URL；需要 Gitee 源时使用 Skills CLI。
+## 能力边界
 
-## 验证与维护
+插件和标准 Skill 的安装范围、更新方式不同。使用 Gitee 源安装标准 Skill 时使用 Skills CLI；安装插件时另行检查插件是否包含完整批改规则。
 
-使用 `/plugins list` 检查插件；独立 Skill 使用 `/skill:kaoyan-english-grader` 调用，或直接提交批改任务。分别测试英语一翻译和英语二大作文，确认对应引用文件可读。
+## 验收
 
-Skills CLI 安装使用 `npx skills update kaoyan-english-grader`。插件通过 Kimi 插件管理命令更新或重装。卸载时只移除对应 Skill 或插件条目。
+检查 Agent 能发现并加载技能，再分别测试英语一翻译和英语二大作文，确认对应规则可读取、评分分值正确、输出结构完整。
 
-## 参考资料
+## 官方资料
 
 - [Kimi Code：Using Skills](https://www.kimi.ai/help/plugins-and-skills/use-skills-in-code)
 - [Kimi Code：Plugins 命令](https://www.kimi.com/code/docs/en/kimi-code-cli/customization/plugins.html)
-- [Skills CLI：Kimi Code CLI 目录映射](https://github.com/vercel-labs/skills/blob/main/docs/agents.md)
+- [Skills CLI：Agent 映射](https://github.com/vercel-labs/skills/blob/main/docs/agents.md)
