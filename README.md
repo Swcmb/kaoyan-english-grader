@@ -163,13 +163,15 @@ kaoyan-english-grader/
 ├── skills/
 │   ├── kaoyan-english-grader/
 │   │   ├── SKILL.md
-│       └── references/
-│           ├── english1_essay_major.md
-│           ├── english1_essay_minor.md
-│           ├── english1_translation.md
-│           ├── english2_essay_major.md
-│           ├── english2_essay_minor.md
-│           └── english2_translation.md
+│   │   └── references/
+│   │       ├── english1_essay_major.md
+│   │       ├── english1_essay_minor.md
+│   │       ├── english1_translation.md
+│   │       ├── english2_essay_major.md
+│   │       ├── english2_essay_minor.md
+│   │       └── english2_translation.md
+│   └── check-the-licence-before-you-copy/
+│       └── SKILL.md
 ├── .claude-plugin/
 ├── .codex-plugin/
 ├── .cursor-plugin/
@@ -191,10 +193,11 @@ kaoyan-english-grader/
 │   ├── github-content-writing.md
 │   ├── third-party-license-review.md
 │   └── README.*.md
-└── LICENSE
+├── LICENSE
+└── README.md
 ```
 
-考研英语批改 Skill 位于 skills/kaoyan-english-grader，六份题型规则放在其 references 目录中。第三方许可审查 Skill 位于 skills/check-the-licence-before-you-copy。平台清单负责让不同 Agent 发现和安装仓库中的 Skill。
+考研英语批改 Skill 位于 `skills/kaoyan-english-grader`，六份题型规则放在其 `references` 目录中。第三方许可审查 Skill 位于 `skills/check-the-licence-before-you-copy`。平台清单负责让不同 Agent 发现和安装仓库中的 Skill。
 
 ## 评分原则与边界
 
