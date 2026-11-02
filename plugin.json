@@ -2,7 +2,7 @@
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "kaoyan-english-grader",
   "version": "1.0.0",
-  "description": "跨平台 Agent Skills：考研英语一/二翻译与作文批改，以及第三方内容许可证审查和署名完整性验证。",
+  "description": "跨平台考研英语 AI 批改 Skill：覆盖英语一、英语二翻译、大作文和小作文六类题型。",
   "author": {
     "name": "Swcmb",
     "url": "https://github.com/Swcmb"
@@ -19,17 +19,14 @@
     "essay",
     "grading",
     "education",
-    "agent-skills",
-    "license-compliance",
-    "third-party-licenses",
-    "markdown"
+    "agent-skills"
   ],
   "extensions": {
     "com.openai": {
       "interface": {
-        "displayName": "考研英语批改与开源合规",
-        "shortDescription": "考研英语一/二批改与第三方许可证审查",
-        "longDescription": "包含考研英语六类题型模拟批改，以及第三方代码、Skill、Prompt 和配置的文件级许可证审查、来源记录与署名测试。",
+        "displayName": "考研英语批改",
+        "shortDescription": "考研英语一/二翻译与作文六种题型批改",
+        "longDescription": "按题型进行审题、模拟评分、逐句纠错、完整修改和针对性复盘。评分仅供练习参考。",
         "developerName": "Swcmb",
         "category": "Education",
         "capabilities": [
@@ -38,8 +35,7 @@
         "websiteURL": "https://github.com/Swcmb/kaoyan-english-grader",
         "defaultPrompt": [
           "批改我的考研英语一大作文，检查图画寓意与论证是否切题。",
-          "批改我的考研英语二翻译，逐意群划分模拟采分点。",
-          "在复制第三方 Skill 或代码之前，检查它的许可证、NOTICE 和文件级署名要求。"
+          "批改我的考研英语二翻译，逐意群划分模拟采分点。"
         ]
       }
     }
