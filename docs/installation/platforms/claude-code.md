@@ -25,7 +25,7 @@ npx skills add https://gitee.com/ianwusb/kaoyan-english-grader.git \
 | 用户级 | `~/.claude/skills/kaoyan-english-grader/` |
 | Windows 用户级 | `%USERPROFILE%/.claude/skills/kaoyan-english-grader/` |
 
-将完整目录放入目标路径，保留 `SKILL.md` 和 `（外部规则目录）`。
+将 `skills/kaoyan-english-grader/` 目录完整放入目标路径。该目录只包含完整的 `SKILL.md` 文件。
 
 ## 安装边界
 
@@ -37,7 +37,7 @@ Claude Code 本地目录和 Claude 网页版自定义 Skill 上传由不同界�
 
 ## 本项目 Skill
 
-本仓库只提供一个自包含的标准 Agent Skill，六类题型的完整评分规则全部内嵌于 `skills/kaoyan-english-grader/SKILL.md`，不依赖 `（外部规则目录）` 或其他外部文件。目录安装时导入 `skills/kaoyan-english-grader/`；平台明确只接受单文件时，导入该目录中的 `SKILL.md`。
+本仓库只提供一个自包含的标准 Agent Skill，六类题型的完整评分规则全部内嵌于 `skills/kaoyan-english-grader/SKILL.md`，不依赖额外的规则文件或运行时服务。目录安装时导入 `skills/kaoyan-english-grader/`；平台明确只接受单文件时，导入该目录中的 `SKILL.md`。
 
 ## 官方资料
 
