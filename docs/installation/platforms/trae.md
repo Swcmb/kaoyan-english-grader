@@ -36,7 +36,7 @@ npx skills add https://gitee.com/ianwusb/kaoyan-english-grader.git \
 
 ## 能力边界
 
-Trae、Trae CN、TraeCode 和 TraeWork 等产品线的菜单可能不同。导入后检查 `外部规则文件` 是否完整保留；只接受单文件时使用完整单文件版本。
+Trae、Trae CN、TraeCode 和 TraeWork 等产品线的菜单可能不同。导入后确认 `SKILL.md` 内容完整且 Agent 能正常调用；平台明确只接受单文件时，直接导入该文件。
 
 ## 验收
 
