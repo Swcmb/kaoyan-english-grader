@@ -1,3 +1,9 @@
+<!--
+Copyright (C) 2026 kaoyan-english-grader contributors
+SPDX-License-Identifier: GPL-3.0-or-later
+This file is licensed under GPL-3.0-or-later. See LICENSE.
+-->
+
 # Codex 安装指南
 
 本仓库提供通用插件清单、Codex 兼容清单和仓库级插件市场入口。
