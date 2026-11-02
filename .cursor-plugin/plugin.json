@@ -1,0 +1,22 @@
+{
+  "name": "kaoyan-english-grader",
+  "displayName": "考研英语批改",
+  "description": "Practice grading for postgraduate entrance exam English I and II: translation, major essays, and minor essays.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Swcmb",
+    "url": "https://github.com/Swcmb"
+  },
+  "homepage": "https://github.com/Swcmb/kaoyan-english-grader",
+  "repository": "https://github.com/Swcmb/kaoyan-english-grader",
+  "license": "MIT",
+  "keywords": [
+    "kaoyan",
+    "english",
+    "translation",
+    "essay",
+    "grading",
+    "education"
+  ],
+  "skills": "./skills/"
+}
