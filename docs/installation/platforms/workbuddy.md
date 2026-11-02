@@ -6,7 +6,7 @@ This file is licensed under GPL-3.0-or-later. See ../../../LICENSE.
 
 # WorkBuddy 桌面端：安装与使用
 
-WorkBuddy 提供技能搜索、技能创建和本地技能包上传。本项目依赖六份内嵌评分规则，目录版上传时应保留完整目录。
+WorkBuddy 提供技能搜索、技能创建和本地技能包上传。本项目的六类题型完整评分规则均内嵌在一个 `SKILL.md` 文件中。
 
 ## 安装与使用
 
@@ -14,17 +14,10 @@ WorkBuddy 提供技能搜索、技能创建和本地技能包上传。本项目�
 
 将 `skills/kaoyan-english-grader/` 整个目录压缩为 ZIP：
 
-```text
+~~~text
 kaoyan-english-grader/
-├── SKILL.md
-└── 外部规则文件
-    ├── english1_essay_major.md
-    ├── english1_essay_minor.md
-    ├── english1_translation.md
-    ├── english2_essay_major.md
-    ├── english2_essay_minor.md
-    └── english2_translation.md
-```
+└── SKILL.md
+~~~
 
 ### 上传
 
@@ -34,7 +27,7 @@ kaoyan-english-grader/
 4. 选择 ZIP 并等待解析完成。
 5. 在技能列表确认技能出现并启用。
 
-只接收单个文件时，使用[内嵌六类规则的完整单文件版本](../../../skills/kaoyan-english-grader/SKILL.md)。
+只接收单个文件时，使用[本项目完整 Skill 文件](../../../skills/kaoyan-english-grader/SKILL.md)。
 
 ## 能力边界
 
