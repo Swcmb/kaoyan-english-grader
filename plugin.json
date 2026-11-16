@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "kaoyan-english-grader",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "跨平台考研英语 AI 批改 Skill：覆盖英语一、英语二翻译、大作文和小作文六类题型。",
   "author": {
     "name": "Swcmb",

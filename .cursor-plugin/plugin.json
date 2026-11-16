@@ -2,7 +2,7 @@
   "name": "kaoyan-english-grader",
   "displayName": "考研英语批改",
   "description": "考研英语一/二六类题型模拟评分、逐句批改和学习复盘。",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "author": {
     "name": "Swcmb",
     "url": "https://github.com/Swcmb"

@@ -5,7 +5,7 @@ license: GPL-3.0-or-later
 compatibility: 适用于能够读取本地文件以及用户提供的文字或图片的 Agent Skills 兼容助手。无需 MCP 服务、外部 API 或运行时依赖。
 metadata:
   author: Swcmb
-  version: "1.0.0"
+  version: "1.1.0"
 ---
 
 <!--
